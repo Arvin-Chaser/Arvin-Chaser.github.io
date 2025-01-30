@@ -1,0 +1,30 @@
+{
+    "mouseover": [
+        {
+            "selector": ".posttitlewithoutimg",
+            "text": ["要看看 {text} 么？"]
+        },
+        {
+            "selector": ".posttitle",
+            "text": ["要看看 {text} 么？"]
+        },
+        {
+            "selector": ".search-input",
+            "text": ["问问小莫吧"]
+        },
+        {
+            "selector": "#live2d",
+            "text": ["It's mygo!!!!!"]
+        },
+        {
+            "selector": ".avatar",
+            "text": ["快来交换友链吧！"]
+        }
+    ],
+    "click": [
+        {
+            "selector": "#landlord #live2d",
+            "text": ["It's mygo!!!!!"]
+        }
+    ]
+}
