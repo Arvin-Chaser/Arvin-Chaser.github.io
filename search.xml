@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>Test</title>
-      <link href="/2025/10/08/test/"/>
-      <url>/2025/10/08/test/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Heading-1"><a href="#Heading-1" class="headerlink" title="Heading 1"></a>Heading 1</h1><h2 id="Heading-2"><a href="#Heading-2" class="headerlink" title="Heading 2"></a>Heading 2</h2><h3 id="Heading-3"><a href="#Heading-3" class="headerlink" title="Heading 3"></a>Heading 3</h3><p><strong>Bold</strong><br><em>Italic</em></p><ul><li>Bullet Item 1</li><li>Bullet Item 2<ul><li>Nested Item</li></ul></li><li>Bullet Item 3</li></ul><ol><li>Number one</li><li>Number two</li><li>Number three<br>[[My First Note]]</li></ol><p><a href="https://www.bilibili.com/">bilibili</a></p><p>&#x3D;&#x3D;Highlight&#x3D;&#x3D;<br><del>Strikethrough</del></p><ul><li><input disabled="" type="checkbox"> Checkbox</li><li></li></ul>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>[Optimization]Sensitivity Analysis</title>
       <link href="/2025/09/29/optimizationsensitivity-analysis/"/>
       <url>/2025/09/29/optimizationsensitivity-analysis/</url>
@@ -192,6 +179,12 @@
         <content type="html"><![CDATA[<h2 id="Using-simple-operators-to-construct-other-operators"><a href="#Using-simple-operators-to-construct-other-operators" class="headerlink" title="Using simple operators to construct other operators"></a>Using simple operators to construct other operators</h2><ul><li>讨论仅仅使用 ∧ ∨ ¬ 来表示其它已知输入和输入（Truth table）的运算</li><li><h2 id="在复现一个新定义的运算时，我们有两种情况使得一个运算和一系列运算式-简单例：异或"><a href="#在复现一个新定义的运算时，我们有两种情况使得一个运算和一系列运算式-简单例：异或" class="headerlink" title="在复现一个新定义的运算时，我们有两种情况使得一个运算和一系列运算式  - 简单例：异或  - "></a>在复现一个新定义的运算时，我们有两种情况使得一个运算和一系列运算式<br>  - 简单例：异或<br>  - <img src="https://arvin-chaser.github.io/post-images/1757155365629.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1757155365629.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></h2></li></ul>]]></content>
       
       
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
       
     </entry>
     
@@ -225,6 +218,37 @@
       
         <content type="html"><![CDATA[<p>已经过去一年整了，我说的是那个河口湖的清晨。</p><p>去年的这个时间，新宿的一辆巴士载着我吱吱呀呀开向河口湖。不算新的车摇晃着思绪，只依稀记得窗外场景，从商业区到郊区的树木一帧一帧地迭代。我倒是清楚记得，在河口湖前停的最后一站，窗外有一座废弃的摩天轮。夕阳在草地上投下摩天轮的影子，仿佛二次元照进现实。</p><p>印象中，河口湖的车站大部分都是木制的，车站里随处可见的货架上摆放着富士山的明信片，价格自然是成本的数倍。</p><p>有点难绷，哪里的景点似乎都是一个德性。</p><p>入住酒店已经是傍晚，姜圣在附近找了一个烤肉店，记得这烤肉店颇有趣味，还赠送了一个挂饰，只是这挂饰已经不知所踪了。</p><p>放完行李，我们结伴沿着河口湖岸逆时针地走，正琢磨着富士山到底能在哪看到，内心忽而有感应，向左看去，首先映入眼帘的居然是三个并排的垃圾桶。</p><p>有趣的是，垃圾桶在日本是极其稀缺的，三个垃圾桶摆成一排居然也有些奇观的意味。<br>待眼睛适应了垃圾桶后那片浓郁的夜色，方才看清，在垃圾桶之后、越过一片栏杆之后的，正是富士山。</p><p>八月的富士山山腰没有雪，以至于我思索了一会眼前的到底是不是富士山，还是只是一座普通的山包。</p><p>下方是稀有的垃圾桶，上方是著名的富士山。<br>我自然不会怀疑垃圾桶是不是垃圾桶，但是我却没来由的质疑富士山是不是富士山。可能我心里下意识地认为富士山不会这样自然而然地就出现在三个垃圾桶的上面——现身的方式太戏剧性，太丑陋了。</p><p>但事实上，很多富士山正是和一群垃圾桶一起施施然出现的。</p><p>次日早晨，同行的两人还未醒来，我便没来由地独自往酒店楼下走去。或许我是想再给富士山一个现身的机会，如此我就可以当作她昨晚并没有在三个垃圾桶的上方出现过。总之，我迈着和昨晚相反的方向，顺时针沿着河口湖岸开始漫步。</p><p>出发时仍是阴天，微风缓缓拂过河口湖湖面，激起微波；彼时天刚亮，整个河口湖也尚未苏醒。我自得其乐地向前走，路旁是两三层的小房子，倒是和国内的乡下有几分相似。漆成红色的栏杆蜿蜒着指引方向，延伸向湖对岸。</p><p>记忆中，河口湖看起来并不大，路却不是严格沿着河岸向前的。等到视野中已不见河岸，我才意识到回头可能是更好的选择——此时同行的友人已经苏醒，催促我回去了。但我心中确乎存有怒气：该死的富士山，只愿意在三个垃圾桶上方现身，却不愿意以一个更优雅的姿态再度与我相见吗？于是我加快脚步，还是选择把顺时针的路走完。</p><p>下一个转角提供的视野也许就能看到富士山，我想。</p><p>待到我走到一座小桥上，回望整个河口湖，才意识到富士山其实一直都在视野之中，只不过飘絮般的云将山腰以上都挡住了。我不禁哑然失笑：原来富士山早就拒绝了我，是我自己迟钝地不愿发现罢了。</p><p>友人还在催，我也只能把顺时针的路走完。回头路太远也太苦涩了，我不愿再走一遭。</p><p>走过小桥，是一道长长的坡。从坡顶望去，车流自坡底汹涌而来。驻足片刻，我不知怎的突然很激动很有气力。富士山一直在那，我想，总有一天云会移开，山腰上也会再布满雪。湖畔的樱花也终将迎来她们的季节，我想，即使花开花谢，即使已经是下一代目。到那时我再来河口湖看富士山，我对自己说。</p><p>于是我逆着车流向坡底跑去，至少我没有走回头路，我有些骄傲。阳光从正前方洒下，略微灼目，我眯起眼睛，视野里一片模糊，好像正在冲向整个世界。</p><p>一年后的清晨，我又一次从晨星等到天明，开阔的视野里云缓缓飘过。自己感受着天气从微微凉到灼热，就仿佛和太阳一起重获新生。</p><p>发明时间的人大抵是个该死的天才。那么多一瞬的欢笑从此有了参照，那么多悲恸也自此有了刻印的依托。 </p><p>我又想起河口湖的早晨，彼时我戴着廉价的耳机，沿着河口湖岸，一个人不要命地往前走。抬头是淡淡的云，阳光从缝隙投下，体感超过了暖和，却又不至于燥热。富士山被云挡住不见踪影，湖畔的樱花也不是盛开的季节。但我仍沿着红色的栏杆，穿过古旧的隧道，从坡顶逆着车流向下跑去。我知道总有一天我会看到云后的富士山，总有一个花季会让樱花盛开。</p><p>所以我还是选择往前走，没等待也没停留。</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>河口湖游记</title>
+      <link href="/2025/08/04/test/"/>
+      <url>/2025/08/04/test/</url>
+      
+        <content type="html"><![CDATA[<p>这里是河口湖游记的正文内容，写一些随笔内容测试分类和标签显示。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
       
       
         <tags>
@@ -449,6 +473,12 @@
       
         <content type="html"><![CDATA[<p><code>For the brand new life.</code><br>$2025.1.11$<br><img src="https://arvin-chaser.github.io/post-images/1736528309476.jpg" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1736528309476.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p><p><code>He can win almost everything one more time if he wants to.</code><br>$2025.9.28$</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
       
       
     </entry>
