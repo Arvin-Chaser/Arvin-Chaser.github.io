@@ -42,7 +42,7 @@
 <meta property="og:title" content="[Linear Algebra]Gram-Schmidt Process">
 <meta property="og:url" content="http://example.com/2025/04/21/linear-algebra-gram-schmidt-process/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="#0 Key Questions 首先给出本节的核心问题及讨论要点：  #1 Simple Cases：k&#x3D;2 &amp; k&#x3D;3 首先考虑两个向量的情况：  注意：此处的$p_1&#x3D;(ux^Tv_1)v_1$，即为$p_1&#x3D;&lt;  v_1,u_2 &gt;v_1$, 是上一节中对投影的定义，意为$u_2$在$v_1$张成空间上的投影。   进一步的，考虑">
+<meta property="og:description" content="#0 Key Questions  首先给出本节的核心问题及讨论要点：  #1 Simple Cases：k&#x3D;2 &amp; k&#x3D;3   首先考虑两个向量的情况：   注意：此处的$p_1&#x3D;(ux^Tv_1)v_1$，即为$p_1&#x3D;&lt;  v_1,u_2 &gt;v_1$, 是上一节中对投影的定义，意为$u_2$在$v_1$张成空间上的投影。    进一步的，考虑三个向量的情况：   与k&#x3D;2">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-04-20T18:23:46.000Z">
@@ -1966,7 +1966,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2021,7 +2021,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2359,7 +2361,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>366 words</p>
+      <p>361 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2389,31 +2391,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="0-Key-Questions"><a href="#0-Key-Questions" class="headerlink" title="#0 Key Questions"></a>#0 Key Questions</h2><ul>
-<li>首先给出本节的核心问题及讨论要点：<img src="https://arvin-chaser.github.io/post-images/1745174093869.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745174093869.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-</ul>
-<h2 id="1-Simple-Cases：k-2-k-3"><a href="#1-Simple-Cases：k-2-k-3" class="headerlink" title="#1 Simple Cases：k&#x3D;2 &amp; k&#x3D;3"></a>#1 Simple Cases：k&#x3D;2 &amp; k&#x3D;3</h2><ul>
-<li><p>首先考虑两个向量的情况：<br><img src="https://arvin-chaser.github.io/post-images/1745175342620.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745175342620.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+    <h2 id="0-Key-Questions">#0 Key Questions</h2>
 <ul>
-<li>注意：此处的$p_1&#x3D;(ux^Tv_1)v_1$，即为$p_1&#x3D;&lt;  v_1,u_2 &gt;v_1$, 是上一节中对投影的定义，意为$u_2$在$v_1$张成空间上的投影。</li>
+<li>首先给出本节的核心问题及讨论要点：<img src="https://Arvin-Chaser.github.io/post-images/1745174093869.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745174093869.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+</ul>
+<h2 id="1-Simple-Cases：k-2-k-3">#1 Simple Cases：k=2 &amp; k=3</h2>
+<ul>
+<li>
+<p>首先考虑两个向量的情况：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745175342620.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745175342620.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<ul>
+<li>注意：此处的$p_1=(ux^Tv_1)v_1$，即为$p_1=&lt;  v_1,u_2 &gt;v_1$, 是上一节中对投影的定义，意为$u_2$在$v_1$张成空间上的投影。</li>
 </ul>
 </li>
-<li><p>进一步的，考虑三个向量的情况：<img src="https://arvin-chaser.github.io/post-images/1745176164741.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745176164741.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<li>
+<p>进一步的，考虑三个向量的情况：<img src="https://Arvin-Chaser.github.io/post-images/1745176164741.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745176164741.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
 </li>
-<li><p>与k&#x3D;2相似的，此处的p2是u3在u1,u2张成空间上的投影，也就是u3在v1,v2张成空间上的投影。</p>
+<li>
+<p>与k=2相似的，此处的p2是u3在u1,u2张成空间上的投影，也就是u3在v1,v2张成空间上的投影。</p>
 </li>
 </ul>
-<h2 id="2-Formal-Process"><a href="#2-Formal-Process" class="headerlink" title="#2 Formal Process"></a>#2 Formal Process</h2><ul>
+<h2 id="2-Formal-Process">#2 Formal Process</h2>
+<ul>
 <li>从#1中我们不难归纳出，在已知k个标准正交基，求第k+1个正交基时，我们先求$u_{k+1}$在$v_1,v_2,…,v_k$张成空间上的投影$p_k$, 那么 $\frac{u_{k+1} - p_k}{||u_{k+1} - p_k||}$即为我们所求的$v_{k+1}$</li>
-<li>将整个过程用数学语言复述一遍，得到Gram-Schmidt Process的一般形式：<img src="https://arvin-chaser.github.io/post-images/1745177062304.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745177062304.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li>将整个过程用数学语言复述一遍，得到Gram-Schmidt Process的一般形式：<img src="https://Arvin-Chaser.github.io/post-images/1745177062304.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745177062304.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 <li>值得注意的是，该过程是用伪代码书写的，不难看出是一个迭代循环的过程。</li>
-<li>Example：<br><img src="https://arvin-chaser.github.io/post-images/1745224517282.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745224517282.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1745224523027.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745224523027.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1745177286050.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745177286050.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li>Example：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745224517282.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745224517282.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745224523027.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745224523027.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745177286050.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745177286050.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 </ul>
-<h2 id="3-Application"><a href="#3-Application" class="headerlink" title="#3 Application"></a>#3 Application</h2><ul>
+<h2 id="3-Application">#3 Application</h2>
+<ul>
 <li>首先明确：GS Process是一个求一组标准正交基的过程，那么一组标准正交基有什么用呢？</li>
 <li>回顾上一节，我们知道：一组标准正交基可以用来求一个向量在它们张成空间上的投影。</li>
 <li>自然，我们能想到：GS Process可以辅助我们求投影。</li>
-<li>Example：<br><img src="https://arvin-chaser.github.io/post-images/1745224491251.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745224491251.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1745224443149.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745224443149.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1745177805372.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745177805372.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li>Example：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745224491251.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745224491251.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745224443149.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745224443149.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745177805372.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745177805372.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 <li>自此GS Process与Compute Projection建立起应有的联系。</li>
 </ul>
 
@@ -2525,17 +2541,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2025/04/21/linear-algebra-determinant/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>[Linear Algebra]Determinant</p>
           <p class='content'>#1 Motivation of Determinant：Invertiblity Problem
+
 在先前对矩阵是否可逆的讨论中，我们有如下命题，它们全部等价：
-但很可惜的是，我们并没有一个确定...</p>
+
+但很可惜的是，我们并没有一个...</p>
         </a>
       
       
         <a class='next' href='/2025/04/21/linear-algebraorthogonal-basis-and-orthogonal-matrix/'>
           <p class='title'>[Linear Algebra]Orthogonal Basis and Orthogonal Matrix<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>#1 Orthogonal Set
+
 直接给出定义：
 进一步的，当Orthogonal Set中的每个向量模长均为1，该集合称为Orthonormal Set
-如果已知一个Orthogonal S...</p>
+
+如果已知一个Orthogonal...</p>
         </a>
       
     </div>

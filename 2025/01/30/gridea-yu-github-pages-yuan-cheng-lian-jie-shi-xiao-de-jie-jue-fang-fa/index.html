@@ -42,7 +42,7 @@
 <meta property="og:title" content="Gridea与Github Pages远程连接失效的解决方法">
 <meta property="og:url" content="http://example.com/2025/01/30/gridea-yu-github-pages-yuan-cheng-lian-jie-shi-xiao-de-jie-jue-fang-fa/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="一、前言笔者若干天没有管理博客后，在心血来潮检查repositories时，惊奇地发现Gridea和Github Pages之间的远程连接居然断掉了。（连接逃げる）  第一时间，笔者下意识认为是repositories的token过期了，于是重新整了一个，但是Gridea上仍然显示远程连接断开，令人疑惑。几经鼓捣后，笔者终于找到了问题所在，本文将大概介绍一下笔者的解决方法。  二、出现连接问题的根">
+<meta property="og:description" content="一、前言 笔者若干天没有管理博客后，在心血来潮检查repositories时，惊奇地发现Gridea和Github Pages之间的远程连接居然断掉了。（连接逃げる）  第一时间，笔者下意识认为是repositories的token过期了，于是重新整了一个，但是Gridea上仍然显示远程连接断开，令人疑惑。几经鼓捣后，笔者终于找到了问题所在，本文将大概介绍一下笔者的解决方法。  二、出现连接问题的">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-01-30T08:12:44.000Z">
@@ -1966,7 +1966,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2021,7 +2021,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2389,31 +2391,37 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>笔者若干天没有管理博客后，在心血来潮检查repositories时，惊奇地发现Gridea和Github Pages之间的远程连接居然断掉了。<del>（连接逃げる）</del>  第一时间，笔者下意识认为是repositories的token过期了，于是重新整了一个，但是Gridea上仍然显示远程连接断开，令人疑惑。几经鼓捣后，笔者终于找到了问题所在，本文将大概介绍一下笔者的解决方法。</p>
+    <h1>一、前言</h1>
+<p>笔者若干天没有管理博客后，在心血来潮检查repositories时，惊奇地发现Gridea和Github Pages之间的远程连接居然断掉了。<s>（连接逃げる）</s>  第一时间，笔者下意识认为是repositories的token过期了，于是重新整了一个，但是Gridea上仍然显示远程连接断开，令人疑惑。几经鼓捣后，笔者终于找到了问题所在，本文将大概介绍一下笔者的解决方法。</p>
 <hr>
-<h1 id="二、出现连接问题的根本原因"><a href="#二、出现连接问题的根本原因" class="headerlink" title="二、出现连接问题的根本原因"></a>二、出现连接问题的根本原因</h1><ol>
-<li>当repositories中的token过期时，Gridea会失去对repositories的访问权限，就像用一把旧钥匙去开一个新锁，不能同步是自然的。<del>这也是笔者下意识认为问题所在之处</del>  遇到这种情况很方便，就按照当初设置Gridea时一样重新申请一个token就行了。</li>
+<h1>二、出现连接问题的根本原因</h1>
+<ol>
+<li>当repositories中的token过期时，Gridea会失去对repositories的访问权限，就像用一把旧钥匙去开一个新锁，不能同步是自然的。<s>这也是笔者下意识认为问题所在之处</s>  遇到这种情况很方便，就按照当初设置Gridea时一样重新申请一个token就行了。</li>
 </ol>
 <ul>
 <li>但是有一点要补充，在若干次更新前，github设置token的页面添加了一个<code>Fine-grained tokens</code>，这个玩意笔者感觉像是一个测试版本，而且好像和经典的token编辑方式不太一样（？）总之，和之前一样，在Github-&gt;Settings-&gt;Developer Settings-&gt;Personal access tokens里选<code>Tokens(classic)</code>就行了，这就是我们熟知的token版本。</li>
 </ul>
 <ol start="2">
-<li>如果重新申请token后，<del>或者我们的token没有设置过期时间</del>Gridea还是连接不上repositories，那么就大概率是网络的问题。笔者在网上看到各种相当前沿的解决方法，比如每次写完避开同步，而使用github client本地克隆repositories去上传等等。但是笔者之前有一个repositories就是在本地上传时崩了，所以没敢用这种方法。（是真的会崩，所以强烈建议大家别在本地强制push，<del>不过崩的原因笔者不知道</del>）那么我们就回到这个问题本身：<code>网络问题</code>。说白了，无非是我们的个人电脑和在github中的repositories连接没有构建好，而本地上传就是直接避开这个连接过程，用github客户端检测到的库冲突来强制push。在已知强制push可能会爆炸的情况下，我们能不能尝试直接解决网络问题，稳定个人电脑和github中repositories的连接情况呢？答案是肯定的。</li>
+<li>如果重新申请token后，<s>或者我们的token没有设置过期时间</s>Gridea还是连接不上repositories，那么就大概率是网络的问题。笔者在网上看到各种相当前沿的解决方法，比如每次写完避开同步，而使用github client本地克隆repositories去上传等等。但是笔者之前有一个repositories就是在本地上传时崩了，所以没敢用这种方法。（是真的会崩，所以强烈建议大家别在本地强制push，<s>不过崩的原因笔者不知道</s>）那么我们就回到这个问题本身：<code>网络问题</code>。说白了，无非是我们的个人电脑和在github中的repositories连接没有构建好，而本地上传就是直接避开这个连接过程，用github客户端检测到的库冲突来强制push。在已知强制push可能会爆炸的情况下，我们能不能尝试直接解决网络问题，稳定个人电脑和github中repositories的连接情况呢？答案是肯定的。</li>
 </ol>
 <hr>
-<h1 id="三、解决方法"><a href="#三、解决方法" class="headerlink" title="三、解决方法"></a>三、解决方法</h1><p>大家都知道，电脑打开网页时，会先行在本地的<code>hosts</code>文件中检测是否有匹配的网站，如果匹配，那么就用hosts中预设的IP来为域名指定好地址；如果不匹配，那么浏览器会将网址提交到DNS服务器来进行IP地址解析。DNS解析的这个过程，便是可能会出现连接情况异常的来源。那么很显然，只要我们绕过DNS，直接预设好github的IP地址，就能达到快速打开网页的目的，从而最大幅度的优化本地与github repositories之间的连接情况。笔者在这里直接把ping github IP地址的网站贴出来：<a target="_blank" rel="noopener" href="https://ping.chinaz.com/github.com" title="It&#39;s mygo!!!!!">Here</a>  笔者自己是选择了一个霓虹的IP地址，延迟只有惊人的8ms（</p>
+<h1>三、解决方法</h1>
+<p>大家都知道，电脑打开网页时，会先行在本地的<code>hosts</code>文件中检测是否有匹配的网站，如果匹配，那么就用hosts中预设的IP来为域名指定好地址；如果不匹配，那么浏览器会将网址提交到DNS服务器来进行IP地址解析。DNS解析的这个过程，便是可能会出现连接情况异常的来源。那么很显然，只要我们绕过DNS，直接预设好github的IP地址，就能达到快速打开网页的目的，从而最大幅度的优化本地与github repositories之间的连接情况。笔者在这里直接把ping github IP地址的网站贴出来：<a target="_blank" rel="noopener" href="https://ping.chinaz.com/github.com" title="It's mygo!!!!!">Here</a>  笔者自己是选择了一个霓虹的IP地址，延迟只有惊人的8ms（</p>
 <hr>
-<h1 id="四、详细过程"><a href="#四、详细过程" class="headerlink" title="四、详细过程"></a>四、详细过程</h1><ol>
+<h1>四、详细过程</h1>
+<ol>
 <li>在库中按如下路径找到<code>hosts</code>（无后缀名！！！）：<code>C:\Windows\System32\drivers\etc</code></li>
 </ol>
 <ul>
 <li>注意：系统文件直接搜索搜不到，慢慢找罢。</li>
 </ul>
 <ol start="2">
-<li>提供管理员权限，修改<code>hosts</code>（在属性-&gt;安全-&gt;高级里提供权限）。或者有更加简单易懂的方法：先将<code>hosts</code>复制出该路径，在用记事本修改新<code>hosts</code>副本后，再将其复制回该路径下替换，全程不用提供管理员权限。<del>是您的不二之选</del></li>
+<li>提供管理员权限，修改<code>hosts</code>（在属性-&gt;安全-&gt;高级里提供权限）。或者有更加简单易懂的方法：先将<code>hosts</code>复制出该路径，在用记事本修改新<code>hosts</code>副本后，再将其复制回该路径下替换，全程不用提供管理员权限。<s>是您的不二之选</s></li>
 </ol>
 <hr>
-<h1 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h1><p>对Gridea与Github Pages远程连接失效的解决方法，研究的同时还能复习电脑打开网页的底层逻辑，可喜可贺，可喜可贺。<br><del>又：本文有一个若只彩蛋</del></p>
+<h1>五、结语</h1>
+<p>对Gridea与Github Pages远程连接失效的解决方法，研究的同时还能复习电脑打开网页的底层逻辑，可喜可贺，可喜可贺。<br>
+<s>又：本文有一个若只彩蛋</s></p>
 
   </div>
   
@@ -2522,14 +2530,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2025/04/08/pin-cou-de-duan-yin/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>拼凑的断音</p>
-          <p class='content'>前些日子为了完成所谓ITE的作业，去学了一下怎么调ai翻唱。自己上手后才发现这玩意学习成本意外的低。说是意外其实也是情理之中，现在的作品似乎都有着高度集成的模板，开发的过程竟被略去了。
-确实是好...</p>
+          <p class='content'>前些日子为了完成所谓ITE的作业，去学了一下怎么调ai翻唱。自己上手后才发现这玩意学习成本意外的低。
+说是意外其实也是情理之中，现在的作品似乎都有着高度集成的模板，开发的过程竟被略去了。
+确实是...</p>
         </a>
       
       
         <a class='next' href='/2025/01/15/java-zhong-de-exception/'>
           <p class='title'>JAVA中的Exception<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>一、前言笔者在学习java的过程中经常见到一些throws Exception或者类似的语句；在初学java，阅读一些代码框架时，throws Exception的语句常常被笔者认为是不必要，甚...</p>
+          <p class='content'>一、前言
+笔者在学习java的过程中经常见到一些throws Exception或者类似的语句；在初学java，阅读一些代码框架时，throws Exception的语句常常被笔者认为是不必要，...</p>
         </a>
       
     </div>

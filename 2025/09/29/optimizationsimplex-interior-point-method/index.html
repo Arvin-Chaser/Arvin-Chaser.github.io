@@ -42,7 +42,7 @@
 <meta property="og:title" content="[Optimization]Simplex, Interior Point Method">
 <meta property="og:url" content="http://example.com/2025/09/29/optimizationsimplex-interior-point-method/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="Simplex Method form the Perspective of Complementary Consitions 在上一节中我们完善了Duality Theorem的内容，其中我们通过Complementary Conditions提供了一个新的判断当前解是否最优的方法，那么该方法显然是可以在Simplex Method中得到进一步运用的。  我们不妨从Terminating tab">
+<meta property="og:description" content="Simplex Method form the Perspective of Complementary Consitions   在上一节中我们完善了Duality Theorem的内容，其中我们通过Complementary Conditions提供了一个新的判断当前解是否最优的方法，那么该方法显然是可以在Simplex Method中得到进一步运用的。   我们不妨从Terminating">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-09-29T06:46:36.000Z">
@@ -1967,7 +1967,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2022,7 +2022,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2439,10 +2441,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="Simplex-Method-form-the-Perspective-of-Complementary-Consitions"><a href="#Simplex-Method-form-the-Perspective-of-Complementary-Consitions" class="headerlink" title="Simplex Method form the Perspective of Complementary Consitions"></a>Simplex Method form the Perspective of Complementary Consitions</h2><ul>
-<li><p>在上一节中我们完善了Duality Theorem的内容，其中我们通过Complementary Conditions提供了一个新的判断当前解是否最优的方法，那么该方法显然是可以在Simplex Method中得到进一步运用的。</p>
+    <h2 id="Simplex-Method-form-the-Perspective-of-Complementary-Consitions">Simplex Method form the Perspective of Complementary Consitions</h2>
+<ul>
+<li>
+<p>在上一节中我们完善了Duality Theorem的内容，其中我们通过Complementary Conditions提供了一个新的判断当前解是否最优的方法，那么该方法显然是可以在Simplex Method中得到进一步运用的。</p>
 </li>
-<li><p>我们不妨从Terminating tableau开始考量，在最优解对应的Tableau中：</p>
+<li>
+<p>我们不妨从Terminating tableau开始考量，在最优解对应的Tableau中：</p>
 </li>
 </ul>
 <table>
@@ -2455,7 +2460,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <th>$RHS$</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$Z$</td>
 <td></td>
 <td></td>
@@ -2483,26 +2489,32 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <td></td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
 <li>Shadow Prices是直接以$Z$行，Slack Variabes列，也就是它们的系数这一形式出现的，更进一步的说，Dual optimal solutions是在这里出现的</li>
 <li>那么，最优解的表格中我们能直接得到Shadow Prices的值，那么在先前的迭代过程中，⭕处的数值，又体现了当前解的什么性质呢？</li>
 </ul>
-<p>不妨回顾一个以Tabular Form进行的Simplex Method例子：<br><img src="https://arvin-chaser.github.io/post-images/1759129773223.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759129773223.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>不妨回顾一个以Tabular Form进行的Simplex Method例子：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759129773223.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759129773223.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
 <ul>
 <li>我们列出所有Complementary slackness conditions，并计算出每次迭代表格所对应的$\overline{y_i}$，如下：</li>
 </ul>
-<p><img src="https://arvin-chaser.github.io/post-images/1759130175748.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759130175748.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://Arvin-Chaser.github.io/post-images/1759130175748.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759130175748.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
 <ul>
 <li>则每次Simplex Method迭代后，$s_1，s_2$这两列的数值正是在Dual Problem中一个能得到与当前$x$相同Objective Value的伪解（这个解仅仅满足和$x$Objective Value相同，不满足Dual Problem中所有的约束条件）</li>
 <li>在Terminating Tableau中，这两个数值不再是伪解，而是最优解，因为此时$x,y$的Objective Value相等，正体现了它们为各自问题的最优解</li>
 </ul>
-<h3 id="Simplex-Complementary-Solutions-Property："><a href="#Simplex-Complementary-Solutions-Property：" class="headerlink" title="Simplex:Complementary Solutions Property："></a>Simplex:Complementary Solutions Property：</h3><ul>
-<li><p>在每次迭代时，单纯形法会同时找到一个primal 可行解$x$和一个解$y$，使得这两个解满足complementary slackness conditions</p>
+<h3 id="Simplex-Complementary-Solutions-Property：">Simplex:Complementary Solutions Property：</h3>
+<ul>
+<li>
+<p>在每次迭代时，单纯形法会同时找到一个primal 可行解$x$和一个解$y$，使得这两个解满足complementary slackness conditions</p>
 </li>
-<li><p>若同时，$y$也是dual LP的可行解，那么根据complementary slackness property，此时的$x$和$y$恰为各自问题的最优解</p>
+<li>
+<p>若同时，$y$也是dual LP的可行解，那么根据complementary slackness property，此时的$x$和$y$恰为各自问题的最优解</p>
 </li>
-<li><p>于是我们从Complementary dual solutions的角度，可以对Simplex Method做这样的解读：</p>
+<li>
+<p>于是我们从Complementary dual solutions的角度，可以对Simplex Method做这样的解读：</p>
 <ul>
 <li>从一个primal可行解开始，不断迭代直到当前primal可行解对应的complementary dual解成为可行解</li>
 </ul>
@@ -2510,15 +2522,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <p>如果我们将这个过程反过来呢？</p>
 <hr>
-<h2 id="Dual-Simplex-Method"><a href="#Dual-Simplex-Method" class="headerlink" title="Dual Simplex Method"></a>Dual Simplex Method</h2><ul>
-<li>起始表格应满足：<ul>
+<h2 id="Dual-Simplex-Method">Dual Simplex Method</h2>
+<ul>
+<li>起始表格应满足：
+<ul>
 <li>所有$Z$行的元素都是非负的</li>
 <li>每行对应的等式应当是：仅包含一个basic var.，且该basic var.的系数是$1$</li>
 </ul>
 </li>
-<li>迭代过程：<ul>
+<li>迭代过程：
+<ul>
 <li>确定leaving var.：选择RHS最负的行</li>
-<li>确定entering var.：<ul>
+<li>确定entering var.：
+<ul>
 <li>若pivot row中的元素为负，则用$Z$行中的元素除以该元素，再取绝对值</li>
 <li>取绝对值最小的一列为pivot column</li>
 </ul>
@@ -2526,15 +2542,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>所有行通过减去pivot row的若干倍，消去pivot column中的元素</li>
 </ul>
 </li>
-<li>结束条件：（不同于Optimality Test，这里使用Feasibility Test）<ul>
+<li>结束条件：（不同于Optimality Test，这里使用Feasibility Test）
+<ul>
 <li>若所有$RHS$非负，停下（注意，不包括$Z$行的$RHS$）</li>
 <li>此时表中的BFS即为最优解</li>
 </ul>
 </li>
 </ul>
-<p>例：<br><img src="https://arvin-chaser.github.io/post-images/1759132103383.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759132103383.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1759132111512.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759132111512.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1759132118418.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759132118418.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1759132128006.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759132128006.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>例：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759132103383.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759132103383.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759132111512.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759132111512.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759132118418.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759132118418.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759132128006.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759132128006.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
 <ul>
-<li>在这种思想启发下的Simplex Method，初始化过程也与普通的Simplex Method不一样，该方法的初始化：<ul>
+<li>在这种思想启发下的Simplex Method，初始化过程也与普通的Simplex Method不一样，该方法的初始化：
+<ul>
 <li>将原LP转化为标准形式</li>
 <li>找到一个basic solution，使得$Z$的表达式中没有basic variables，且所有系数均非负（注意，该basic solution不一定是可行解）</li>
 <li>将约束式重写为所有变量在$LHS$的形式</li>
@@ -2543,41 +2565,49 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <p>该方法对LP的dual problem进行操作，从一个dual 可行解开始，最终得到一对均可行且满足complementary conditions的解，即该问题与其dual Problem的一对最优解</p>
 <hr>
-<h2 id="The-Interior-Point-Method-simple-intro"><a href="#The-Interior-Point-Method-simple-intro" class="headerlink" title="The Interior Point Method (simple intro.)"></a>The Interior Point Method (simple intro.)</h2><p>我们再次列出LP的所有Optimality Conditions：</p>
+<h2 id="The-Interior-Point-Method-simple-intro">The Interior Point Method (simple intro.)</h2>
+<p>我们再次列出LP的所有Optimality Conditions：</p>
 <ul>
-<li>1.Primal Feasibility：$Ax&#x3D;b, x≥0$</li>
+<li>1.Primal Feasibility：$Ax=b, x≥0$</li>
 <li>2.Dual Feasibility：$A^Ty≤c$</li>
-<li>3.Complementarity：$x_i\cdot s_i &#x3D; x_i\cdot (c_i-A_i^Ty)&#x3D;0, \forall i$<br>Interior Point Method在确保$1$和$2$均满足的情况下，寻找到一对满足complementarity conditions的解</li>
+<li>3.Complementarity：$x_i\cdot s_i = x_i\cdot (c_i-A_i^Ty)=0, \forall i$<br>
+Interior Point Method在确保$1$和$2$均满足的情况下，寻找到一对满足complementarity conditions的解</li>
 </ul>
 <p>不妨用代数形式表达出整个问题：</p>
 <ul>
-<li><p>我们想寻找到满足如下条件 $x,y,s$：</p>
+<li>
+<p>我们想寻找到满足如下条件 $x,y,s$：</p>
 <ul>
-<li>$Ax&#x3D;b, x≥0$</li>
-<li>$A^Ty + s &#x3D; c, s≥0$</li>
-<li>$x_i\cdot s_i &#x3D; 0, \forall i.$</li>
+<li>$Ax=b, x≥0$</li>
+<li>$A^Ty + s = c, s≥0$</li>
+<li>$x_i\cdot s_i = 0, \forall i.$</li>
 </ul>
 </li>
-<li><p>直接解决这个问题显然是不现实的，我们先尝试考虑一个松弛后的问题：</p>
+<li>
+<p>直接解决这个问题显然是不现实的，我们先尝试考虑一个松弛后的问题：</p>
 <ul>
-<li>$Ax&#x3D;b, x≥0$</li>
-<li>$A^Ty + s &#x3D; c, s≥0$</li>
+<li>$Ax=b, x≥0$</li>
+<li>$A^Ty + s = c, s≥0$</li>
 <li>$x_i\cdot s_i ≤ \mu , \forall i，\mu &gt; 0$</li>
 </ul>
 </li>
-<li><p>我们称$\mu$为complementarity gap</p>
+<li>
+<p>我们称$\mu$为complementarity gap</p>
 </li>
-<li><p>核心思路：若我们已经找到了一个拥有参数$\mu _i$的解，我们期望凭此找到一个具有参数$\mu _j$，且$\mu _j &lt; \mu _i$的解，从而一步步减小$\mu$，直到$\mu _n&#x3D; 0$时，求得LP的解</p>
+<li>
+<p>核心思路：若我们已经找到了一个拥有参数$\mu _i$的解，我们期望凭此找到一个具有参数$\mu _j$，且$\mu _j &lt; \mu _i$的解，从而一步步减小$\mu$，直到$\mu _n= 0$时，求得LP的解</p>
 <ul>
 <li>Interior Point Method的核心步骤是证明，我们能从一个已知$\mu $的解，迭代到一个$\mu$更小的解</li>
 </ul>
 </li>
 </ul>
-<p>我们不妨从”Interior Point Method”这一名字开始入手。</p>
+<p>我们不妨从&quot;Interior Point Method&quot;这一名字开始入手。</p>
 <ul>
-<li><p>在单纯形法中，我们只沿着各个极点搜索，也就是在多边形（体）的边上移动</p>
+<li>
+<p>在单纯形法中，我们只沿着各个极点搜索，也就是在多边形（体）的边上移动</p>
 </li>
-<li><p>在内点法中：</p>
+<li>
+<p>在内点法中：</p>
 <ul>
 <li>我们从可行域的内部开始</li>
 <li>在我们到达最优解前，我们都保证$x&gt;0 and s&gt;0$</li>
@@ -2585,15 +2615,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>解释：由内点法不断而得到的最优解，在LP退化的情况下，可能落在两个最优解的连线上，不是极点，自然也不是BFS</li>
 </ul>
 </li>
-<li><p>为了找到一个出发点，我们一般通过求解一个称作homogeneous self-dual problem的辅助问题来得到</p>
+<li>
+<p>为了找到一个出发点，我们一般通过求解一个称作homogeneous self-dual problem的辅助问题来得到</p>
 </li>
-<li><p>内点法种类繁多，下文中介绍的是primal-dual type of interior point method</p>
+<li>
+<p>内点法种类繁多，下文中介绍的是primal-dual type of interior point method</p>
 </li>
-<li><p>其它内点法的大致思路是相同的，不同之处在于迭代的方法</p>
+<li>
+<p>其它内点法的大致思路是相同的，不同之处在于迭代的方法</p>
 </li>
-<li><p>与单纯形法相比，内点法的复杂度较为稳定，不因问题的特化性而出现较大的差别；而单纯形法在一些类型的问题中复杂度较低，在特化的问题中复杂度较高，不够稳定</p>
+<li>
+<p>与单纯形法相比，内点法的复杂度较为稳定，不因问题的特化性而出现较大的差别；而单纯形法在一些类型的问题中复杂度较低，在特化的问题中复杂度较高，不够稳定</p>
 </li>
-<li><p>内点法的性质：内点法总是倾向于寻找一个最多非零元素的解，使得解的秩最大化</p>
+<li>
+<p>内点法的性质：内点法总是倾向于寻找一个最多非零元素的解，使得解的秩最大化</p>
 </li>
 </ul>
 
@@ -2706,12 +2741,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>[Optimization]Sensitivity Analysis</p>
           <p class='content'>
 在研究LP时，我们时常会考虑这种问题：
+
 当参数$(A,b,c)$改变时，最优解和最优值会如何变化？
 
 
 这种问题，我们称其为Sensitivity Analysis
 
-Local Sensit...</p>
+Local Sensi...</p>
         </a>
       
       
@@ -2719,7 +2755,8 @@ Local Sensit...</p>
           <p class='title'>[Optimization]LP Duality Theory(Algebraic Form)<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>在上一节中我们通过一个例子大概阐述了Primal LP与Dual LP的关系，本节中我们首先用更代数化的形式重写该过程。
 
-Duality of Standard Form给出一个标准形式的LP...</p>
+Duality of Standard Form
+给出一个标准形式的L...</p>
         </a>
       
     </div>

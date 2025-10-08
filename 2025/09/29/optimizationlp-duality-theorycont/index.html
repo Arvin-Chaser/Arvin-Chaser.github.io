@@ -42,7 +42,7 @@
 <meta property="og:title" content="[Optimization]LP Duality Theory(Algebraic Form)">
 <meta property="og:url" content="http://example.com/2025/09/29/optimizationlp-duality-theorycont/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="在上一节中我们通过一个例子大概阐述了Primal LP与Dual LP的关系，本节中我们首先用更代数化的形式重写该过程。  Duality of Standard Form给出一个标准形式的LP（$m$个约束条件，$n$个变量）&nbsp; &nbsp; &nbsp; &nbsp; minimize $c^Tx$&nbsp; &nbsp; &nbsp; &nbsp; subject to $Ax&amp;">
+<meta property="og:description" content="在上一节中我们通过一个例子大概阐述了Primal LP与Dual LP的关系，本节中我们首先用更代数化的形式重写该过程。  Duality of Standard Form 给出一个标准形式的LP（$m$个约束条件，$n$个变量）         minimize $c^Tx$         subject to $Ax&#x3D;b$         $x≥0$ 我们可以将其重写为：         m">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-09-29T01:01:19.000Z">
@@ -1967,7 +1967,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2022,7 +2022,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2409,7 +2411,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>1.6k words</p>
+      <p>1.5k words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2441,42 +2443,69 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="post-body" itemprop="articleBody">
     <p>在上一节中我们通过一个例子大概阐述了Primal LP与Dual LP的关系，本节中我们首先用更代数化的形式重写该过程。</p>
 <hr>
-<h2 id="Duality-of-Standard-Form"><a href="#Duality-of-Standard-Form" class="headerlink" title="Duality of Standard Form"></a>Duality of Standard Form</h2><p>给出一个标准形式的LP（$m$个约束条件，$n$个变量）<br>&nbsp; &nbsp; &nbsp; &nbsp; minimize $c^Tx$<br>&nbsp; &nbsp; &nbsp; &nbsp; subject to $Ax&#x3D;b$<br>&nbsp; &nbsp; &nbsp; &nbsp; $x≥0$<br>我们可以将其重写为：<br>&nbsp; &nbsp; &nbsp; &nbsp; minimize $c^Tx + max y^T(b-Ax)$，$y\in R^m$<br>&nbsp; &nbsp; &nbsp; &nbsp; subject to $x≥0$</p>
+<h2 id="Duality-of-Standard-Form">Duality of Standard Form</h2>
+<p>给出一个标准形式的LP（$m$个约束条件，$n$个变量）<br>
+        minimize $c^Tx$<br>
+        subject to $Ax=b$<br>
+        $x≥0$<br>
+我们可以将其重写为：<br>
+        minimize $c^Tx + max y^T(b-Ax)$，$y\in R^m$<br>
+        subject to $x≥0$</p>
 <ul>
-<li>注意，通过在$min$里引入$max y^T(b-Ax)$，我们隐含了$Ax&#x3D;b$的条件——若$Ax&#x3D;b$不得到满足，那么该最小化问题无法求解，因为其中的$max$可到达$inf$</li>
+<li>注意，通过在$min$里引入$max y^T(b-Ax)$，我们隐含了$Ax=b$的条件——若$Ax=b$不得到满足，那么该最小化问题无法求解，因为其中的$max$可到达$inf$</li>
 </ul>
-<p>接下来，我们假定$max$和$min$可以交换，那么此问题变为：<br>$max$ $b^Ty + min$  $x^T (c - A^Ty)$，其中$x≥0$</p>
+<p>接下来，我们假定$max$和$min$可以交换，那么此问题变为：<br>
+$max$ $b^Ty + min$  $x^T (c - A^Ty)$，其中$x≥0$</p>
 <ul>
-<li>注意，我们和前文相同，在这里优先分析$min$的正负：<ul>
+<li>注意，我们和前文相同，在这里优先分析$min$的正负：
+<ul>
 <li>当$A^Ty≤c$时，$min$为0</li>
 <li>当$A^Ty$不满足恒$≤c$时，$min$为$-inf$</li>
 </ul>
 </li>
 <li>所以为了使$max$问题有解，添加约束：$A^Ty≤c$</li>
-<li>原问题变换为：<br>&nbsp; &nbsp; &nbsp; &nbsp; maximize $b^Ty$<br>&nbsp; &nbsp; &nbsp; &nbsp; subject to$A^Ty≤c$</li>
+<li>原问题变换为：<br>
+        maximize $b^Ty$<br>
+        subject to$A^Ty≤c$</li>
 </ul>
 <p>这样的两个LP，我们就称它们是dual to each other的；若其中一个被我们定为Primal problem，那么另外一个就是Dual problem</p>
 <ul>
 <li>对于第一个最小化问题来说，$y$称为dual variables</li>
 <li>两个问题的最优值相等</li>
 </ul>
-<h2 id="Different-Duality-Forms"><a href="#Different-Duality-Forms" class="headerlink" title="Different Duality Forms"></a>Different Duality Forms</h2><ul>
+<h2 id="Different-Duality-Forms">Different Duality Forms</h2>
+<ul>
 <li>我们将尝试推导一些非标准形式的二元性质</li>
 </ul>
-<h4 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem 1"></a>Problem 1</h4><p>&nbsp; &nbsp; &nbsp; &nbsp; minimize $c^Tx$<br>&nbsp; &nbsp; &nbsp; &nbsp; subject to $Ax≥b$</p>
+<h4 id="Problem-1">Problem 1</h4>
+<p>        minimize $c^Tx$<br>
+        subject to $Ax≥b$</p>
 <ul>
 <li>同理，该方程可重写为：$min$ $c^Tx + max$  $y^T(b-Ax)$，$y≥0$</li>
 <li>与前文相同，这里对$y^T(b-Ax)$求$max$的行为和该问题的有解性一起，保证了$Ax≥b$的约束条件成立</li>
-<li>我们再次复刻先前的操作，交换$max$和$min$，得到<br>&nbsp; &nbsp; &nbsp; $max$ $b^Ty + min$  $x^T(c-A^Ty)$ ，$y≥0$<br>进一步的，该方程等价于<br>&nbsp;&nbsp;&nbsp;&nbsp;maximize $b^Ty$<br>&nbsp;&nbsp;&nbsp;&nbsp;subject to $A^Ty&#x3D;c$<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$y≥0$</li>
-<li>注意：此处的约束条件是$A^Ty&#x3D;c$，而非不等关系，这是因为系数$x^T$没有规定正负，只要$A^Ty$和$c$不相等就会出现原问题无解的情况；对比之下，Primal Problem中我们提供的是不等式，是因为我们存在$y≥0$的约束条件</li>
+<li>我们再次复刻先前的操作，交换$max$和$min$，得到<br>
+      $max$ $b^Ty + min$  $x^T(c-A^Ty)$ ，$y≥0$<br>
+进一步的，该方程等价于<br>
+    maximize $b^Ty$<br>
+    subject to $A^Ty=c$<br>
+     $y≥0$</li>
+<li>注意：此处的约束条件是$A^Ty=c$，而非不等关系，这是因为系数$x^T$没有规定正负，只要$A^Ty$和$c$不相等就会出现原问题无解的情况；对比之下，Primal Problem中我们提供的是不等式，是因为我们存在$y≥0$的约束条件</li>
 </ul>
-<p>给出一些常见的Dual Problems：<br><img src="https://arvin-chaser.github.io/post-images/1759111569722.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759111569722.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>给出一些常见的Dual Problems：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759111569722.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759111569722.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
 <ul>
-<li><p>这里提到的”Equality constraints always correspond to free variables”，正是我们前文中所分析的，变量正负对约束条件是等式还是不等式形式存在影响的结果。</p>
+<li>
+<p>这里提到的&quot;Equality constraints always correspond to free variables&quot;，正是我们前文中所分析的，变量正负对约束条件是等式还是不等式形式存在影响的结果。</p>
 </li>
-<li><p>例：<br>&nbsp; minimize $x_1+2x_2$<br>&nbsp; subject to$x_1+x_2≥5$<br>&nbsp; $x_1-x_2≤3$<br>&nbsp; $x_1≥0, x_2\in R$(free)</p>
+<li>
+<p>例：<br>
+  minimize $x_1+2x_2$<br>
+  subject to$x_1+x_2≥5$<br>
+  $x_1-x_2≤3$<br>
+  $x_1≥0, x_2\in R$(free)</p>
 </li>
-<li><p>总结出表格如下：</p>
+<li>
+<p>总结出表格如下：</p>
 </li>
 </ul>
 <table>
@@ -2488,88 +2517,105 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <th>Dual</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>constraints</td>
-<td>$≥b_i \ ≤b_i \ &#x3D;b_i$</td>
+<td>$≥b_i \ ≤b_i \ =b_i$</td>
 <td>$≥0 \ ≤0 \ free$</td>
 <td>variables</td>
 </tr>
 <tr>
 <td>variables</td>
 <td>$≥0 \ ≤0 \ free$</td>
-<td>$≤c_j \ ≥ c_j \ &#x3D;c_j$</td>
+<td>$≤c_j \ ≥ c_j \ =c_j$</td>
 <td>constraints</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
 <li>Primal constraints($m$) $\Rrightarrow$ dual variables($m$)</li>
 <li>Primal variables($m$) $\Rrightarrow$ dual constrains($n$)</li>
 </ul>
-<h2 id="Duality-Theory"><a href="#Duality-Theory" class="headerlink" title="Duality Theory"></a>Duality Theory</h2><h3 id="Weak-Duality-Theorem"><a href="#Weak-Duality-Theorem" class="headerlink" title="Weak Duality Theorem"></a>Weak Duality Theorem</h3><ul>
-<li>回想上一节中我们对Primal LP和Dual LP函数值大小关系的辨析：<ul>
+<h2 id="Duality-Theory">Duality Theory</h2>
+<h3 id="Weak-Duality-Theorem">Weak Duality Theorem</h3>
+<ul>
+<li>回想上一节中我们对Primal LP和Dual LP函数值大小关系的辨析：
+<ul>
 <li>假设Primal LP的objective function是$max$  $c_1x_1+…+c_nx_n$，$(\overline x_1, … \overline x_n)$是一个BFS</li>
 <li>假设Dual LP的objective function是$min$ $b_1y_1+…+b_my_m$，$(\overline y_1, … \overline y_m)$是一个BFS</li>
 <li>那么 $c_1\overline x_1 + … + c_n\overline x_n ≤ b_1\overline y_1 + … + b_m\overline y_m$</li>
 </ul>
 </li>
 </ul>
-<h3 id="Strong-Duality-Theorem"><a href="#Strong-Duality-Theorem" class="headerlink" title="Strong Duality Theorem"></a>Strong Duality Theorem</h3><ul>
-<li>与weak duality theorem唯一的不同就是引入了两个确定的最优值：<ul>
+<h3 id="Strong-Duality-Theorem">Strong Duality Theorem</h3>
+<ul>
+<li>与weak duality theorem唯一的不同就是引入了两个确定的最优值：
+<ul>
 <li>令$(x_1^<em>, … ,x_m^</em>)$为primal LP的最优解</li>
 <li>令$(y_1^<em>, … , y_m^</em>)$为dual LP的最优解</li>
-<li>那么$c_1\overline x_1 + … + c_n\overline x_n ≤ c_1x_1^* + … + c_nx_n^* &#x3D; b_1y_1^* + … + b_my_m^* ≤ b_1\overline y_1 + … + b_m\overline y_m$</li>
+<li>那么$c_1\overline x_1 + … + c_n\overline x_n ≤ c_1x_1^* + … + c_nx_n^* = b_1y_1^* + … + b_my_m^* ≤ b_1\overline y_1 + … + b_m\overline y_m$</li>
 </ul>
 </li>
 <li>也就意味着：若一个primal 可行解和一个dual 可行解有着相同的函数值，那么它们分别为各自问题的最优解。</li>
 </ul>
-<h3 id="Algebraic-Version"><a href="#Algebraic-Version" class="headerlink" title="Algebraic Version"></a>Algebraic Version</h3><table>
+<h3 id="Algebraic-Version">Algebraic Version</h3>
+<table>
 <thead>
 <tr>
 <th>Primal</th>
 <th>Dual</th>
 </tr>
 </thead>
-<tbody><tr>
-<td>$min$ $c^Tx \ s.t. Ax&#x3D;b, x≥0$</td>
+<tbody>
+<tr>
+<td>$min$ $c^Tx \ s.t. Ax=b, x≥0$</td>
 <td>$max$ $b^Ty \ s.t. A^Ty≤c$</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li><p>Weak Duality Theorem</p>
+<li>
+<p>Weak Duality Theorem</p>
 <ul>
 <li>$b^Ty≤c^Tx$</li>
 </ul>
 </li>
-<li><p>简易证明：</p>
+<li>
+<p>简易证明：</p>
 <ul>
-<li>$b^Ty &#x3D; (Ax)^Ty &#x3D; x^T(A^T)y≤c^Tx$</li>
+<li>$b^Ty = (Ax)^Ty = x^T(A^T)y≤c^Tx$</li>
 <li>注：我们在这里运用了$A^Ty≤c$进行推导</li>
 </ul>
 </li>
-<li><p>Optimality conditions in duality：</p>
+<li>
+<p>Optimality conditions in duality：</p>
 <ul>
 <li>1.$x$ is primal feasible</li>
 <li>2.$y$ is dual feasible</li>
-<li><ol start="3">
-<li>The objective values coincide, $i.e.$  $c^Tx &#x3D; b^Ty$</li>
+<li>
+<ol start="3">
+<li>The objective values coincide, $i.e.$  $c^Tx = b^Ty$</li>
 </ol>
 </li>
 </ul>
 </li>
-<li><p>这也意味着，解决一个LP（假设是标准形式），也就等价于求解如下的线性系统：</p>
+<li>
+<p>这也意味着，解决一个LP（假设是标准形式），也就等价于求解如下的线性系统：</p>
 <ul>
-<li>$Ax&#x3D;b$</li>
+<li>$Ax=b$</li>
 <li>$A^Ty≤c$</li>
-<li>$b^Ty&#x3D;c^Tx$</li>
+<li>$b^Ty=c^Tx$</li>
 </ul>
 </li>
-<li><p>Strong Duality Theorem</p>
+<li>
+<p>Strong Duality Theorem</p>
 <ul>
 <li>若一个LP存在一个最优解，那么它的Dual LP也同样存在一个最优解，且这两个最优值相同。</li>
 </ul>
 </li>
 </ul>
-<h3 id="Optimality-Feasibility-Boundedness"><a href="#Optimality-Feasibility-Boundedness" class="headerlink" title="Optimality &amp; Feasibility &amp; Boundedness"></a>Optimality &amp; Feasibility &amp; Boundedness</h3><table>
+<h3 id="Optimality-Feasibility-Boundedness">Optimality &amp; Feasibility &amp; Boundedness</h3>
+<table>
 <thead>
 <tr>
 <th>Primal丨Dual</th>
@@ -2578,7 +2624,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <th>Infeasible</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Finite Optimum</td>
 <td>√</td>
 <td></td>
@@ -2596,83 +2643,114 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <td>√</td>
 <td>√</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <hr>
-<h2 id="Complementary-Slackness-Conditions"><a href="#Complementary-Slackness-Conditions" class="headerlink" title="Complementary Slackness Conditions"></a>Complementary Slackness Conditions</h2><p>仍然从window-door example开始：<br>Primal LP：<br>&nbsp; $max$ $Z&#x3D;3x_1+5x_2$<br>&nbsp; $x_1≤4$<br>&nbsp; $2x_2≤12$<br>&nbsp; $3x_1+2x_2≤18$<br>&nbsp;$x_1≥0,x_2≥0$</p>
+<h2 id="Complementary-Slackness-Conditions">Complementary Slackness Conditions</h2>
+<p>仍然从window-door example开始：<br>
+Primal LP：<br>
+  $max$ $Z=3x_1+5x_2$<br>
+  $x_1≤4$<br>
+  $2x_2≤12$<br>
+  $3x_1+2x_2≤18$<br>
+ $x_1≥0,x_2≥0$</p>
 <ul>
 <li>最优解为$(x_1^<em>,x_2^</em>)$</li>
 </ul>
-<p>Dual LP:<br>&nbsp; $min$ $4y_1+12y_2+18y_3$<br>&nbsp;$y_1+3y_3≥3$<br>&nbsp;$2y_2+2y_3≥5$<br>&nbsp;$y_1,y_2,y_3≥0$</p>
+<p>Dual LP:<br>
+  $min$ $4y_1+12y_2+18y_3$<br>
+ $y_1+3y_3≥3$<br>
+ $2y_2+2y_3≥5$<br>
+ $y_1,y_2,y_3≥0$</p>
 <ul>
-<li><p>最优解为$(y_1^<em>,y_2^</em>,y_3^*)$</p>
+<li>
+<p>最优解为$(y_1^<em>,y_2^</em>,y_3^*)$</p>
 </li>
-<li><p>注意到：</p>
+<li>
+<p>注意到：</p>
 <ul>
-<li>1. <ul>
+<li>
+<ol>
+<li></li>
+</ol>
+<ul>
 <li>$y_1^<em>(4-x_1^</em>)≥0 \ y_2^<em>(12-2x_2^</em>)≥0 \ y_3^<em>(18-3x_1^</em>-2x_2^*)≥0$</li>
 <li>$x_1^<em>(y_1^</em>+3y_3^<em>-3)≥0 \ x_2^</em>(2y_2^<em>+2y_3^</em>-5)≥0$</li>
 </ul>
 </li>
-<li><ol start="2">
-<li>$y_1^<em>(4-x_1^</em>) + y_2^<em>(12-2x_2^</em>)+y_3^<em>(18-3x_1^</em>-2x_2^<em>) \ + x_1^</em>(y_1^<em>+3y_3^</em>-3) + x_2^<em>(2y_2^</em>+2y_3^<em>-5) \ &#x3D; 4y_1^</em> + 12y_2^* + 18y_3^* - 3x_1^* - 5x_2^* &#x3D; 0$(由最优解的最优值相同推导最后一步)</li>
+<li>
+<ol start="2">
+<li>$y_1^<em>(4-x_1^</em>) + y_2^<em>(12-2x_2^</em>)+y_3^<em>(18-3x_1^</em>-2x_2^<em>) \ + x_1^</em>(y_1^<em>+3y_3^</em>-3) + x_2^<em>(2y_2^</em>+2y_3^<em>-5) \ = 4y_1^</em> + 12y_2^* + 18y_3^* - 3x_1^* - 5x_2^* = 0$(由最优解的最优值相同推导最后一步)</li>
 </ol>
 </li>
-<li>两者结合，可知：<ul>
-<li>$y_1^<em>(4-x_1^</em>)&#x3D;0$</li>
-<li>$y_2^<em>(12-2x_2^</em>)&#x3D;0$</li>
-<li>$y_3^<em>(18-3x_1^</em>-2x_2^*)&#x3D;0$</li>
-<li>$x_1^<em>(y_1^</em>+3y_3^*-3)&#x3D;0$</li>
-<li>$x_2^<em>(2y_2^</em>+2y_3^*-5)&#x3D;0$</li>
+<li>两者结合，可知：
+<ul>
+<li>$y_1^<em>(4-x_1^</em>)=0$</li>
+<li>$y_2^<em>(12-2x_2^</em>)=0$</li>
+<li>$y_3^<em>(18-3x_1^</em>-2x_2^*)=0$</li>
+<li>$x_1^<em>(y_1^</em>+3y_3^*-3)=0$</li>
+<li>$x_2^<em>(2y_2^</em>+2y_3^*-5)=0$</li>
 <li>我们称这些等式为Complementary Slackness Conditions（$y_i$与第$i$个Primal constraint对应，$x_j$与第$j$个Dual constraint对应）</li>
 <li>进一步的，我们能推导出：Primal(Dual)LP 最优解中的一个变量可为非负，仅当它在Dual(Primal)中对应的约束条件在最优解时，该约束条件不被松弛（约束变量为$0$，恰好到达约束条件，所以在$var.\cdot constraint$时，$constraint$为0，使得$var.$可自由取值）</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>推广到一般情况，即：<br><img src="https://arvin-chaser.github.io/post-images/1759118510388.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759118510388.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<li>
+<p>推广到一般情况，即：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759118510388.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759118510388.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
 </li>
-<li><p>我们还可总结出complementary slackness conditions与optimality的关系：满足complementary slackness conditions的可行解是最优解</p>
+<li>
+<p>我们还可总结出complementary slackness conditions与optimality的关系：满足complementary slackness conditions的可行解是最优解</p>
 </li>
 </ul>
-<h3 id="Algebraic-Version-1"><a href="#Algebraic-Version-1" class="headerlink" title="Algebraic Version"></a>Algebraic Version</h3><table>
+<h3 id="Algebraic-Version-2">Algebraic Version</h3>
+<table>
 <thead>
 <tr>
 <th>Primal</th>
 <th>Dual</th>
 </tr>
 </thead>
-<tbody><tr>
-<td>$min$ $c^Tx \ s.t. Ax&#x3D;b, x≥0$</td>
+<tbody>
+<tr>
+<td>$min$ $c^Tx \ s.t. Ax=b, x≥0$</td>
 <td>$max$ $b^Ty \ s.t. A^Ty≤c$</td>
 </tr>
 <tr>
 <td>Theorem:Complementarity Conditions</td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li>$x,y$是最优解，当且仅当：$x_i\cdot (c_i-A_i^Ty) &#x3D; 0, i &#x3D; 1, …, n$</li>
+<li>$x,y$是最优解，当且仅当：$x_i\cdot (c_i-A_i^Ty) = 0, i = 1, …, n$</li>
 </ul>
-<p>以例检验：<br><img src="https://arvin-chaser.github.io/post-images/1759118994479.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759118994479.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>以例检验：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759118994479.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759118994479.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
 <ul>
-<li><p>证明：</p>
+<li>
+<p>证明：</p>
 <ul>
-<li>若$x,y$分别为Primal和Dual LP的最优解，则我们有：$c^Tx&#x3D;b^Ty$</li>
-<li>展开，得：$0&#x3D;c^Tx-b^Ty&#x3D;c^Tx-y^TAx&#x3D;\sum_{i&#x3D;1}^n(c_i-A_i^Ty)\cdot x_i$</li>
-<li>由于$c_i-A_i^Ty≥0$且$x_i≥0$，所以我们必有：$(c_i-A_i^Ty)\cdot x_i &#x3D; 0，\forall i&#x3D;1,…,n.$，得证</li>
-</ul>
-</li>
-<li><p>有时为了便于书写，我们将dual problem重写为：</p>
-<ul>
-<li>$max$ $b^Ty \ s.t. A^Ty + s &#x3D; c, s≥0$</li>
-<li>于是complementarity conditions可写为$x_i \cdot s_i &#x3D; 0, \forall i &#x3D; 1, …, n$</li>
+<li>若$x,y$分别为Primal和Dual LP的最优解，则我们有：$c^Tx=b^Ty$</li>
+<li>展开，得：$0=c^Tx-b^Ty=c^Tx-y^TAx=\sum_{i=1}^n(c_i-A_i^Ty)\cdot x_i$</li>
+<li>由于$c_i-A_i^Ty≥0$且$x_i≥0$，所以我们必有：$(c_i-A_i^Ty)\cdot x_i = 0，\forall i=1,…,n.$，得证</li>
 </ul>
 </li>
-</ul>
-<p>整理如上叙述，得：<br><img src="https://arvin-chaser.github.io/post-images/1759128233302.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759128233302.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<li>
+<p>有时为了便于书写，我们将dual problem重写为：</p>
 <ul>
-<li>Theorem: Complementarity Conditions<ul>
-<li>令$x,y$分别为primal和dual problem的可行解，则$x,y$是最优解，当且仅当：$y_i\cdot (a_i^Tx - b_i) &#x3D; 0, \forall i$   and $x_j\cdot (A_j^Ty - c_j) &#x3D; 0, \forall j.$</li>
+<li>$max$ $b^Ty \ s.t. A^Ty + s = c, s≥0$</li>
+<li>于是complementarity conditions可写为$x_i \cdot s_i = 0, \forall i = 1, …, n$</li>
+</ul>
+</li>
+</ul>
+<p>整理如上叙述，得：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759128233302.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759128233302.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<ul>
+<li>Theorem: Complementarity Conditions
+<ul>
+<li>令$x,y$分别为primal和dual problem的可行解，则$x,y$是最优解，当且仅当：$y_i\cdot (a_i^Tx - b_i) = 0, \forall i$   and $x_j\cdot (A_j^Ty - c_j) = 0, \forall j.$</li>
 </ul>
 </li>
 </ul>
@@ -2785,13 +2863,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2025/09/29/optimizationsimplex-interior-point-method/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>[Optimization]Simplex, Interior Point Method</p>
           <p class='content'>Simplex Method form the Perspective of Complementary Consitions
-在上一节中我们完善了Duality Theorem的内容，其中我们...</p>
+
+
+在上一节中我们完善了Duality Theorem的内容，其中...</p>
         </a>
       
       
         <a class='next' href='/2025/09/28/optimizationshadow-price-and-lp-duality/'>
           <p class='title'>[Optimization]Shadow Price and LP Duality<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Shadow Prices…How valuable are the resources?
+          <p class='content'>Shadow Prices
+…How valuable are the resources?
 
 回顾window door example：
 
@@ -2801,7 +2882,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 door
 window
-total hour...</p>
+total hou...</p>
         </a>
       
     </div>
@@ -2862,7 +2943,7 @@ total hour...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Duality-of-Standard-Form"><span class="toc-text">Duality of Standard Form</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Different-Duality-Forms"><span class="toc-text">Different Duality Forms</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Problem-1"><span class="toc-text">Problem 1</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Duality-Theory"><span class="toc-text">Duality Theory</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Weak-Duality-Theorem"><span class="toc-text">Weak Duality Theorem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Strong-Duality-Theorem"><span class="toc-text">Strong Duality Theorem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Algebraic-Version"><span class="toc-text">Algebraic Version</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Optimality-Feasibility-Boundedness"><span class="toc-text">Optimality &amp; Feasibility &amp; Boundedness</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Complementary-Slackness-Conditions"><span class="toc-text">Complementary Slackness Conditions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Algebraic-Version-1"><span class="toc-text">Algebraic Version</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Duality-of-Standard-Form"><span class="toc-text">Duality of Standard Form</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Different-Duality-Forms"><span class="toc-text">Different Duality Forms</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Problem-1"><span class="toc-text">Problem 1</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Duality-Theory"><span class="toc-text">Duality Theory</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Weak-Duality-Theorem"><span class="toc-text">Weak Duality Theorem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Strong-Duality-Theorem"><span class="toc-text">Strong Duality Theorem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Algebraic-Version"><span class="toc-text">Algebraic Version</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Optimality-Feasibility-Boundedness"><span class="toc-text">Optimality &amp; Feasibility &amp; Boundedness</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Complementary-Slackness-Conditions"><span class="toc-text">Complementary Slackness Conditions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Algebraic-Version-2"><span class="toc-text">Algebraic Version</span></a></li></ol></li></ol>
   </div>
 </section>
 

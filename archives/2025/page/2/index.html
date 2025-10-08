@@ -1963,7 +1963,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2018,7 +2018,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2528,6 +2530,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         住所和城市
+
 It’s a close-knit community.
 
 
@@ -2547,7 +2550,8 @@ walkable 适合步行
 
 
 学习
-Ch...
+
+...
       
     
   </div>
@@ -2611,18 +2615,23 @@ Ch...
     
       
         #1 Motivation of Linear Transformation
+
 考虑对某个图形的放大及旋转：
+
 对于一个初始坐标为$(x,y)$的变量
-放大&#x2F;旋转后坐标会如何变化？
+放大/旋转后坐标会如何变化？
 
 
 由该问题引入线性变换的概念
 
 #2 Definition of Linear Transformation
+
+
 Mapping（映射）
 
 
 注意描述集合和元素的对应关系时使用的箭头不一样
+
 
 
 Linear ...
@@ -2689,10 +2698,13 @@ Linear ...
     
       
         #1 Motivation of Determinant：Invertiblity Problem
+
 在先前对矩阵是否可逆的讨论中，我们有如下命题，它们全部等价：
-但很可惜的是，我们并没有一个确定的等量关系&#x2F;判别方程来直接判断一个矩阵是否可逆。
+
+但很可惜的是，我们并没有一个确定的等量关系/判别方程来直接判断一个矩阵是否可逆。
 为了完善这一体系，Determinant（行列式）应运而生。
-不妨回顾一下在$2×2$的矩阵中，我们如何使用经验来判断它是否可逆的：对于矩阵...
+不妨回顾一下在$2×2$的矩阵中，我们如何使用经验来判断它是否可逆的：对于矩阵
+$$...
       
     
   </div>
@@ -2756,15 +2768,23 @@ Linear ...
     
       
         #0 Key Questions
+
 首先给出本节的核心问题及讨论要点：
 
-#1 Simple Cases：k&#x3D;2 &amp; k&#x3D;3
+#1 Simple Cases：k=2 &amp; k=3
+
+
 首先考虑两个向量的情况：
 
-注意：此处的$p_1&#x3D;(ux^Tv_1)v_1$，即为$p_1&#x3D;&lt;  v_1,u_2 &gt;v_1$, 是上一节中对投影的定义，意为$u_2$在$v_1$张成空间上的投影。
+
+注意：此处的$p_1=(ux^Tv_1)v_1$，即为$p_1=&lt;  v_1,u_2 &gt;v_1$, 是上一节中对投影的定义，意为$u_2$在$v_1$张成空间上的投影。
 
 
-进一步的...
+
+进一步的，考虑三个向量的情况：
+
+
+与...
       
     
   </div>
@@ -2828,14 +2848,18 @@ Linear ...
     
       
         #1 Orthogonal Set
+
 直接给出定义：
 进一步的，当Orthogonal Set中的每个向量模长均为1，该集合称为Orthonormal Set
+
 如果已知一个Orthogonal Set，如何将其快速转化为一个Orthonormal Set呢：
-将ui变为ui&#x2F;||ui||即可
+
+将ui变为ui/||ui||即可
 
 
 不妨思考，如果若干个向量之间两两都是orthogonal的，它们之间存在怎样的关系？
-联...
+
+联想...
       
     
   </div>
@@ -2900,10 +2924,11 @@ Linear ...
       
         #1 Example: Salary Prediction
 
+
 与统计学中选择不同模型不同，线性代数中这类问题直接假设关系是线性的，从而将已知关系导向线性方程组。
 不幸的是，只有两个未知数的线性关系在多方程的情况下很容易无解，如本例：
-但是回顾一下统计学，我们能联想到，即使在统计学中出现符合线性模型的数据，也不是每一个数据点都落在直线上，而只是一个估计，更准确的说，残差分析是满足正态分布的。
-...
+
+但是回顾一下统计学，我们能联想到，即使在统计学中出现符合线性模型的数据，也不是每一个数据点都落在直线上，而只是一个估计，更准确的说，残差分析是满足正态分布的...
       
     
   </div>
@@ -2967,7 +2992,8 @@ Linear ...
     
       
         #1
-The Enumeration Orders are orders in which the five elements were named in various ancient and mediaeval presentations of the subject. They were far from always being the same, but the four most...
+
+The Enumeration Orders are orders in which the five elements were named in various ancient and mediaeval presentations of the subject. They were far from always being the same, but the four mos...
       
     
   </div>
@@ -3031,7 +3057,8 @@ The Enumeration Orders are orders in which the five elements were named in vario
     
       
         #1
-That new theory maintained his earlier distinction between conscious and unconscious mental functions, but it added three interacting psychic agencies: the ego, the id, and the superego. Freud s...
+
+That new theory maintained his earlier distinction between conscious and unconscious mental functions, but it added three interacting psychic agencies: the ego, the id, and the superego. Freud ...
       
     
   </div>

@@ -42,7 +42,7 @@
 <meta property="og:title" content="[Linear Algebra]Linear Transformation">
 <meta property="og:url" content="http://example.com/2025/04/21/linear-algebralinear-transformation/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="#1 Motivation of Linear Transformation 考虑对某个图形的放大及旋转： 对于一个初始坐标为$(x,y)$的变量 放大&#x2F;旋转后坐标会如何变化？   由该问题引入线性变换的概念  #2 Definition of Linear Transformation Mapping（映射）   注意描述集合和元素的对应关系时使用的箭头不一样   Linear Tra">
+<meta property="og:description" content="#1 Motivation of Linear Transformation  考虑对某个图形的放大及旋转：  对于一个初始坐标为$(x,y)$的变量 放大&#x2F;旋转后坐标会如何变化？   由该问题引入线性变换的概念  #2 Definition of Linear Transformation   Mapping（映射）   注意描述集合和元素的对应关系时使用的箭头不一样    Linear Tra">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-04-21T13:14:16.000Z">
@@ -1965,7 +1965,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2020,7 +2020,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2407,7 +2409,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>240 words</p>
+      <p>239 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2437,45 +2439,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-Motivation-of-Linear-Transformation"><a href="#1-Motivation-of-Linear-Transformation" class="headerlink" title="#1 Motivation of Linear Transformation"></a>#1 Motivation of Linear Transformation</h2><ul>
-<li>考虑对某个图形的放大及旋转：<ul>
+    <h2 id="1-Motivation-of-Linear-Transformation">#1 Motivation of Linear Transformation</h2>
+<ul>
+<li>考虑对某个图形的放大及旋转：
+<ul>
 <li>对于一个初始坐标为$(x,y)$的变量</li>
-<li>放大&#x2F;旋转后坐标会如何变化？</li>
+<li>放大/旋转后坐标会如何变化？</li>
 </ul>
 </li>
 <li>由该问题引入线性变换的概念</li>
 </ul>
-<h2 id="2-Definition-of-Linear-Transformation"><a href="#2-Definition-of-Linear-Transformation" class="headerlink" title="#2 Definition of Linear Transformation"></a>#2 Definition of Linear Transformation</h2><ul>
-<li><p>Mapping（映射）</p>
+<h2 id="2-Definition-of-Linear-Transformation">#2 Definition of Linear Transformation</h2>
 <ul>
-<li><img src="https://arvin-chaser.github.io/post-images/1745242594394.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745242594394.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li>
+<p>Mapping（映射）</p>
+<ul>
+<li><img src="https://Arvin-Chaser.github.io/post-images/1745242594394.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745242594394.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 <li>注意描述集合和元素的对应关系时使用的箭头不一样</li>
 </ul>
 </li>
-<li><p>Linear Transformation：</p>
+<li>
+<p>Linear Transformation：</p>
 <ul>
-<li><img src="https://arvin-chaser.github.io/post-images/1745242704924.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745242704924.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>线性变换的例子：<img src="https://arvin-chaser.github.io/post-images/1745243672622.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745243672622.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li><img src="https://Arvin-Chaser.github.io/post-images/1745242704924.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745242704924.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>线性变换的例子：<img src="https://Arvin-Chaser.github.io/post-images/1745243672622.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745243672622.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 </ul>
 </li>
 </ul>
-<h2 id="3-Checking-Linear-Transformation"><a href="#3-Checking-Linear-Transformation" class="headerlink" title="#3 Checking Linear Transformation"></a>#3 Checking Linear Transformation</h2><ul>
-<li><p>考虑基础定义，并代入一些特殊值：<img src="https://arvin-chaser.github.io/post-images/1745243905686.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745243905686.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h2 id="3-Checking-Linear-Transformation">#3 Checking Linear Transformation</h2>
+<ul>
+<li>
+<p>考虑基础定义，并代入一些特殊值：<img src="https://Arvin-Chaser.github.io/post-images/1745243905686.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745243905686.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
 <ul>
 <li>0是相当值得第一手验证的</li>
 </ul>
 </li>
-<li><p>直线</p>
+<li>
+<p>直线</p>
 <ul>
-<li><img src="https://arvin-chaser.github.io/post-images/1745248209004.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745248209004.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li><img src="https://Arvin-Chaser.github.io/post-images/1745248209004.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745248209004.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 <li>其实就是幸福定理</li>
 </ul>
 </li>
 </ul>
-<h2 id="4-Matrix-of-Linear-Transformation"><a href="#4-Matrix-of-Linear-Transformation" class="headerlink" title="#4 Matrix of Linear Transformation"></a>#4 Matrix of Linear Transformation</h2><ul>
-<li>先以旋转为例：<img src="https://arvin-chaser.github.io/post-images/1745252136498.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745252136498.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>在旋转的例子中旋转被转化成了乘一个矩阵，事实上这是能推广到所有线性变换的<br><img src="https://arvin-chaser.github.io/post-images/1745252517055.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745252517055.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>而计算该矩阵的方式，我们先考虑一个全由单位向量组成的向量，它经过线性变换后转换的结果构成的矩阵正是符合结论的运算矩阵：<img src="https://arvin-chaser.github.io/post-images/1745255855884.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745255855884.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<h2 id="4-Matrix-of-Linear-Transformation">#4 Matrix of Linear Transformation</h2>
+<ul>
+<li>先以旋转为例：<img src="https://Arvin-Chaser.github.io/post-images/1745252136498.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745252136498.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>在旋转的例子中旋转被转化成了乘一个矩阵，事实上这是能推广到所有线性变换的<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745252517055.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745252517055.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>而计算该矩阵的方式，我们先考虑一个全由单位向量组成的向量，它经过线性变换后转换的结果构成的矩阵正是符合结论的运算矩阵：<img src="https://Arvin-Chaser.github.io/post-images/1745255855884.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745255855884.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 </ul>
 
   </div>
@@ -2579,21 +2591,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2025/06/05/ieltsbasic-sentences-and-phrases/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>[IELTS]Basic sentences and phrases</p>
           <p class='content'>住所和城市
+
 It’s a close-knit community.
 
 
 close-knit 有凝聚力的
 
 
-There are many leisure facilities in citi...</p>
+There are many leisure facilities in cit...</p>
         </a>
       
       
         <a class='next' href='/2025/04/21/linear-algebra-determinant/'>
           <p class='title'>[Linear Algebra]Determinant<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>#1 Motivation of Determinant：Invertiblity Problem
+
 在先前对矩阵是否可逆的讨论中，我们有如下命题，它们全部等价：
-但很可惜的是，我们并没有一个确定...</p>
+
+但很可惜的是，我们并没有一个...</p>
         </a>
       
     </div>

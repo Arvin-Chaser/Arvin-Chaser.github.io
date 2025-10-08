@@ -42,7 +42,7 @@
 <meta property="og:title" content="[Optimization]The Degenerate Case of Simplex Method">
 <meta property="og:url" content="http://example.com/2025/09/22/optimizationthe-degenerate-case-of-simplex-method/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="Degeneracy 在上一节的讨论中，我们在考虑一个节点的相邻BFS时，默认只有两种情况  1.当前节点非最优，我们将跳跃到与之相邻的BFS中最优的那一个 2.当前节点是最优解，体现在它比所有相邻的BFS都更优 而在我们进行节点间跳跃时，我们将一个non-basic variable和一个basic variable互换；在我们先前的例子中，这个basic variable非零，使得我们能凭此来">
+<meta property="og:description" content="Degeneracy   在上一节的讨论中，我们在考虑一个节点的相邻BFS时，默认只有两种情况  1.当前节点非最优，我们将跳跃到与之相邻的BFS中最优的那一个 2.当前节点是最优解，体现在它比所有相邻的BFS都更优 而在我们进行节点间跳跃时，我们将一个non-basic variable和一个basic variable互换；在我们先前的例子中，这个basic variable非零，使得我们能凭">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-09-22T09:23:03.000Z">
@@ -1967,7 +1967,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2022,7 +2022,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2439,48 +2441,63 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="Degeneracy"><a href="#Degeneracy" class="headerlink" title="Degeneracy"></a>Degeneracy</h2><ul>
-<li><p>在上一节的讨论中，我们在考虑一个节点的相邻BFS时，默认只有两种情况</p>
+    <h2 id="Degeneracy">Degeneracy</h2>
+<ul>
+<li>
+<p>在上一节的讨论中，我们在考虑一个节点的相邻BFS时，默认只有两种情况</p>
 <ul>
 <li>1.当前节点非最优，我们将跳跃到与之相邻的BFS中最优的那一个</li>
 <li>2.当前节点是最优解，体现在它比所有相邻的BFS都更优</li>
 <li>而在我们进行节点间跳跃时，我们将一个non-basic variable和一个basic variable互换；在我们先前的例子中，这个basic variable非零，使得我们能凭此来优化已有的解，那么如果存在为零的basic variable呢？</li>
 </ul>
 </li>
-<li><p>存在为零的basic variable时，我们不妨考虑将这个为零的basic variable设为leaving variable的情况，那么交换前后，解的优劣性不变，而且交换后仍有可能会返回原来的节点，陷入循环。</p>
+<li>
+<p>存在为零的basic variable时，我们不妨考虑将这个为零的basic variable设为leaving variable的情况，那么交换前后，解的优劣性不变，而且交换后仍有可能会返回原来的节点，陷入循环。</p>
 </li>
-<li><p>这种情况下，我们之前的Simplex Method便不可用了。</p>
+<li>
+<p>这种情况下，我们之前的Simplex Method便不可用了。</p>
 </li>
-<li><p>于是当存在为0的basic variable时，我们将这种情况称为：Degenerate Case</p>
+<li>
+<p>于是当存在为0的basic variable时，我们将这种情况称为：Degenerate Case</p>
 </li>
-<li><p>注意到，Simlex Method的基本思路是可用的；在Degenerate Case中，不可用的仅仅是我们求局部最优解的算法。</p>
+<li>
+<p>注意到，Simlex Method的基本思路是可用的；在Degenerate Case中，不可用的仅仅是我们求局部最优解的算法。</p>
 </li>
-<li><p>也就是说，我们在处理Degenerate Case时，只需要得到一个新的、不会陷入自循环、同时能找到最优解的迭代方式即可。</p>
+<li>
+<p>也就是说，我们在处理Degenerate Case时，只需要得到一个新的、不会陷入自循环、同时能找到最优解的迭代方式即可。</p>
 </li>
 </ul>
-<h2 id="Convergence-in-LP"><a href="#Convergence-in-LP" class="headerlink" title="Convergence in LP"></a>Convergence in LP</h2><ul>
-<li><p>在一般的Simplex Method运行的过程中，因为LP要么存在最优解，要么unbounded，所以我们在进行若干次的迭代后，一定会得到如下的结果之一：</p>
+<h2 id="Convergence-in-LP">Convergence in LP</h2>
+<ul>
+<li>
+<p>在一般的Simplex Method运行的过程中，因为LP要么存在最优解，要么unbounded，所以我们在进行若干次的迭代后，一定会得到如下的结果之一：</p>
 <ul>
 <li>该过程在最优解处停止</li>
 <li>该LPunbounded，表现为$\exists j-th$ basic direction $d$ with $\overline{c_j} &lt; 0$ and $d ≥ 0$</li>
 <li>即该问题一定收敛到一个我们预想中的解</li>
 </ul>
 </li>
-<li><p>那么，在Degenerate Case中，我们也期望通过某种迭代方法，它能收敛到一个我们预想中的解。</p>
+<li>
+<p>那么，在Degenerate Case中，我们也期望通过某种迭代方法，它能收敛到一个我们预想中的解。</p>
 </li>
-<li><p>由于LP仍然要么存在最优解，要么unbounded，所以抛开过程不看，从结果出发，Degenerate Case也仍然是收敛的，也就是说，这种迭代方法是存在的。</p>
+<li>
+<p>由于LP仍然要么存在最优解，要么unbounded，所以抛开过程不看，从结果出发，Degenerate Case也仍然是收敛的，也就是说，这种迭代方法是存在的。</p>
 </li>
-<li><p>在这里我们直接给出这个迭代方法：</p>
+<li>
+<p>在这里我们直接给出这个迭代方法：</p>
 </li>
 </ul>
-<h3 id="Bland’s-Rule："><a href="#Bland’s-Rule：" class="headerlink" title="Bland’s Rule："></a>Bland’s Rule：</h3><ul>
-<li>若我们在选择entering basis和leaving basis时，遵循“最小下标”原则，那么在Simplex Method中不会再发生循环的情况。<ul>
+<h3 id="Bland’s-Rule：">Bland’s Rule：</h3>
+<ul>
+<li>若我们在选择entering basis和leaving basis时，遵循“最小下标”原则，那么在Simplex Method中不会再发生循环的情况。
+<ul>
 <li>entering basis选择：在所有正检验数中，选择下标最小的non-basic variable</li>
 </ul>
 </li>
 <li>该方法的证明在lec中没有给出，笔者的大概理解如下：即使最小下标是为0的basic variable,在下一次迭代中它不会再处在最小下标中，那么我们不会再从下一个节点回到当前节点，也就避免了循环的情况；而关于该方法的最优性，“最小下标”仅仅是在同时存在两个优化程度相同时的判断法则，前提仍然是选择最佳优化程度的解，所以最优性仍是得到保证的。</li>
 </ul>
-<h2 id="Reduced-Cost-in-Degenerate-Case"><a href="#Reduced-Cost-in-Degenerate-Case" class="headerlink" title="Reduced Cost in Degenerate Case"></a>Reduced Cost in Degenerate Case</h2><ul>
+<h2 id="Reduced-Cost-in-Degenerate-Case">Reduced Cost in Degenerate Case</h2>
+<ul>
 <li>我们在研究非退化的Simplex Method时，提到若reduced costs vector $\overline{c} &gt; 0$，那么当前的BFS$x$是最优的。这代表着：从当前节点出发，若每个方向都劣化了当前的解，那么代表这个节点是最优的。</li>
 <li>那么当我们研究退化了的案例时，不难想到存在这样的情况：有若干相邻的节点，$i.e.$一条线段上的点都是最优解，那么考虑$\overling{c}$的几何含义，那么这条线段的方向，正是可以“优化”当前解的方向，也就是说，在退化的案例下，即使是一个最优解，也可能存在$\overline{c} &lt; 0$的情况</li>
 <li>不过，在退化的情况下，只要我们一直应用simplex method，最后也会得到一个$\overline{c}≥0$的解，只不过我们可能在这个解之前一些点就已经达到了最优解$x$，在simplex method的进一步迭代过程中，变化的只是basis而已。</li>
@@ -2594,14 +2611,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2025/09/27/optimizationtwo-phase-simplex-method-and-the-big-m-method/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>[Optimization]Two-Phase Simplex Method and the Big-M Method</p>
-          <p class='content'>Finding an Initial BFS在我们使用Simplex Method时，我们一定需要一个起点来应用Simplex Method，在先前的例子中，我们通常将所有不等式转化为等式（通过...</p>
+          <p class='content'>Finding an Initial BFS
+在我们使用Simplex Method时，我们一定需要一个起点来应用Simplex Method，在先前的例子中，我们通常将所有不等式转化为等式（通...</p>
         </a>
       
       
         <a class='next' href='/2025/09/13/optimizationgraphic-method-and-simplex-method/'>
           <p class='title'>[Optimization]Graphic Method and Simplex method<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>Graphic Method
-LP之所以叫线性方程组，正是因为它所含有的方程都是线性的，而简化到一个双变量的LP中时，我们不妨考虑这些约束条件在坐标系中的表现：作为线性函数，它们自然是方便分析且...</p>
+
+
+LP之所以叫线性方程组，正是因为它所含有的方程都是线性的，而简化到一个双变量的LP中时，我们不妨考虑这些约束条件在坐标系中的表现：作为线性函数，它们自然是方便分...</p>
         </a>
       
     </div>

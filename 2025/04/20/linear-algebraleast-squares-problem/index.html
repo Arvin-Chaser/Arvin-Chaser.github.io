@@ -42,7 +42,7 @@
 <meta property="og:title" content="[Linear Algebra]Least Squares Problem">
 <meta property="og:url" content="http://example.com/2025/04/20/linear-algebraleast-squares-problem/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="#1 Example: Salary Prediction  与统计学中选择不同模型不同，线性代数中这类问题直接假设关系是线性的，从而将已知关系导向线性方程组。 不幸的是，只有两个未知数的线性关系在多方程的情况下很容易无解，如本例： 但是回顾一下统计学，我们能联想到，即使在统计学中出现符合线性模型的数据，也不是每一个数据点都落在直线上，而只是一个估计，更准确的说，残差分析是满足正态分布的。 那么在">
+<meta property="og:description" content="#1 Example: Salary Prediction   与统计学中选择不同模型不同，线性代数中这类问题直接假设关系是线性的，从而将已知关系导向线性方程组。 不幸的是，只有两个未知数的线性关系在多方程的情况下很容易无解，如本例：  但是回顾一下统计学，我们能联想到，即使在统计学中出现符合线性模型的数据，也不是每一个数据点都落在直线上，而只是一个估计，更准确的说，残差分析是满足正态分布的。 那">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-04-20T11:02:33.000Z">
@@ -1966,7 +1966,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2021,7 +2021,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2359,7 +2361,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>699 words</p>
+      <p>698 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2389,48 +2391,59 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-Example-Salary-Prediction"><a href="#1-Example-Salary-Prediction" class="headerlink" title="#1 Example: Salary Prediction"></a>#1 Example: Salary Prediction</h2><p><img src="https://arvin-chaser.github.io/post-images/1745154387679.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745154387679.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+    <h2 id="1-Example-Salary-Prediction">#1 Example: Salary Prediction</h2>
+<p><img src="https://Arvin-Chaser.github.io/post-images/1745154387679.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745154387679.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
 <ul>
 <li>与统计学中选择不同模型不同，线性代数中这类问题直接假设关系是线性的，从而将已知关系导向线性方程组。</li>
-<li>不幸的是，只有两个未知数的线性关系在多方程的情况下很容易无解，如本例：<br><img src="https://arvin-chaser.github.io/post-images/1745154697068.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745154697068.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li>不幸的是，只有两个未知数的线性关系在多方程的情况下很容易无解，如本例：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745154697068.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745154697068.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 <li>但是回顾一下统计学，我们能联想到，即使在统计学中出现符合线性模型的数据，也不是每一个数据点都落在直线上，而只是一个估计，更准确的说，残差分析是满足正态分布的。</li>
 <li>那么在线性代数对线性模型的分析中，有这样留给我们估计的余地吗？有的兄弟，有的。</li>
-<li>不妨模仿残差分析，分析对于一个独立的解，每个线性方程可能产生的error，即，在本例中：<img src="https://arvin-chaser.github.io/post-images/1745160865911.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745160865911.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br>  接下来规定如何衡量误差大小，直接给出定义：使得norm(Ax-b)最小的解x是最合适的估计解。如在本例中：使得sqrt(ε1²+ε2²+ε3²)最小的解即为所求。</li>
+<li>不妨模仿残差分析，分析对于一个独立的解，每个线性方程可能产生的error，即，在本例中：<img src="https://Arvin-Chaser.github.io/post-images/1745160865911.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745160865911.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+接下来规定如何衡量误差大小，直接给出定义：使得norm(Ax-b)最小的解x是最合适的估计解。如在本例中：使得sqrt(ε1²+ε2²+ε3²)最小的解即为所求。</li>
 </ul>
-<h2 id="2-Least-Squares-Definition"><a href="#2-Least-Squares-Definition" class="headerlink" title="#2 Least Squares: Definition"></a>#2 Least Squares: Definition</h2><ul>
-<li>推广#1中的衡量方式，即给出定义：<img src="https://arvin-chaser.github.io/post-images/1745161390256.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745161390256.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><ul>
+<h2 id="2-Least-Squares-Definition">#2 Least Squares: Definition</h2>
+<ul>
+<li>推广#1中的衡量方式，即给出定义：<img src="https://Arvin-Chaser.github.io/post-images/1745161390256.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745161390256.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+<ul>
 <li>*1：如上图，我们最小化向量的模来得出近似解。</li>
 <li>*2：y是一个向量而非一个方程的固定解。</li>
-<li>*3：特别的，当Ax&#x3D;b存在解时，该解即为近似解，因为此时向量的模为0。</li>
+<li>*3：特别的，当Ax=b存在解时，该解即为近似解，因为此时向量的模为0。</li>
 </ul>
 </li>
 </ul>
-<h2 id="3-Row-Interpretation"><a href="#3-Row-Interpretation" class="headerlink" title="#3 Row Interpretation"></a>#3 Row Interpretation</h2><ul>
-<li>不妨从行向量的角度理解该问题<ul>
+<h2 id="3-Row-Interpretation">#3 Row Interpretation</h2>
+<ul>
+<li>不妨从行向量的角度理解该问题
+<ul>
 <li>首先，最小化||Ax-b||即等同于最小化||Ax-b||²</li>
 <li>展开模长的平方，得：</li>
-<li><img src="https://arvin-chaser.github.io/post-images/1745161732527.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745161732527.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li><img src="https://Arvin-Chaser.github.io/post-images/1745161732527.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745161732527.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 <li>值得注意的是，此处的每一项[ai(transpose) - bi]²正是对应共n个线性方程的n个残差之平方，也是我们在前文中回顾统计学中提到的概念。</li>
 </ul>
 </li>
 </ul>
-<h2 id="4-Linear-Regression"><a href="#4-Linear-Regression" class="headerlink" title="#4 Linear Regression"></a>#4 Linear Regression</h2><p><img src="https://arvin-chaser.github.io/post-images/1745162456441.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745162456441.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h2 id="5-Geometry-Explanation-and-Projection"><a href="#5-Geometry-Explanation-and-Projection" class="headerlink" title="#5 Geometry Explanation and Projection"></a>#5 Geometry Explanation and Projection</h2><ul>
-<li>不妨再从Linear Space的角度思考一下||Ax-b||的其它含义：若把A看成若干个列向量，那么Ax就是一个由这若干个列向量所张成线性空间中的一个向量，而||Ax-b||便是一个向量b到向量Ax的距离，将其最小化这一问题其实也就是最小化向量b到向量Ax的距离，以容易想象的二次空间为例：<img src="https://arvin-chaser.github.io/post-images/1745163748687.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745163748687.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>进一步推广，一般地：<img src="https://arvin-chaser.github.io/post-images/1745163795355.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745163795355.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<h2 id="4-Linear-Regression">#4 Linear Regression</h2>
+<p><img src="https://Arvin-Chaser.github.io/post-images/1745162456441.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745162456441.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<h2 id="5-Geometry-Explanation-and-Projection">#5 Geometry Explanation and Projection</h2>
+<ul>
+<li>不妨再从Linear Space的角度思考一下||Ax-b||的其它含义：若把A看成若干个列向量，那么Ax就是一个由这若干个列向量所张成线性空间中的一个向量，而||Ax-b||便是一个向量b到向量Ax的距离，将其最小化这一问题其实也就是最小化向量b到向量Ax的距离，以容易想象的二次空间为例：<img src="https://Arvin-Chaser.github.io/post-images/1745163748687.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745163748687.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>进一步推广，一般地：<img src="https://Arvin-Chaser.github.io/post-images/1745163795355.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745163795355.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 <li>注意：此处可将b和A理解为已知量，变量只有x</li>
 <li>若以二次平面作理解，不难发现，当该距离取得最小值时，Ax即为向量b在张成平面上的投影。</li>
 <li>推广，即得广义投影定义：</li>
-<li><img src="https://arvin-chaser.github.io/post-images/1745164427129.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745164427129.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li><img src="https://Arvin-Chaser.github.io/post-images/1745164427129.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745164427129.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 </ul>
-<h2 id="5-Finding-Projection-is-Solving-Equation"><a href="#5-Finding-Projection-is-Solving-Equation" class="headerlink" title="#5 Finding Projection is Solving Equation"></a>#5 Finding Projection is Solving Equation</h2><ul>
-<li>将投影的定义与Least Squares Problem相互对应，我们可以将Least Squares Problem转化成：<img src="https://arvin-chaser.github.io/post-images/1745164645910.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745164645910.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>进行一系列运算及化简：<img src="https://arvin-chaser.github.io/post-images/1745164830588.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745164830588.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>即：<img src="https://arvin-chaser.github.io/post-images/1745164869864.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745164869864.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><ul>
+<h2 id="5-Finding-Projection-is-Solving-Equation">#5 Finding Projection is Solving Equation</h2>
+<ul>
+<li>将投影的定义与Least Squares Problem相互对应，我们可以将Least Squares Problem转化成：<img src="https://Arvin-Chaser.github.io/post-images/1745164645910.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745164645910.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>进行一系列运算及化简：<img src="https://Arvin-Chaser.github.io/post-images/1745164830588.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745164830588.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>即：<img src="https://Arvin-Chaser.github.io/post-images/1745164869864.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745164869864.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+<ul>
 <li>C(A)是A的Column Space</li>
 </ul>
 </li>
-<li><img src="https://arvin-chaser.github.io/post-images/1745165099247.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745165099247.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li><img src="https://Arvin-Chaser.github.io/post-images/1745165099247.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745165099247.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 </ul>
 
   </div>
@@ -2541,16 +2554,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2025/04/21/linear-algebraorthogonal-basis-and-orthogonal-matrix/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>[Linear Algebra]Orthogonal Basis and Orthogonal Matrix</p>
           <p class='content'>#1 Orthogonal Set
+
 直接给出定义：
 进一步的，当Orthogonal Set中的每个向量模长均为1，该集合称为Orthonormal Set
-如果已知一个Orthogonal S...</p>
+
+如果已知一个Orthogonal...</p>
         </a>
       
       
         <a class='next' href='/2025/04/16/in-dialogue-with-nature2025-spring-text-9-review/'>
           <p class='title'> [In Dialogue With Nature]2025 Spring Text 9 review<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>#1
-The Enumeration Orders are orders in which the five elements were named in various ancient and...</p>
+
+The Enumeration Orders are orders in which the five elements were named in various ancient an...</p>
         </a>
       
     </div>

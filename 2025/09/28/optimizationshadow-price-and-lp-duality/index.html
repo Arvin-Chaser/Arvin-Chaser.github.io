@@ -42,7 +42,7 @@
 <meta property="og:title" content="[Optimization]Shadow Price and LP Duality">
 <meta property="og:url" content="http://example.com/2025/09/28/optimizationshadow-price-and-lp-duality/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="Shadow Prices…How valuable are the resources?  回顾window door example：      door window total hours    Plant 1(prepare door frame) 1  4   Plant 2(prepare window frame)  2 12   Plant 3(assembly) 3 2 18">
+<meta property="og:description" content="Shadow Prices …How valuable are the resources?  回顾window door example：      door window total hours     Plant 1(prepare door frame) 1  4   Plant 2(prepare window frame)  2 12   Plant 3(assembly) 3 2 1">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-09-28T07:02:51.000Z">
@@ -1967,7 +1967,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2022,7 +2022,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2439,7 +2441,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="Shadow-Prices"><a href="#Shadow-Prices" class="headerlink" title="Shadow Prices"></a>Shadow Prices</h2><p>…How valuable are the resources?</p>
+    <h2 id="Shadow-Prices">Shadow Prices</h2>
+<p>…How valuable are the resources?</p>
 <ul>
 <li>回顾window door example：</li>
 </ul>
@@ -2452,7 +2455,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <th>total hours</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Plant 1(prepare door frame)</td>
 <td>1</td>
 <td></td>
@@ -2476,37 +2480,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <td>$5</td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li><p>Question 1: What is the minimum price that you should offer to buy the entire operation?</p>
+<li>
+<p>Question 1: What is the minimum price that you should offer to buy the entire operation?</p>
 </li>
-<li><p>Question 2:What is the price that the company should be willing to pay for an extra working hour of plant 1, or 2, or 3?</p>
+<li>
+<p>Question 2:What is the price that the company should be willing to pay for an extra working hour of plant 1, or 2, or 3?</p>
 </li>
-<li><p>这里的Q1正是之前用LP解决的问题，这里不再赘述</p>
+<li>
+<p>这里的Q1正是之前用LP解决的问题，这里不再赘述</p>
 <ul>
-<li>转化为stand form后，在最优解处：$Z&#x3D;36 - \frac{3}{2}s_2-s_3$，$s_2,s_3$为slack variables</li>
+<li>转化为stand form后，在最优解处：$Z=36 - \frac{3}{2}s_2-s_3$，$s_2,s_3$为slack variables</li>
 </ul>
 </li>
-<li><p>问题二中，我们试图量化：在三个约束式的条件扩大一个单位量的情况下，原问题的最优解能再扩大多少</p>
+<li>
+<p>问题二中，我们试图量化：在三个约束式的条件扩大一个单位量的情况下，原问题的最优解能再扩大多少</p>
 </li>
-<li><p>不妨回到原问题中求解：</p>
+<li>
+<p>不妨回到原问题中求解：</p>
 <ul>
 <li>若将约束条件$1$变为$x_1≤5$，我们得到新的最优值仍为$36$</li>
 <li>若将约束条件$2$变为$2x_2≤13$，我们得到新的最优值变为$\frac{75}{2}$，增加了$\frac{3}{2}$</li>
 <li>若将约束条件$3$变为$3x_1+2x_2≤18$，我们得到新的最优值变为$37$，增加了$1$</li>
 </ul>
 </li>
-<li><p>我们将$(0, \frac{3}{2}, 1)$称为这三个约束条件的<strong>shadow prices</strong></p>
+<li>
+<p>我们将$(0, \frac{3}{2}, 1)$称为这三个约束条件的<strong>shadow prices</strong></p>
 </li>
-<li><p>注意到，最优解处，Objective Function恰好可以写为$Z &#x3D; 36 - 0s_1-\frac{3}{2}s_2 - s_3$，我们所引入的shadow prices正是Objective Function中slack variables的系数</p>
+<li>
+<p>注意到，最优解处，Objective Function恰好可以写为$Z = 36 - 0s_1-\frac{3}{2}s_2 - s_3$，我们所引入的shadow prices正是Objective Function中slack variables的系数</p>
 </li>
-<li><p>根据这一联系，我们可以进一步的解释shadow prices的含义：当约束条件被松弛时，Objective value随之扩大（减小）的程度，一个约束条件对应一个shadow price</p>
+<li>
+<p>根据这一联系，我们可以进一步的解释shadow prices的含义：当约束条件被松弛时，Objective value随之扩大（减小）的程度，一个约束条件对应一个shadow price</p>
 </li>
-<li><p>注意：一个最优解的表示形式中（用nonbasic variable表示），显然可能存在decision variable和slack variable的组合，在这种情况下，decision variable被我们忽略，因为一个constraint对应的是一个slack variable，也只有slack variable的系数才能体现与之对应的constraint在被松弛时Objective value扩大（减小）的程度</p>
+<li>
+<p>注意：一个最优解的表示形式中（用nonbasic variable表示），显然可能存在decision variable和slack variable的组合，在这种情况下，decision variable被我们忽略，因为一个constraint对应的是一个slack variable，也只有slack variable的系数才能体现与之对应的constraint在被松弛时Objective value扩大（减小）的程度</p>
 </li>
 </ul>
 <hr>
-<h2 id="LP-Duality"><a href="#LP-Duality" class="headerlink" title="LP Duality"></a>LP Duality</h2><p>我们在如上的过程中，是假设约束条件被松弛，从而计算出shadow price，那么我们不妨抛开这种直接修改约束条件的方法，设三个约束条件的shadow prices分别为$y_1,y_2,y_3$；那么在$y_1,y_2,y_3$为decision variables的情况下，我们能否求出Q1的最优解？</p>
+<h2 id="LP-Duality">LP Duality</h2>
+<p>我们在如上的过程中，是假设约束条件被松弛，从而计算出shadow price，那么我们不妨抛开这种直接修改约束条件的方法，设三个约束条件的shadow prices分别为$y_1,y_2,y_3$；那么在$y_1,y_2,y_3$为decision variables的情况下，我们能否求出Q1的最优解？</p>
 <table>
 <thead>
 <tr>
@@ -2516,7 +2531,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <th>total hours</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Plant 1(prepare door frame)</td>
 <td>1</td>
 <td></td>
@@ -2540,34 +2556,42 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <td>$5</td>
 <td></td>
 </tr>
-</tbody></table>
-<p>Q1:What is the minimum price that you should offer to buy the entire operation?<br>我们重设Q2为：What is the minimum price that you should offer to buy these three plants?</p>
+</tbody>
+</table>
+<p>Q1:What is the minimum price that you should offer to buy the entire operation?<br>
+我们重设Q2为：What is the minimum price that you should offer to buy these three plants?</p>
 <ul>
-<li>由此得到的两个LP分别为：<ul>
-<li>LP1: max $Z &#x3D; 3x_1 + 5x_2 \ x_1 ≤ 4 \ 2x_2≤12 \ 3x_1+2x_2 ≤ 18 \ x_1,x_2≥0$</li>
-<li>LP2: min $M&#x3D; 4y_1+12y_2+18y_3 \ y_1 + 3y_3 ≥ 3 \ 2y_2 + 2y_3 ≥ 5 \ y_1,y_2,y_3≥0$</li>
+<li>由此得到的两个LP分别为：
+<ul>
+<li>LP1: max $Z = 3x_1 + 5x_2 \ x_1 ≤ 4 \ 2x_2≤12 \ 3x_1+2x_2 ≤ 18 \ x_1,x_2≥0$</li>
+<li>LP2: min $M= 4y_1+12y_2+18y_3 \ y_1 + 3y_3 ≥ 3 \ 2y_2 + 2y_3 ≥ 5 \ y_1,y_2,y_3≥0$</li>
 </ul>
 </li>
 </ul>
 <p>若我们称LP1为Primal LP, 则LP2为the Dual of LP1</p>
 <ul>
-<li><p>我们注意到，Primal LP中各约束条件的RHS是与Dual LP的Objective Function中$y_i$系数相同的$（4,12,18）$</p>
+<li>
+<p>我们注意到，Primal LP中各约束条件的RHS是与Dual LP的Objective Function中$y_i$系数相同的$（4,12,18）$</p>
 </li>
-<li><p>而Dual LP的约束条件中的各系数，则有如下的对应关系：</p>
+<li>
+<p>而Dual LP的约束条件中的各系数，则有如下的对应关系：</p>
 <ul>
 <li>在Primal LP中$x_1$在约束条件$1$，约束条件$3$，和Objective Function中的系数分别为$1,3,3$，于是在Dual LP中我们有这样的约束条件：$y_1+3y_3≥3$</li>
 <li>同样的，$2y_2+2y_3≥5$也能在Primal LP中找到对应的系数</li>
 </ul>
 </li>
-<li><p>我们不妨试着再求Dual LP的Dual LP，不难求得，Dual LP的Dual LP，正是原来的Primal LP，这是它们的对称性质</p>
+<li>
+<p>我们不妨试着再求Dual LP的Dual LP，不难求得，Dual LP的Dual LP，正是原来的Primal LP，这是它们的对称性质</p>
 </li>
-<li><p>分析Primal LP和Dual LP的变量、约束条件数和形式，我们发现：</p>
+<li>
+<p>分析Primal LP和Dual LP的变量、约束条件数和形式，我们发现：</p>
 <ul>
 <li>Primal LP有$n$个变量，$m$个约束条件，是一个最大化问题</li>
 <li>与此同时，Dual LP有$m$个变量，$n$个约束条件，是一个最小化问题</li>
 </ul>
 </li>
-<li><p>更进一步的：</p>
+<li>
+<p>更进一步的：</p>
 <ul>
 <li>Primal LP和Dual LP的最优值相同</li>
 <li>Primal Constraints的shadow prices是Dual LP中各变量的最优解</li>
@@ -2575,7 +2599,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>若一个Primal LP是最大值问题，那么它的任意一个可行解的值都小于等于其Dual LP的最优解（对最优值相同的进一步阐释）；对应的，若一个Primal LP是最小值问题，那么它的任意一个可行解的值都大于等于其Dual LP的最优解</li>
 </ul>
 </li>
-<li><p>关于两个LP Feasibility 和 Unbounded情况的关联（Duality Theorem）</p>
+<li>
+<p>关于两个LP Feasibility 和 Unbounded情况的关联（Duality Theorem）</p>
 <ul>
 <li>Case 1: 若Primal(Dual)LP 有可行解和一个Bounded Objective Value（也就意味着有最优解），那么 Dual（Primal）LP也存在最优解</li>
 <li>Case 2:若Primal(Dual)LP 存在可行解，但是Objective Value是Unbounded，那么Dual(Primal)LP不存在可行解</li>
@@ -2694,7 +2719,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>[Optimization]LP Duality Theory(Algebraic Form)</p>
           <p class='content'>在上一节中我们通过一个例子大概阐述了Primal LP与Dual LP的关系，本节中我们首先用更代数化的形式重写该过程。
 
-Duality of Standard Form给出一个标准形式的LP...</p>
+Duality of Standard Form
+给出一个标准形式的L...</p>
         </a>
       
       

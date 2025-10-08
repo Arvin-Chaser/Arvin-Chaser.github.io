@@ -1963,7 +1963,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2018,7 +2018,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2410,16 +2412,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
 在研究LP时，我们时常会考虑这种问题：
+
 当参数$(A,b,c)$改变时，最优解和最优值会如何变化？
 
 
 这种问题，我们称其为Sensitivity Analysis
 
-Local Sensitivity考虑一个标准形式的LP:&nbsp;maximize $c^Tx$&nbsp; s.t. $Ax&#x3D;b$&nbsp; $x≥0$
+Local Sensitivity
+考虑一个标准形式的LP:
+ maximize $c^Tx$
+  s.t. $Ax=b$
+  $x≥0$
 
 我们将相应的最优值定为$V$
 
-当$A$和$c$固...
+当$A$和$c$固定时
+
+
+当$A$和$c$固定...
       
     
   </div>
@@ -2483,9 +2493,12 @@ Local Sensitivity考虑一个标准形式的LP:&nbsp;maximize $c^Tx$&nbsp; s.t. 
     
       
         Simplex Method form the Perspective of Complementary Consitions
+
+
 在上一节中我们完善了Duality Theorem的内容，其中我们通过Complementary Conditions提供了一个新的判断当前解是否最优的方法，那么该方法显然是可以在Simplex Method中得到进一步运用的。
 
-我们不妨从Terminating ...
+
+我们不妨从Terminati...
       
     
   </div>
@@ -2550,7 +2563,13 @@ Local Sensitivity考虑一个标准形式的LP:&nbsp;maximize $c^Tx$&nbsp; s.t. 
       
         在上一节中我们通过一个例子大概阐述了Primal LP与Dual LP的关系，本节中我们首先用更代数化的形式重写该过程。
 
-Duality of Standard Form给出一个标准形式的LP（$m$个约束条件，$n$个变量）&nbsp; &nbsp; &nbsp; &nbsp; minimize $c^Tx$&nbsp; &nbsp; &nbsp; &nbsp; subject to $...
+Duality of Standard Form
+给出一个标准形式的LP（$m$个约束条件，$n$个变量）
+        minimize $c^Tx$
+        subject to $Ax=b$
+        $x≥0$
+我们可以将其重写为：
+      ...
       
     
   </div>
@@ -2613,7 +2632,8 @@ Duality of Standard Form给出一个标准形式的LP（$m$个约束条件，$n$
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Shadow Prices…How valuable are the resources?
+        Shadow Prices
+…How valuable are the resources?
 
 回顾window door example：
 
@@ -2624,6 +2644,7 @@ Duality of Standard Form给出一个标准形式的LP（$m$个约束条件，$n$
 door
 window
 total hours
+
 
 
 
@@ -2641,7 +2662,6 @@ Plant 2(prepare window frame)
 
 Plant 3(assembly)
 3
-2
 ...
       
     
@@ -2708,7 +2728,10 @@ Plant 3(assembly)
         注：Simplex Tableau Method的原理和过程与Simplex Method本质相同，Tableau Method是为了简化求解过程，方便我们选择entering和leaving variable，通过表格填充形式来优化判断过程的方法。
 
 仍以window door question为例：
-Original LP:           max $Z&#x3D;3x_1+5x_2...
+Original LP:
+max $Z=3x_1+5x_2$
+$x_1≤4$
+$2x_2...
       
     
   </div>
@@ -2771,7 +2794,10 @@ Original LP:           max $Z&#x3D;3x_1+5x_2...
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Finding an Initial BFS在我们使用Simplex Method时，我们一定需要一个起点来应用Simplex Method，在先前的例子中，我们通常将所有不等式转化为等式（通过引入slack variable）后，解该方程组来得到一个初始可行解，但这种方式显然是不通用的，不妨引入如下例子：minimize $x_1+x_2+x_3$subject to $x_1+2x_2+...
+        Finding an Initial BFS
+在我们使用Simplex Method时，我们一定需要一个起点来应用Simplex Method，在先前的例子中，我们通常将所有不等式转化为等式（通过引入slack variable）后，解该方程组来得到一个初始可行解，但这种方式显然是不通用的，不妨引入如下例子：
+minimize $x_1+x_2+x_3$
+subject to $x_1+2x...
       
     
   </div>
@@ -2835,11 +2861,13 @@ Original LP:           max $Z&#x3D;3x_1+5x_2...
     
       
         Degeneracy
+
+
 在上一节的讨论中，我们在考虑一个节点的相邻BFS时，默认只有两种情况
 
 1.当前节点非最优，我们将跳跃到与之相邻的BFS中最优的那一个
 2.当前节点是最优解，体现在它比所有相邻的BFS都更优
-而在我们进行节点间跳跃时，我们将一个non-basic variable和一个basic variable互换；在我们先前的例子中，这个basic variable非零，使得我们能...
+而在我们进行节点间跳跃时，我们将一个non-basic variable和一个basic variable互换；在我们先前的例子中，这个basic variable非零，使得我...
       
     
   </div>
@@ -2903,10 +2931,12 @@ Original LP:           max $Z&#x3D;3x_1+5x_2...
     
       
         Graphic Method
+
+
 LP之所以叫线性方程组，正是因为它所含有的方程都是线性的，而简化到一个双变量的LP中时，我们不妨考虑这些约束条件在坐标系中的表现：作为线性函数，它们自然是方便分析且直观的。仍以第一节中提到的应用为例，
 
-如图所示，我们能得到一个阴影区域，在该区域中的数对都是对此线性方程组的有效解。   
-我们不妨再关注一下与Objective Function对应的一组平行线：...
+如图所示，我们能得到一个阴影区域，在该区域中的数对都是对此线性方程组的有效解。
+我们不妨再关注一下与Objective Function对应的一组平行线：$...
       
     
   </div>
@@ -2970,7 +3000,8 @@ LP之所以叫线性方程组，正是因为它所含有的方程都是线性的
     
       
         Linear Programming Formulation)(LP Formulation)
-当我们谈论求含多变量的线性函数的极值时，形如$max Z&#x3D;3x_1+5x_2$的式子，若我们将变量名统一为某某字母+下标的形式，它们的表现方式往往让我们联想到简单矩阵相乘的结果。比如在该例中，$3x_1+5x2$可以看作$[3,5][x_1,x_2]^T$；这给我们以启发，将一些简单的最...
+
+当我们谈论求含多变量的线性函数的极值时，形如$max Z=3x_1+5x_2$的式子，若我们将变量名统一为某某字母+下标的形式，它们的表现方式往往让我们联想到简单矩阵相乘的结果。比如在该例中，$3x_1+5x2$可以看作$[3,5][x_1,x_2]^T$；这给我们以启发，将一些简单的最优化问题...
       
     
   </div>
@@ -3034,6 +3065,7 @@ LP之所以叫线性方程组，正是因为它所含有的方程都是线性的
     
       
         住所和城市
+
 It’s a close-knit community.
 
 
@@ -3053,7 +3085,8 @@ walkable 适合步行
 
 
 学习
-Ch...
+
+...
       
     
   </div>

@@ -42,7 +42,7 @@
 <meta property="og:title" content="[Optimization]Two-Phase Simplex Method and the Big-M Method">
 <meta property="og:url" content="http://example.com/2025/09/27/optimizationtwo-phase-simplex-method-and-the-big-m-method/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="Finding an Initial BFS在我们使用Simplex Method时，我们一定需要一个起点来应用Simplex Method，在先前的例子中，我们通常将所有不等式转化为等式（通过引入slack variable）后，解该方程组来得到一个初始可行解，但这种方式显然是不通用的，不妨引入如下例子：minimize $x_1+x_2+x_3$subject to $x_1+2x_2+3x_">
+<meta property="og:description" content="Finding an Initial BFS 在我们使用Simplex Method时，我们一定需要一个起点来应用Simplex Method，在先前的例子中，我们通常将所有不等式转化为等式（通过引入slack variable）后，解该方程组来得到一个初始可行解，但这种方式显然是不通用的，不妨引入如下例子： minimize $x_1+x_2+x_3$ subject to $x_1+2x_2+">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-09-27T07:50:55.000Z">
@@ -1967,7 +1967,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2022,7 +2022,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2409,7 +2411,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>885 words</p>
+      <p>869 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2439,40 +2441,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="Finding-an-Initial-BFS"><a href="#Finding-an-Initial-BFS" class="headerlink" title="Finding an Initial BFS"></a>Finding an Initial BFS</h2><p>在我们使用Simplex Method时，我们一定需要一个起点来应用Simplex Method，在先前的例子中，我们通常将所有不等式转化为等式（通过引入slack variable）后，解该方程组来得到一个初始可行解，但这种方式显然是不通用的，不妨引入如下例子：<br>minimize $x_1+x_2+x_3$<br>subject to $x_1+2x_2+3x_3&#x3D;3$<br> $-4x_2-9x_3&#x3D;-5$<br>$3x_3+x_4&#x3D;1$<br>$x≥0$</p>
+    <h2 id="Finding-an-Initial-BFS">Finding an Initial BFS</h2>
+<p>在我们使用Simplex Method时，我们一定需要一个起点来应用Simplex Method，在先前的例子中，我们通常将所有不等式转化为等式（通过引入slack variable）后，解该方程组来得到一个初始可行解，但这种方式显然是不通用的，不妨引入如下例子：<br>
+minimize $x_1+x_2+x_3$<br>
+subject to $x_1+2x_2+3x_3=3$<br>
+$-4x_2-9x_3=-5$<br>
+$3x_3+x_4=1$<br>
+$x≥0$</p>
 <ul>
 <li>在我们解该方程组时，我们以此方法得到的解是不满足$x≥0$的，这导致了我们不能通过该方法来寻找到一个基础的可行解。</li>
-<li>而若我们想找到一个basis使得$x≥0$，我们需要多次检验$x_B &#x3D; A_B^{-1}b$是否非负，这种朴素的遍历方式显然不是我们喜欢的，我们期望找到一个对于任何形式的LP都通用的，求初始BFS的方法。</li>
+<li>而若我们想找到一个basis使得$x≥0$，我们需要多次检验$x_B = A_B^{-1}b$是否非负，这种朴素的遍历方式显然不是我们喜欢的，我们期望找到一个对于任何形式的LP都通用的，求初始BFS的方法。</li>
 </ul>
-<h2 id="Two-Phase-Simplex-Method"><a href="#Two-Phase-Simplex-Method" class="headerlink" title="Two-Phase Simplex Method"></a>Two-Phase Simplex Method</h2><ul>
+<h2 id="Two-Phase-Simplex-Method">Two-Phase Simplex Method</h2>
+<ul>
 <li>Two-Phase Simplex Method作为对Simplex Method的优化版，唯一的差别就是加入了第一阶段的求初始BFS，第二阶段与我们之前所提到的迭代方法相同。</li>
-<li>为了得到一个初始BFS，我们引入一个auxiliary problem，<ul>
+<li>为了得到一个初始BFS，我们引入一个auxiliary problem，
+<ul>
 <li>minimize$1^Ty$（decision variable为$x,y$）</li>
-<li>subject to $Ax+y&#x3D;b$</li>
+<li>subject to $Ax+y=b$</li>
 <li>$x,y≥0$</li>
 <li>若$A$为一个$n × m$的矩阵，那么$x$为一个$n × 1$的向量，$y$为一个$m×1$的向量</li>
 <li>为了保证我们接下来操作的合法性，我们首先确保$b≥0$：若某行为负，则对其乘-1</li>
 </ul>
 </li>
-<li>对于该辅助问题，我们很容易就能得到一个初始解为$x&#x3D;0,y&#x3D;b ≥ 0$，我们之前的预处理操作使得该步的合法性得到保障；接下来我们便可以通过Simplex Method得到最优解。</li>
-<li>引入定理：<ul>
+<li>对于该辅助问题，我们很容易就能得到一个初始解为$x=0,y=b ≥ 0$，我们之前的预处理操作使得该步的合法性得到保障；接下来我们便可以通过Simplex Method得到最优解。</li>
+<li>引入定理：
+<ul>
 <li>原问题是feasible的，当且仅当辅助问题的optimal value为0</li>
-<li>证：若原问题是feasible的，那么$Ax&#x3D;b, x≥0$，参照auxiliary problem的$Ax+y&#x3D;b$，我们得到$y&#x3D;0$，那么$1^T Y$的最小值就是$0$.</li>
-<li>若auxiliary problem的最小值为$0$，我们不妨设对应最优解为$\hat x, \hat y&#x3D;0$，则$A\hat x + \hat y &#x3D; A\hat x &#x3D; b，x≥0$，$\hat x$的存在使得原问题的feasibility得到保证。</li>
+<li>证：若原问题是feasible的，那么$Ax=b, x≥0$，参照auxiliary problem的$Ax+y=b$，我们得到$y=0$，那么$1^T Y$的最小值就是$0$.</li>
+<li>若auxiliary problem的最小值为$0$，我们不妨设对应最优解为$\hat x, \hat y=0$，则$A\hat x + \hat y = A\hat x = b，x≥0$，$\hat x$的存在使得原问题的feasibility得到保证。</li>
 </ul>
 </li>
 <li>不妨考虑$\hat x$在原问题中的含义：$\hat x$正是原问题的一个BFS，于是我们通过求解auxiliary problem得到了original problem的一个初始BFS，由此BFS我们可以进入Simplex Method</li>
-<li>那么，若auxiliary problem退化呢？<ul>
+<li>那么，若auxiliary problem退化呢？
+<ul>
 <li>我们在为原问题提供一个BFS时，注意到该BFS秩为$m$，而在auxiliary problem退化的情况下，该$\hat x$的秩会小于$m$，这使得我们得到的$\hat x$并不是一个严格的BFS</li>
 <li>为了使得$\hat x$的秩达到$m$，我们在矩阵$A$的剩余列（非基列）中选取一列，与$\hat x$构成一个合格的BFS</li>
 </ul>
 </li>
 </ul>
-<h2 id="Big-M-Method"><a href="#Big-M-Method" class="headerlink" title="Big-M Method"></a>Big-M Method</h2><p>考虑另一个auxiliary problem：<br>        minimize  $c^Tx + M\sum_{i&#x3D;1}^m y_i$<br>        subject to $Ax+y&#x3D;b$<br>                         $x, y ≥ 0$</p>
+<h2 id="Big-M-Method">Big-M Method</h2>
+<p>考虑另一个auxiliary problem：<br>
+minimize  $c^Tx + M\sum_{i=1}^m y_i$<br>
+subject to $Ax+y=b$<br>
+$x, y ≥ 0$</p>
 <ul>
-<li>该问题的初始BFS也为$x&#x3D;0, y &#x3D; b≥0$（同样进行预处理使得$b≥0$）</li>
-<li>在用Simplex Method求解该问题时，我们假定$M$极大，那么：<ul>
-<li>若原问题feasible，则最优解为$\hat y &#x3D;0$且$\hat y$中一定不含有basic indices（若$\hat y$中存在basic indices，则会因为极大值$M$的约束使得该解不是最优解，只有不含basic indices的$\hat y$才会作为Simplex Method的最终解）</li>
+<li>该问题的初始BFS也为$x=0, y = b≥0$（同样进行预处理使得$b≥0$）</li>
+<li>在用Simplex Method求解该问题时，我们假定$M$极大，那么：
+<ul>
+<li>若原问题feasible，则最优解为$\hat y =0$且$\hat y$中一定不含有basic indices（若$\hat y$中存在basic indices，则会因为极大值$M$的约束使得该解不是最优解，只有不含basic indices的$\hat y$才会作为Simplex Method的最终解）</li>
 </ul>
 </li>
 </ul>
@@ -2591,10 +2608,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='next' href='/2025/09/22/optimizationthe-degenerate-case-of-simplex-method/'>
           <p class='title'>[Optimization]The Degenerate Case of Simplex Method<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>Degeneracy
+
+
 在上一节的讨论中，我们在考虑一个节点的相邻BFS时，默认只有两种情况
 
 1.当前节点非最优，我们将跳跃到与之相邻的BFS中最优的那一个
-2.当前节点是最优解，体现在它比所有...</p>
+2.当前节点是最优解，体现在它比...</p>
         </a>
       
     </div>

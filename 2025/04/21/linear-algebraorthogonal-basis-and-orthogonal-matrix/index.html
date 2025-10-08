@@ -42,7 +42,7 @@
 <meta property="og:title" content="[Linear Algebra]Orthogonal Basis and Orthogonal Matrix">
 <meta property="og:url" content="http://example.com/2025/04/21/linear-algebraorthogonal-basis-and-orthogonal-matrix/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="#1 Orthogonal Set 直接给出定义： 进一步的，当Orthogonal Set中的每个向量模长均为1，该集合称为Orthonormal Set 如果已知一个Orthogonal Set，如何将其快速转化为一个Orthonormal Set呢： 将ui变为ui&#x2F;||ui||即可   不妨思考，如果若干个向量之间两两都是orthogonal的，它们之间存在怎样的关系？ 联想到一">
+<meta property="og:description" content="#1 Orthogonal Set  直接给出定义： 进一步的，当Orthogonal Set中的每个向量模长均为1，该集合称为Orthonormal Set  如果已知一个Orthogonal Set，如何将其快速转化为一个Orthonormal Set呢：  将ui变为ui&#x2F;||ui||即可   不妨思考，如果若干个向量之间两两都是orthogonal的，它们之间存在怎样的关系？  联想到一个">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-04-20T16:09:03.000Z">
@@ -1966,7 +1966,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2021,7 +2021,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2359,7 +2361,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>669 words</p>
+      <p>661 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -2389,47 +2391,60 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-Orthogonal-Set"><a href="#1-Orthogonal-Set" class="headerlink" title="#1 Orthogonal Set"></a>#1 Orthogonal Set</h2><ul>
-<li>直接给出定义：<img src="https://arvin-chaser.github.io/post-images/1745166151465.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745166151465.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>进一步的，当Orthogonal Set中的每个向量模长均为1，该集合称为Orthonormal Set<br><img src="https://arvin-chaser.github.io/post-images/1745166219408.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745166219408.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>如果已知一个Orthogonal Set，如何将其快速转化为一个Orthonormal Set呢：<ul>
-<li>将ui变为ui&#x2F;||ui||即可</li>
+    <h2 id="1-Orthogonal-Set">#1 Orthogonal Set</h2>
+<ul>
+<li>直接给出定义：<img src="https://Arvin-Chaser.github.io/post-images/1745166151465.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745166151465.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>进一步的，当Orthogonal Set中的每个向量模长均为1，该集合称为Orthonormal Set<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745166219408.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745166219408.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>如果已知一个Orthogonal Set，如何将其快速转化为一个Orthonormal Set呢：
+<ul>
+<li>将ui变为ui/||ui||即可</li>
 </ul>
 </li>
-<li>不妨思考，如果若干个向量之间两两都是orthogonal的，它们之间存在怎样的关系？<ul>
+<li>不妨思考，如果若干个向量之间两两都是orthogonal的，它们之间存在怎样的关系？
+<ul>
 <li>联想到一个向量（力）的分解，一个向量在任意与它垂直的方向上是没有任何分量的，也就是说，这若干个向量中任意一个向量都不能拆分成剩下向量的复合。</li>
-<li>也就是说，这若干个向量是linearly independent的。<img src="https://arvin-chaser.github.io/post-images/1745167160409.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745167160409.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li>也就是说，这若干个向量是linearly independent的。<img src="https://Arvin-Chaser.github.io/post-images/1745167160409.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745167160409.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 </ul>
 </li>
 </ul>
-<h2 id="2-Orthogonal-Basis-and-Orthogonal-Matrix"><a href="#2-Orthogonal-Basis-and-Orthogonal-Matrix" class="headerlink" title="#2 Orthogonal Basis and Orthogonal Matrix"></a>#2 Orthogonal Basis and Orthogonal Matrix</h2><ul>
-<li>回想一下基底，它们是若干个能张成空间、相互独立的向量，再结合一下#1中的Orthogonal Set，显然一个Orthogonal Set中的向量可以作为一组基底，再将Orthogonal Set优化为Orthonormal Set，我们称这一组向量为Orthonormal Basis，标准正交基。<img src="https://arvin-chaser.github.io/post-images/1745169263754.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745169263754.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>值得注意的是，上一节中我们在解决normal equation时，Ax被我们看作了A的column space中的一个向量，若A是满秩的，那么A的若干列向量也是一组基底。我们不妨考虑，一个矩阵A的若干个列向量组成一个Orthogonal Set的情况；特别的，这种矩阵被定义为Orthogonal Matrix，正交矩阵：<img src="https://arvin-chaser.github.io/post-images/1745169521383.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745169521383.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>引入一个命题及其证明：<img src="https://arvin-chaser.github.io/post-images/1745169694833.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745169694833.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1745170192897.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745170192897.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><ul>
+<h2 id="2-Orthogonal-Basis-and-Orthogonal-Matrix">#2 Orthogonal Basis and Orthogonal Matrix</h2>
+<ul>
+<li>回想一下基底，它们是若干个能张成空间、相互独立的向量，再结合一下#1中的Orthogonal Set，显然一个Orthogonal Set中的向量可以作为一组基底，再将Orthogonal Set优化为Orthonormal Set，我们称这一组向量为Orthonormal Basis，标准正交基。<img src="https://Arvin-Chaser.github.io/post-images/1745169263754.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745169263754.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>值得注意的是，上一节中我们在解决normal equation时，Ax被我们看作了A的column space中的一个向量，若A是满秩的，那么A的若干列向量也是一组基底。我们不妨考虑，一个矩阵A的若干个列向量组成一个Orthogonal Set的情况；特别的，这种矩阵被定义为Orthogonal Matrix，正交矩阵：<img src="https://Arvin-Chaser.github.io/post-images/1745169521383.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745169521383.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>引入一个命题及其证明：<img src="https://Arvin-Chaser.github.io/post-images/1745169694833.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745169694833.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745170192897.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745170192897.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+<ul>
 <li>用列向量表示原矩阵及其转置矩阵，十分好证。</li>
 </ul>
 </li>
-<li>正交矩阵的性质：<img src="https://arvin-chaser.github.io/post-images/1745170352689.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745170352689.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><ul>
-<li>(a)(b)(c)已证。</li>
-<li>(d)：&lt; Qx, Qy &gt; &#x3D; (Qx)(T)Qy &#x3D; xT * QT * Q * y &#x3D; xT * y &#x3D; &lt; x, y&gt;</li>
-<li>(e)： ||Qx||² &#x3D; &lt; Qx, Qx &gt;, ||x|| &#x3D; &lt; x, x &gt;, 由(d)得两者相等</li>
+<li>正交矩阵的性质：<img src="https://Arvin-Chaser.github.io/post-images/1745170352689.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745170352689.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+<ul>
+<li>(a)(b)©已证。</li>
+<li>(d)：&lt; Qx, Qy &gt; = (Qx)(T)Qy = xT * QT * Q * y = xT * y = &lt; x, y&gt;</li>
+<li>(e)： ||Qx||² = &lt; Qx, Qx &gt;, ||x|| = &lt; x, x &gt;, 由(d)得两者相等</li>
 </ul>
 </li>
 </ul>
-<h2 id="3-Representation"><a href="#3-Representation" class="headerlink" title="#3 Representation"></a>#3 Representation</h2><ul>
+<h2 id="3-Representation">#3 Representation</h2>
+<ul>
 <li>回顾之前的知识，我们了解一组基底能够以一种唯一的方式表达出一个在该线性空间中的向量，求这种方式的过程也是解线性方程。</li>
-<li>推广到Orthonormal Basis：<img src="https://arvin-chaser.github.io/post-images/1745171669387.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745171669387.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><ul>
-<li>这个形式乍一看和标准的Σαiui大相径庭，下面给出两者等价的证明：<img src="https://arvin-chaser.github.io/post-images/1745171935440.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745171935440.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>值得注意的是，uiTuj &#x3D; 0 得到运用。</li>
+<li>推广到Orthonormal Basis：<img src="https://Arvin-Chaser.github.io/post-images/1745171669387.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745171669387.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+<ul>
+<li>这个形式乍一看和标准的Σαiui大相径庭，下面给出两者等价的证明：<img src="https://Arvin-Chaser.github.io/post-images/1745171935440.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745171935440.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>值得注意的是，uiTuj = 0 得到运用。</li>
 </ul>
 </li>
-<li>Example：<br><img src="https://arvin-chaser.github.io/post-images/1745172229127.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745172229127.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li>Example：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745172229127.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745172229127.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 </ul>
-<h2 id="4-Projection"><a href="#4-Projection" class="headerlink" title="#4 Projection"></a>#4 Projection</h2><ul>
+<h2 id="4-Projection">#4 Projection</h2>
+<ul>
 <li>上一节中引入了投影的广义概念，本节讨论当存在标准正交基时，投影的表示方法。</li>
-<li><img src="https://arvin-chaser.github.io/post-images/1745172959950.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745172959950.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li><img src="https://arvin-chaser.github.io/post-images/1745172965291.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745172965291.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>注：整个空间是n维的，那么作为一个由k个标准正交基张成的子空间，S的<br>维度是k；而它的正交补空间维度是n-k，S的法向量，本例中的v-p便落在该正交补空间中。</li>
+<li><img src="https://Arvin-Chaser.github.io/post-images/1745172959950.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745172959950.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li><img src="https://Arvin-Chaser.github.io/post-images/1745172965291.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745172965291.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>注：整个空间是n维的，那么作为一个由k个标准正交基张成的子空间，S的<br>
+维度是k；而它的正交补空间维度是n-k，S的法向量，本例中的v-p便落在该正交补空间中。</li>
 <li>拆分成p和v-p分别进行分解，此处的证明与#3中对等价证明的方法1相似。</li>
 </ul>
 
@@ -2541,12 +2556,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2025/04/21/linear-algebra-gram-schmidt-process/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>[Linear Algebra]Gram-Schmidt Process</p>
           <p class='content'>#0 Key Questions
+
 首先给出本节的核心问题及讨论要点：
 
-#1 Simple Cases：k&#x3D;2 &amp; k&#x3D;3
+#1 Simple Cases：k=2 &amp; k=3
+
+
 首先考虑两个向量的情况：
 
-注意：此处的$...</p>
+
+注意：此处的$p_1=(u...</p>
         </a>
       
       
@@ -2554,8 +2573,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <p class='title'>[Linear Algebra]Least Squares Problem<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>#1 Example: Salary Prediction
 
+
 与统计学中选择不同模型不同，线性代数中这类问题直接假设关系是线性的，从而将已知关系导向线性方程组。
-不幸的是，只有两个未知数的线性关...</p>
+不幸的是，只有两个未知数的线性...</p>
         </a>
       
     </div>

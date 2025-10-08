@@ -42,7 +42,7 @@
 <meta property="og:title" content="[Linear Algebra]Determinant">
 <meta property="og:url" content="http://example.com/2025/04/21/linear-algebra-determinant/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="#1 Motivation of Determinant：Invertiblity Problem 在先前对矩阵是否可逆的讨论中，我们有如下命题，它们全部等价： 但很可惜的是，我们并没有一个确定的等量关系&#x2F;判别方程来直接判断一个矩阵是否可逆。 为了完善这一体系，Determinant（行列式）应运而生。 不妨回顾一下在$2×2$的矩阵中，我们如何使用经验来判断它是否可逆的：对于矩阵$$">
+<meta property="og:description" content="#1 Motivation of Determinant：Invertiblity Problem  在先前对矩阵是否可逆的讨论中，我们有如下命题，它们全部等价：  但很可惜的是，我们并没有一个确定的等量关系&#x2F;判别方程来直接判断一个矩阵是否可逆。 为了完善这一体系，Determinant（行列式）应运而生。 不妨回顾一下在$2×2$的矩阵中，我们如何使用经验来判断它是否可逆的：对于矩阵 $$ \b">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-04-20T19:37:31.000Z">
@@ -1966,7 +1966,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2021,7 +2021,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2389,59 +2391,94 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h2 id="1-Motivation-of-Determinant：Invertiblity-Problem"><a href="#1-Motivation-of-Determinant：Invertiblity-Problem" class="headerlink" title="#1 Motivation of Determinant：Invertiblity Problem"></a>#1 Motivation of Determinant：Invertiblity Problem</h2><ul>
-<li>在先前对矩阵是否可逆的讨论中，我们有如下命题，它们全部等价：<br><img src="https://arvin-chaser.github.io/post-images/1745178197733.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745178197733.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>但很可惜的是，我们并没有一个确定的等量关系&#x2F;判别方程来直接判断一个矩阵是否可逆。</li>
+    <h2 id="1-Motivation-of-Determinant：Invertiblity-Problem">#1 Motivation of Determinant：Invertiblity Problem</h2>
+<ul>
+<li>在先前对矩阵是否可逆的讨论中，我们有如下命题，它们全部等价：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745178197733.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745178197733.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>但很可惜的是，我们并没有一个确定的等量关系/判别方程来直接判断一个矩阵是否可逆。</li>
 <li>为了完善这一体系，Determinant（行列式）应运而生。</li>
-<li>不妨回顾一下在$2×2$的矩阵中，我们如何使用经验来判断它是否可逆的：对于矩阵<br>$$<br> \begin{bmatrix}<br> a&amp;b\<br> c&amp;d\<br> \end{bmatrix}<br> $$<br>当且仅当$ad - bc ≠ 0$时，我们能判定它是可逆的。其实，这就是行列式的雏形。</li>
+<li>不妨回顾一下在$2×2$的矩阵中，我们如何使用经验来判断它是否可逆的：对于矩阵<br>
+$$<br>
+\begin{bmatrix}<br>
+a&amp;b\<br>
+c&amp;d\<br>
+\end{bmatrix}<br>
+$$<br>
+当且仅当$ad - bc ≠ 0$时，我们能判定它是可逆的。其实，这就是行列式的雏形。</li>
 <li>行列式即为该运算方式的推广，$i.e.$     $det(A)≠0$, $iff$ $A$ $is$ $invertible.$</li>
-<li>还是回到$2×2$的矩阵中，在该矩阵中，$ad-bc$到底有什么含义呢？我们不妨和$Cauchy$一样，从几何的角度思考：$ad-bc$的形式与向量叉乘一致，这也就意味着它的数值与由向量$(a,c)和(b,d)$构成的平行四边形的面积相等：<br><img src="https://arvin-chaser.github.io/post-images/1745224591309.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745224591309.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><ul>
+<li>还是回到$2×2$的矩阵中，在该矩阵中，$ad-bc$到底有什么含义呢？我们不妨和$Cauchy$一样，从几何的角度思考：$ad-bc$的形式与向量叉乘一致，这也就意味着它的数值与由向量$(a,c)和(b,d)$构成的平行四边形的面积相等：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745224591309.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745224591309.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+<ul>
 <li>值得注意的是，在上图中，我们将列向量$(a,c)和(b,d)$作为平行四边形的两条相邻的边，但实际上，行向量$(a,b)和(c,d)$同样可以作为决定平行四边形的两条边，它们所构成的平行四边形数值上也等于$ad-bc$。</li>
 </ul>
 </li>
-<li>接下来思考$ad-bc&#x3D;0$所代表的含义：当$ad-bc&#x3D;0$时，意味着上述平行四边形的面积为0，也就是说，向量$(a,c)和(b,d)$共线，二维的平行四边形迎来了向一条直线（一维）的退化：<br><img src="https://arvin-chaser.github.io/post-images/1745224641863.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745224641863.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>不妨回顾一下我们先前对矩阵可逆性的讨论，我们曾提到：只有满秩的矩阵才可逆。而当$ad-bc$迎来退化，列向量共线时，也就意味着该矩阵不满秩，不可逆，这与我们$ad-bc&#x3D;0$所导向的结果是一致的。自此，可逆性的逻辑迎来了一个小小的闭环，可喜可贺，可喜可贺。</li>
+<li>接下来思考$ad-bc=0$所代表的含义：当$ad-bc=0$时，意味着上述平行四边形的面积为0，也就是说，向量$(a,c)和(b,d)$共线，二维的平行四边形迎来了向一条直线（一维）的退化：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745224641863.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745224641863.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>不妨回顾一下我们先前对矩阵可逆性的讨论，我们曾提到：只有满秩的矩阵才可逆。而当$ad-bc$迎来退化，列向量共线时，也就意味着该矩阵不满秩，不可逆，这与我们$ad-bc=0$所导向的结果是一致的。自此，可逆性的逻辑迎来了一个小小的闭环，可喜可贺，可喜可贺。</li>
 <li>那么，我们能否将二阶矩阵中的结论推广到更高阶的矩阵中呢？答案是肯定的。而在向更高阶推广时，行列式的几何意义也自然会发生变化：二阶时是面积，三阶时是体积，四阶时是四维几何体所占的四维空间的大小……自此，矩阵的阶数和所对应的几何维度，通过行列式达到了统一，可喜可贺，可喜可贺。</li>
-<li>我们甚至可以反过来，用行列式定义$Volume$（广义上的）：<img src="https://arvin-chaser.github.io/post-images/1745181771922.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745181771922.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li>我们甚至可以反过来，用行列式定义$Volume$（广义上的）：<img src="https://Arvin-Chaser.github.io/post-images/1745181771922.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745181771922.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 </ul>
-<h2 id="2-Properties-of-Determinant-Decomposition"><a href="#2-Properties-of-Determinant-Decomposition" class="headerlink" title="#2 Properties of Determinant: Decomposition"></a>#2 Properties of Determinant: Decomposition</h2><ul>
+<h2 id="2-Properties-of-Determinant-Decomposition">#2 Properties of Determinant: Decomposition</h2>
+<ul>
 <li>对于行列式的分解，我们考虑两种基本运算：加法和（标量）乘法。</li>
-<li>不妨先在$n&#x3D;2$时进行一些小规模的运算，然后再尝试将它们推广到高阶矩阵中：<br><img src="https://arvin-chaser.github.io/post-images/1745182280499.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745182280499.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><ul>
-<li>标量乘法：回顾在#1中我们对几何意义的判别，将<br>$$<br> \begin{bmatrix}<br> a&amp;b\<br> c&amp;d\<br> \end{bmatrix}<br> $$<br> 变为<br>$$<br> \begin{bmatrix}<br> ta&amp;tb\<br> c&amp;d\<br> \end{bmatrix}<br> $$<br> 可以理解为将构成平行四边形的一条边扩大到原来的$k$倍，面积（行列式的值）自然也扩大到原来的$k$倍。<ul>
-<li>加法，同样放到几何意义中处理：<img src="https://arvin-chaser.github.io/post-images/1745183530403.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745183530403.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li>不妨先在$n=2$时进行一些小规模的运算，然后再尝试将它们推广到高阶矩阵中：<br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745182280499.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745182280499.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+<ul>
+<li>标量乘法：回顾在#1中我们对几何意义的判别，将<br>
+$$<br>
+\begin{bmatrix}<br>
+a&amp;b\<br>
+c&amp;d\<br>
+\end{bmatrix}<br>
+$$<br>
+变为<br>
+$$<br>
+\begin{bmatrix}<br>
+ta&amp;tb\<br>
+c&amp;d\<br>
+\end{bmatrix}<br>
+$$<br>
+可以理解为将构成平行四边形的一条边扩大到原来的$k$倍，面积（行列式的值）自然也扩大到原来的$k$倍。
+<ul>
+<li>加法，同样放到几何意义中处理：<img src="https://Arvin-Chaser.github.io/post-images/1745183530403.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745183530403.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>在讨论更高维度时，我们并不能将行列式的几何意义很好的可视化，也就不能得出如上图所示如此具有说服力的证明，不过在经过大量的经验计算后，我们可以<del>自信地</del>宣称，这两条结论对于高维矩阵的行列式也是适用的。</li>
+<li>在讨论更高维度时，我们并不能将行列式的几何意义很好的可视化，也就不能得出如上图所示如此具有说服力的证明，不过在经过大量的经验计算后，我们可以<s>自信地</s>宣称，这两条结论对于高维矩阵的行列式也是适用的。</li>
 </ul>
-<h2 id="3-Block-Diagonal-and-Zero-Row-Terms"><a href="#3-Block-Diagonal-and-Zero-Row-Terms" class="headerlink" title="#3 Block Diagonal and Zero-Row Terms"></a>#3 Block Diagonal and Zero-Row Terms</h2><ul>
-<li>$Corollary1$：<img src="https://arvin-chaser.github.io/post-images/1745184075742.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745184075742.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>对引理1的理解：在行列式的几何意义中，每个行向量&#x2F;列向量都是构成该几何体的一条从原点出发的边，那么当某条边变为0向量时，也就意味着整个几何体失去了一个维度，迎来了维度的退化。那么这个几何体在对应原维度中所占的空间自然同时会退化成0：联想二维图形之于三维，二维图形在三维中是缺少“高”这一维度的，我们也可以理解为二维图形是一个“高”维度为0的三维图形，它在三维中的体积自然是0。</li>
-<li>$Corollary2$：<img src="https://arvin-chaser.github.io/post-images/1745224807437.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745224807437.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<h2 id="3-Block-Diagonal-and-Zero-Row-Terms">#3 Block Diagonal and Zero-Row Terms</h2>
+<ul>
+<li>$Corollary1$：<img src="https://Arvin-Chaser.github.io/post-images/1745184075742.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745184075742.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>对引理1的理解：在行列式的几何意义中，每个行向量/列向量都是构成该几何体的一条从原点出发的边，那么当某条边变为0向量时，也就意味着整个几何体失去了一个维度，迎来了维度的退化。那么这个几何体在对应原维度中所占的空间自然同时会退化成0：联想二维图形之于三维，二维图形在三维中是缺少“高”这一维度的，我们也可以理解为二维图形是一个“高”维度为0的三维图形，它在三维中的体积自然是0。</li>
+<li>$Corollary2$：<img src="https://Arvin-Chaser.github.io/post-images/1745224807437.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745224807437.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 <li>对引理2的理解：由行向量$(h, 0, 0)，(0, b2, b3)， (0, c2, c3)$构成的立体图形，自然是在以$(b3,c3), (b2, c2)$构成的平行四边形为底的基础上再乘一个大小为$h$的高得到。体积也就是$hdet(B)$。</li>
-<li>在如上所述，对行列式进行加&#x2F;乘法的分解及分块对角矩阵和0行向量的情况下，我们可以推广出三阶行列式的一般表达式……吗？<img src="https://arvin-chaser.github.io/post-images/1745225635494.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745225635494.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li>在如上所述，对行列式进行加/乘法的分解及分块对角矩阵和0行向量的情况下，我们可以推广出三阶行列式的一般表达式……吗？<img src="https://Arvin-Chaser.github.io/post-images/1745225635494.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745225635494.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 <li>如上图所示，我们发现为得到表达式，我们需要知道在交换列时，行列式会发生怎样的变化。</li>
 </ul>
-<h2 id="4-Swapping-Rows-Columns"><a href="#4-Swapping-Rows-Columns" class="headerlink" title="#4 Swapping Rows&#x2F;Columns"></a>#4 Swapping Rows&#x2F;Columns</h2><ul>
-<li>先给出性质：<img src="https://arvin-chaser.github.io/post-images/1745226080743.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745226080743.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<h2 id="4-Swapping-Rows-Columns">#4 Swapping Rows/Columns</h2>
+<ul>
+<li>先给出性质：<img src="https://Arvin-Chaser.github.io/post-images/1745226080743.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745226080743.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 <li>对该性质的解读：继续回到几何意义，我们不妨考虑一下，交换两个行对几何图形有什么影响？答案是没有影响。改变若干向量中的顺序并不会使得它们组成几何体所占空间大小发生改变，但是若代入到行列式中，行列式的数值却确实发生了改变，为解释这种改变，我们引入一个新的定义：有向面积。例如，如果我们规定顺时针旋转为正方向，那么在改变向量顺序的时候，也就意味着改变了这两个向量在形成平行四边形时所组成的二维图形面积的正负，从而改变了整个几何体所占空间的正负。</li>
-<li>得到了该性质后，我们便能完成#3中对于三阶行列式一般式的推导：<img src="https://arvin-chaser.github.io/post-images/1745226691220.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745226691220.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1745226740107.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745226740107.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<li>得到了该性质后，我们便能完成#3中对于三阶行列式一般式的推导：<img src="https://Arvin-Chaser.github.io/post-images/1745226691220.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745226691220.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1745226740107.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745226740107.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 </ul>
-<h2 id="5-Definition-and-Basic-Properties-of-Determinant"><a href="#5-Definition-and-Basic-Properties-of-Determinant" class="headerlink" title="#5 Definition and Basic Properties of Determinant"></a>#5 Definition and Basic Properties of Determinant</h2><ul>
-<li>在如上#1-#4讨论的内容中，我们默认我们已经了解行列式的计算方式，把它看作一个由行&#x2F;列向量构成的几何体所占空间来计算，但回顾所有分析，我们并没有给出行列式的基础定义。不过在#4的最后一部分推导中，我们其实给出了一个方便定义的形式，于是给出如下定义：<img src="https://arvin-chaser.github.io/post-images/1745227590838.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745227590838.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>Example：<img src="https://arvin-chaser.github.io/post-images/1745238597647.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745238597647.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>值得注意的是，在如上的定义中，我们确定第一行，然后在轮流删去每一列时用第一行作为余子式的系数，但这一选择显然不是唯一的。当我们进行任意的行交换时，显然每一行都能作为第一行，也就是说，任一行都能作为固定的参考行，由此归纳：<img src="https://arvin-chaser.github.io/post-images/1745238918385.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745238918385.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>拉普拉斯展开比起最初的定义，显然是更方便我们计算一个特定行列式的，如例：<img src="https://arvin-chaser.github.io/post-images/1745239302491.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745239302491.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>接下来考虑三种基本行运算对行列式大小的影响：<img src="https://arvin-chaser.github.io/post-images/1745239866226.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745239866226.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>值得注意的是，因为$det(A^T) &#x3D; det(A)$，所以能对行适用的运算同样适用于列。</li>
+<h2 id="5-Definition-and-Basic-Properties-of-Determinant">#5 Definition and Basic Properties of Determinant</h2>
+<ul>
+<li>在如上#1-#4讨论的内容中，我们默认我们已经了解行列式的计算方式，把它看作一个由行/列向量构成的几何体所占空间来计算，但回顾所有分析，我们并没有给出行列式的基础定义。不过在#4的最后一部分推导中，我们其实给出了一个方便定义的形式，于是给出如下定义：<img src="https://Arvin-Chaser.github.io/post-images/1745227590838.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745227590838.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>Example：<img src="https://Arvin-Chaser.github.io/post-images/1745238597647.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745238597647.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>值得注意的是，在如上的定义中，我们确定第一行，然后在轮流删去每一列时用第一行作为余子式的系数，但这一选择显然不是唯一的。当我们进行任意的行交换时，显然每一行都能作为第一行，也就是说，任一行都能作为固定的参考行，由此归纳：<img src="https://Arvin-Chaser.github.io/post-images/1745238918385.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745238918385.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>拉普拉斯展开比起最初的定义，显然是更方便我们计算一个特定行列式的，如例：<img src="https://Arvin-Chaser.github.io/post-images/1745239302491.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745239302491.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>接下来考虑三种基本行运算对行列式大小的影响：<img src="https://Arvin-Chaser.github.io/post-images/1745239866226.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745239866226.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>值得注意的是，因为$det(A^T) = det(A)$，所以能对行适用的运算同样适用于列。</li>
 </ul>
-<h2 id="6-Advanced-Properties-of-Determinant"><a href="#6-Advanced-Properties-of-Determinant" class="headerlink" title="#6 Advanced Properties of Determinant"></a>#6 Advanced Properties of Determinant</h2><ul>
-<li><img src="https://arvin-chaser.github.io/post-images/1745240802170.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745240802170.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
+<h2 id="6-Advanced-Properties-of-Determinant">#6 Advanced Properties of Determinant</h2>
+<ul>
+<li><img src="https://Arvin-Chaser.github.io/post-images/1745240802170.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745240802170.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
 <li>回到最初引入行列式的目的，我们能在此对可逆性的体系进行最后的完善：</li>
-<li><img src="https://arvin-chaser.github.io/post-images/1745241026060.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745241026060.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>计算行列式的例子：<img src="https://arvin-chaser.github.io/post-images/1745241102363.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1745241102363.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></li>
-<li>值得注意的是，此处我们选择$a_{13}$，顺着第三列进行拉普拉斯展开，这是因为第三列除了第一个元素都为0，故我们在计算行列式时仅有一项需要计算；同理，在计算行列式时，我们尽量选择0的数量多的行&#x2F;列来进行拉普拉斯展开。</li>
+<li><img src="https://Arvin-Chaser.github.io/post-images/1745241026060.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745241026060.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>计算行列式的例子：<img src="https://Arvin-Chaser.github.io/post-images/1745241102363.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1745241102363.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>值得注意的是，此处我们选择$a_{13}$，顺着第三列进行拉普拉斯展开，这是因为第三列除了第一个元素都为0，故我们在计算行列式时仅有一项需要计算；同理，在计算行列式时，我们尽量选择0的数量多的行/列来进行拉普拉斯展开。</li>
 </ul>
 
   </div>
@@ -2552,24 +2589,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='prev' href='/2025/04/21/linear-algebralinear-transformation/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>[Linear Algebra]Linear Transformation</p>
           <p class='content'>#1 Motivation of Linear Transformation
+
 考虑对某个图形的放大及旋转：
+
 对于一个初始坐标为$(x,y)$的变量
-放大&#x2F;旋转后坐标会如何变化？
+放大/旋转后坐标会如何变化？
 
 
-由...</p>
+由该问题...</p>
         </a>
       
       
         <a class='next' href='/2025/04/21/linear-algebra-gram-schmidt-process/'>
           <p class='title'>[Linear Algebra]Gram-Schmidt Process<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>#0 Key Questions
+
 首先给出本节的核心问题及讨论要点：
 
-#1 Simple Cases：k&#x3D;2 &amp; k&#x3D;3
+#1 Simple Cases：k=2 &amp; k=3
+
+
 首先考虑两个向量的情况：
 
-注意：此处的$...</p>
+
+注意：此处的$p_1=(u...</p>
         </a>
       
     </div>

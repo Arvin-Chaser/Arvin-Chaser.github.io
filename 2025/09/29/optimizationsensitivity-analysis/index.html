@@ -42,7 +42,7 @@
 <meta property="og:title" content="[Optimization]Sensitivity Analysis">
 <meta property="og:url" content="http://example.com/2025/09/29/optimizationsensitivity-analysis/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="在研究LP时，我们时常会考虑这种问题： 当参数$(A,b,c)$改变时，最优解和最优值会如何变化？   这种问题，我们称其为Sensitivity Analysis  Local Sensitivity考虑一个标准形式的LP:&nbsp;maximize $c^Tx$&nbsp; s.t. $Ax&#x3D;b$&nbsp; $x≥0$  我们将相应的最优值定为$V$  当$A$和$c$固定时">
+<meta property="og:description" content="在研究LP时，我们时常会考虑这种问题：  当参数$(A,b,c)$改变时，最优解和最优值会如何变化？   这种问题，我们称其为Sensitivity Analysis  Local Sensitivity 考虑一个标准形式的LP:  maximize $c^Tx$   s.t. $Ax&#x3D;b$   $x≥0$  我们将相应的最优值定为$V$  当$A$和$c$固定时   当$A$和$c$固定时，$">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-09-29T06:47:06.000Z">
@@ -1967,7 +1967,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1759920353270),
+    lastupdate: new Date(1759921161043),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2022,7 +2022,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
   <body itemscope itemtype="https://schema.org.cn/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2440,51 +2442,72 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <ul>
-<li>在研究LP时，我们时常会考虑这种问题：<ul>
+<li>在研究LP时，我们时常会考虑这种问题：
+<ul>
 <li>当参数$(A,b,c)$改变时，最优解和最优值会如何变化？</li>
 </ul>
 </li>
 <li>这种问题，我们称其为Sensitivity Analysis</li>
 </ul>
-<h2 id="Local-Sensitivity"><a href="#Local-Sensitivity" class="headerlink" title="Local Sensitivity"></a>Local Sensitivity</h2><p>考虑一个标准形式的LP:<br>&nbsp;maximize $c^Tx$<br>&nbsp; s.t. $Ax&#x3D;b$<br>&nbsp; $x≥0$</p>
+<h2 id="Local-Sensitivity">Local Sensitivity</h2>
+<p>考虑一个标准形式的LP:<br>
+ maximize $c^Tx$<br>
+  s.t. $Ax=b$<br>
+  $x≥0$</p>
 <ul>
 <li>我们将相应的最优值定为$V$</li>
 </ul>
-<h3 id="当-A-和-c-固定时"><a href="#当-A-和-c-固定时" class="headerlink" title="当$A$和$c$固定时"></a>当$A$和$c$固定时</h3><ul>
-<li><p>当$A$和$c$固定时，$V$可被看作一个关于$b$的方程：$V(b)$</p>
-</li>
-<li><p>Theorem: Differentiability of $V(b)$</p>
+<h3 id="当-A-和-c-固定时">当$A$和$c$固定时</h3>
 <ul>
-<li>若该问题的dual problem存在唯一的最优解$y^<em>$，那么$\nabla _bV(b) &#x3D; y^</em>$（注：该处的$\nabla _b$是在微积分中提及过的概念，作为梯度向量，其每个分量为$V$对$b$各分量的偏导，即$i^{th} \nabla _b V(b) &#x3D; \frac{\delta V}{\delta b_i}$；在该案例中，通俗的说，$\nabla _bV(b)$描述了$b$的微小变化会如何影响最优值$V(b)$）</li>
+<li>
+<p>当$A$和$c$固定时，$V$可被看作一个关于$b$的方程：$V(b)$</p>
+</li>
+<li>
+<p>Theorem: Differentiability of $V(b)$</p>
+<ul>
+<li>若该问题的dual problem存在唯一的最优解$y^<em>$，那么$\nabla _bV(b) = y^</em>$（注：该处的$\nabla _b$是在微积分中提及过的概念，作为梯度向量，其每个分量为$V$对$b$各分量的偏导，即$i^{th} \nabla _b V(b) = \frac{\delta V}{\delta b_i}$；在该案例中，通俗的说，$\nabla _bV(b)$描述了$b$的微小变化会如何影响最优值$V(b)$）</li>
 <li>若dual optimal solution不唯一（或un bdd.或不可行），那么梯度向量就不是完备定义的</li>
 <li>若$b_i$改变了一个微小量$\Delta b_i$，那么objective value改变的微小量则是$\Delta b_i y_i^*$</li>
 </ul>
 </li>
-<li><p>证明：</p>
+<li>
+<p>证明：</p>
 <ul>
-<li>由于primal problem的最优值$V$同样也是dual problem的最优值，所以对$V$的求解也可重写为： maximize $b^Ty$；s.t. $A^Ty ≤ c$，代入$y^<em>$可知：$V(b) &#x3D; b^Ty^</em>$</li>
+<li>由于primal problem的最优值$V$同样也是dual problem的最优值，所以对$V$的求解也可重写为： maximize $b^Ty$；s.t. $A^Ty ≤ c$，代入$y^<em>$可知：$V(b) = b^Ty^</em>$</li>
 <li>写成这种类似线性的形式后，便可以直观体现，若$b$改变了一个微小量$\Delta b$，且最优解($y^<em>$)不变，那么$V$的变化量为$\Delta b^Ty^</em>$</li>
 <li>注意，最优解的不变性在dual problem中得到体现，与下文中我们证明primal opt sol不变的过程相似</li>
 </ul>
 </li>
 </ul>
-<h3 id="当-A-和-b-固定时"><a href="#当-A-和-b-固定时" class="headerlink" title="当$A$和$b$固定时"></a>当$A$和$b$固定时</h3><ul>
-<li><p>此时$V$可被看作一个关于$c$的方程</p>
-</li>
-<li><p>Theorem: Differentiability of $V(c)$</p>
+<h3 id="当-A-和-b-固定时">当$A$和$b$固定时</h3>
 <ul>
-<li>若原问题存在唯一的最优解$x^<em>$，那么$\nabla _c V(c) &#x3D; x^</em>$</li>
+<li>
+<p>此时$V$可被看作一个关于$c$的方程</p>
+</li>
+<li>
+<p>Theorem: Differentiability of $V©$</p>
+<ul>
+<li>若原问题存在唯一的最优解$x^<em>$，那么$\nabla _c V© = x^</em>$</li>
 </ul>
 </li>
-<li><p>证明，$V(c) &#x3D; c^Tx$，当$A$和$b$确定时，解不变($x^* &#x3D; A^{-1}b$)，所以当$c$变化一个微小量$\Delta c$时，$V$的改变量必为$\nabla c^Tx^*$</p>
+<li>
+<p>证明，$V© = c^Tx$，当$A$和$b$确定时，解不变($x^* = A^{-1}b$)，所以当$c$变化一个微小量$\Delta c$时，$V$的改变量必为$\nabla c^Tx^*$</p>
 </li>
 </ul>
-<h3 id="当约束条件变为不等关系时"><a href="#当约束条件变为不等关系时" class="headerlink" title="当约束条件变为不等关系时"></a>当约束条件变为不等关系时</h3><ul>
+<h3 id="当约束条件变为不等关系时">当约束条件变为不等关系时</h3>
+<ul>
 <li>先前的结论仍然成立，为证明这一点我们可以引入松弛变量后再将其转化为标准形式，之后沿用上面的分析过程</li>
 </ul>
-<h3 id="样例："><a href="#样例：" class="headerlink" title="样例："></a>样例：</h3><p><img src="https://arvin-chaser.github.io/post-images/1759136993097.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759136993097.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1759137001997.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759137001997.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1759137010456.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759137010456.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1759137018981.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759137018981.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1759137027011.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759137027011.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h2 id="Global-Sensitivity"><a href="#Global-Sensitivity" class="headerlink" title="Global Sensitivity"></a>Global Sensitivity</h2><ul>
-<li>首先讨论，在如下变量发生变动时，最优值会如何变化：<ul>
+<h3 id="样例：">样例：</h3>
+<p><img src="https://Arvin-Chaser.github.io/post-images/1759136993097.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759136993097.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759137001997.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759137001997.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759137010456.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759137010456.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759137018981.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759137018981.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759137027011.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759137027011.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<h2 id="Global-Sensitivity">Global Sensitivity</h2>
+<ul>
+<li>首先讨论，在如下变量发生变动时，最优值会如何变化：
+<ul>
 <li>1.$b$变化为$b+\Delta b$</li>
 <li>2.$c$变化为$c+\Delta c$</li>
 </ul>
@@ -2498,110 +2521,141 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <th>$-c_B^TA_B^{-1}b$</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$A_B^{-1}A$</td>
 <td>$A_B^{-1}b$</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li>当最后迭代到最优解时：<ul>
+<li>当最后迭代到最优解时：
+<ul>
 <li>reduced costs满足$c^T-c_B^TA_B^{-1}A≥0$</li>
-<li>$x_B &#x3D; A_B^{-1}b$是primal opt sol的含基部分，而$y&#x3D;({A_B^{-1}})^Tc_B$则是dual opt sol</li>
+<li>$x_B = A_B^{-1}b$是primal opt sol的含基部分，而$y=({A_B^{-1}})^Tc_B$则是dual opt sol</li>
 </ul>
 </li>
 </ul>
-<h3 id="在-b-变化的情况下，最优值受到的影响"><a href="#在-b-变化的情况下，最优值受到的影响" class="headerlink" title="在$b$变化的情况下，最优值受到的影响"></a>在$b$变化的情况下，最优值受到的影响</h3><ul>
-<li><p>假设$b$变为了$\tilde b &#x3D; b + \Delta b$，设原基为$B$，我们仍有：$\overline c &#x3D; c^T - c_B^TA_B^{-1}A ≥0$，因为reduced cost是不随$b$的改变而改变的</p>
-</li>
-<li><p>在变动后，为了讨论最优值受到的影响，基是否变化显然是我们关心的内容：</p>
+<h3 id="在-b-变化的情况下，最优值受到的影响">在$b$变化的情况下，最优值受到的影响</h3>
 <ul>
-<li>若我们想保证原来的基$B$对于新的问题仍是最优解，我们只需要验证新的基是否可行（因为最优性已由$\overline c &gt;0$保证，我们只需要证明新的基仍可行，就可证明它仍是一组最优基）：若$\tilde x_B &#x3D; A_B^{-1}\tilde b &#x3D; A_B^{-1}(b+\Delta b) &#x3D; x_B^* + A_B^{-1}\Delta b ≥ 0$，那么$B$仍然是新问题的一组最优基</li>
-<li>则新的最优解为$\tilde x &#x3D; [\tilde x_B; 0]$，新的最优值为$V(\tilde b) &#x3D; \tilde b^T y^* &#x3D; (b+\Delta b)^Ty^* &#x3D; V^* + (y^*)^T\Delta b$</li>
-<li>同时在这种情况下，$y^* &#x3D; (A_B^{-1})^Tc_B$仍是dual problem的最优解</li>
+<li>
+<p>假设$b$变为了$\tilde b = b + \Delta b$，设原基为$B$，我们仍有：$\overline c = c^T - c_B^TA_B^{-1}A ≥0$，因为reduced cost是不随$b$的改变而改变的</p>
+</li>
+<li>
+<p>在变动后，为了讨论最优值受到的影响，基是否变化显然是我们关心的内容：</p>
+<ul>
+<li>若我们想保证原来的基$B$对于新的问题仍是最优解，我们只需要验证新的基是否可行（因为最优性已由$\overline c &gt;0$保证，我们只需要证明新的基仍可行，就可证明它仍是一组最优基）：若$\tilde x_B = A_B^{-1}\tilde b = A_B^{-1}(b+\Delta b) = x_B^* + A_B^{-1}\Delta b ≥ 0$，那么$B$仍然是新问题的一组最优基</li>
+<li>则新的最优解为$\tilde x = [\tilde x_B; 0]$，新的最优值为$V(\tilde b) = \tilde b^T y^* = (b+\Delta b)^Ty^* = V^* + (y^*)^T\Delta b$</li>
+<li>同时在这种情况下，$y^* = (A_B^{-1})^Tc_B$仍是dual problem的最优解</li>
 </ul>
 </li>
-<li><p>于是我们有结论：若原最优基在变换后的问题中仍是最优基，那么local sensitivity便成立（参考前文）</p>
+<li>
+<p>于是我们有结论：若原最优基在变换后的问题中仍是最优基，那么local sensitivity便成立（参考前文）</p>
 </li>
-<li><p>接下来我们讨论，当$b$中只有一个变量发生改变时：</p>
+<li>
+<p>接下来我们讨论，当$b$中只有一个变量发生改变时：</p>
 <ul>
 <li>变化量在什么范围内，能够保证原最优基在变换后仍是最优基？</li>
 </ul>
 </li>
-<li><p>令$\Delta b &#x3D; \lambda e_i$，即$\Delta b_i &#x3D; \lambda.$于是，我们需要满足：</p>
+<li>
+<p>令$\Delta b = \lambda e_i$，即$\Delta b_i = \lambda.$于是，我们需要满足：</p>
 <ul>
 <li>$x_B^* + \lambda A_B^{-1}e_i ≥ 0$（通过该不等式我们可以解得$\lambda $的范围）</li>
 </ul>
 </li>
-<li><p>求解$\lambda$范围的例子：</p>
+<li>
+<p>求解$\lambda$范围的例子：</p>
 </li>
 </ul>
-<p><img src="https://arvin-chaser.github.io/post-images/1759146720223.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759146720223.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p><img src="https://arvin-chaser.github.io/post-images/1759146853121.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759146853121.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h3 id="在-c-变化的情况下，最优值受到的影响"><a href="#在-c-变化的情况下，最优值受到的影响" class="headerlink" title="在$c$变化的情况下，最优值受到的影响"></a>在$c$变化的情况下，最优值受到的影响</h3><ul>
-<li><p>假设$c$变为了$\tilde c &#x3D; c+\Delta c$</p>
+<p><img src="https://Arvin-Chaser.github.io/post-images/1759146720223.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759146720223.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<p><img src="https://Arvin-Chaser.github.io/post-images/1759146853121.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759146853121.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<h3 id="在-c-变化的情况下，最优值受到的影响">在$c$变化的情况下，最优值受到的影响</h3>
 <ul>
-<li>首先，沿用我们上面的分析，若$\tilde c^T - \tilde c_B^TA_B^{-1}A≥0$，那么$B$仍然是最优基<ul>
+<li>
+<p>假设$c$变为了$\tilde c = c+\Delta c$</p>
+<ul>
+<li>首先，沿用我们上面的分析，若$\tilde c^T - \tilde c_B^TA_B^{-1}A≥0$，那么$B$仍然是最优基
+<ul>
 <li>那么原最优解$x^*$也仍为一个最优解</li>
 </ul>
 </li>
-<li>对$\tilde c^T - \tilde c_B^TA_B^{-1}A≥0$进行进一步分析：<ul>
+<li>对$\tilde c^T - \tilde c_B^TA_B^{-1}A≥0$进行进一步分析：
+<ul>
 <li>新的reduced costs可分为[基变量部分，非基变量部分]</li>
-<li>基变量部分$&#x3D;\tilde c_B^T - \tilde c_B^TA_B^{-1}A_B &#x3D; \tilde c_B^T - \tilde c_B^T I &#x3D; 0$，故基变量部分的reduced cost恒为$0$</li>
-<li>非基变量部分$&#x3D;\tilde c_N^T - \tilde c_B^TA_B^{-1}A_N$，该部分必须非负</li>
+<li>基变量部分$=\tilde c_B^T - \tilde c_B^TA_B^{-1}A_B = \tilde c_B^T - \tilde c_B^T I = 0$，故基变量部分的reduced cost恒为$0$</li>
+<li>非基变量部分$=\tilde c_N^T - \tilde c_B^TA_B^{-1}A_N$，该部分必须非负</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>于是我们令$\Delta c &#x3D; \lambda e_j$，接下来讨论两种情况：$j\in B$和$j\in N$</p>
+<li>
+<p>于是我们令$\Delta c = \lambda e_j$，接下来讨论两种情况：$j\in B$和$j\in N$</p>
 </li>
 </ul>
-<h4 id="Case-1-j-in-B"><a href="#Case-1-j-in-B" class="headerlink" title="Case $1:j\in B$"></a>Case $1:j\in B$</h4><ul>
-<li>在这种情况下，reduced cost$&#x3D;c_N^T - (c_B^T + \lambda e_j^T)A_B^{-1}A_N &#x3D; c_N^T - c_B^TA_B^{-1}A_N - \lambda e_j^TA_B^{-1}A_N$<ul>
+<h4 id="Case-1-j-in-B">Case $1:j\in B$</h4>
+<ul>
+<li>在这种情况下，reduced cost$=c_N^T - (c_B^T + \lambda e_j^T)A_B^{-1}A_N = c_N^T - c_B^TA_B^{-1}A_N - \lambda e_j^TA_B^{-1}A_N$
+<ul>
 <li>注意到$c_N^T - c_B^TA_B^{-1}A_N$是原问题的reduced cost，我们将其写为$r_N^T$</li>
 </ul>
 </li>
-<li>则，为保证当前基仍为最优基，我们需要满足：<ul>
+<li>则，为保证当前基仍为最优基，我们需要满足：
+<ul>
 <li>$r_N^T - \lambda e_j^TA_B^{-1}A_N ≥ 0$，我们可依据此不等式解出$\lambda$的范围</li>
 </ul>
 </li>
 </ul>
-<h4 id="Case-2-j-in-N"><a href="#Case-2-j-in-N" class="headerlink" title="Case $2:j\in N$"></a>Case $2:j\in N$</h4><p>该情况中，reduced costs$&#x3D;c_N^T + \lambda e_j^T - c_B^TA_B^{-1}A_N &#x3D; r_N^T + \lambda e_j^T$</p>
+<h4 id="Case-2-j-in-N">Case $2:j\in N$</h4>
+<p>该情况中，reduced costs$=c_N^T + \lambda e_j^T - c_B^TA_B^{-1}A_N = r_N^T + \lambda e_j^T$</p>
 <ul>
 <li>于是解该不等式我们可得$\lambda$范围：$r_N+\lambda e_j ≥ 0$</li>
 </ul>
-<h4 id="例"><a href="#例" class="headerlink" title="例"></a>例</h4><p><img src="https://arvin-chaser.github.io/post-images/1759148372024.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759148372024.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br><img src="https://arvin-chaser.github.io/post-images/1759148417025.png" class="lazyload" data-srcset="https://arvin-chaser.github.io/post-images/1759148417025.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<h3 id="在-A-变化的情况下，最优值受到的影响"><a href="#在-A-变化的情况下，最优值受到的影响" class="headerlink" title="在$A$变化的情况下，最优值受到的影响"></a>在$A$变化的情况下，最优值受到的影响</h3><table>
+<h4 id="例">例</h4>
+<p><img src="https://Arvin-Chaser.github.io/post-images/1759148372024.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759148372024.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br>
+<img src="https://Arvin-Chaser.github.io/post-images/1759148417025.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1759148417025.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<h3 id="在-A-变化的情况下，最优值受到的影响">在$A$变化的情况下，最优值受到的影响</h3>
+<table>
 <thead>
 <tr>
 <th>$c^T - c_B^TA_B^{-1}A$</th>
 <th>$-c_B^TA_B^{-1}b$</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$A_B^{-1}A$</td>
 <td>$A_B^{-1}b$</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li><p>若变化发生在一个非基列中，假设为$A_j$，那么原最优解仍是可行的(non-basic $x_j$为$0$，该变化没有影响)</p>
+<li>
+<p>若变化发生在一个非基列中，假设为$A_j$，那么原最优解仍是可行的(non-basic $x_j$为$0$，该变化没有影响)</p>
 </li>
-<li><p>这种情况下，唯二的变化发生在$A_B^{-1}A$的第$j$列，和reduced cost$\overline c_j$的第$j$列中</p>
+<li>
+<p>这种情况下，唯二的变化发生在$A_B^{-1}A$的第$j$列，和reduced cost$\overline c_j$的第$j$列中</p>
 <ul>
 <li>重新计算$\overline c_j$，若它仍非负，那么原最优解仍是最优解；否则，依次更新单纯形法表格的第$j$列和reduced costs的第$j$列，以此为起点完成新的单纯形法</li>
 </ul>
 </li>
-<li><p>若变化发生在一个基列中，那么基本上所有的变量都会受到影响，我们不能简单地得到所有变化的量及其范围，一般从头进行一次新的单纯形法，得到结果后一一对比</p>
+<li>
+<p>若变化发生在一个基列中，那么基本上所有的变量都会受到影响，我们不能简单地得到所有变化的量及其范围，一般从头进行一次新的单纯形法，得到结果后一一对比</p>
 </li>
 </ul>
-<h3 id="其它变化"><a href="#其它变化" class="headerlink" title="其它变化"></a>其它变化</h3><h4 id="添加一个变量"><a href="#添加一个变量" class="headerlink" title="添加一个变量"></a>添加一个变量</h4><ul>
+<h3 id="其它变化">其它变化</h3>
+<h4 id="添加一个变量">添加一个变量</h4>
+<ul>
 <li>若令新变量为$0$，则可令它为一个non-basic variable，那么原BFS仍是一个BFS，与原BFS相关的reduced costs没有变化</li>
-<li>我们只需要检验和新变量有关联的reduced costs<ul>
+<li>我们只需要检验和新变量有关联的reduced costs
+<ul>
 <li>若它非负，则原最优解加上新变量仍是最优解</li>
 <li>若它为负，从此处开始新一轮的单纯形法</li>
 </ul>
 </li>
 </ul>
-<h4 id="添加一个约束条件"><a href="#添加一个约束条件" class="headerlink" title="添加一个约束条件"></a>添加一个约束条件</h4><ul>
+<h4 id="添加一个约束条件">添加一个约束条件</h4>
+<ul>
 <li>若原最优解满足该约束条件，则原最优解仍是最优解</li>
 <li>若不是，则我们用一个dual variable来表示这个新的约束条件，然后以此为起点，对dual problem进行新一轮的单纯形法运算</li>
 </ul>
@@ -2715,7 +2769,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <a class='next' href='/2025/09/29/optimizationsimplex-interior-point-method/'>
           <p class='title'>[Optimization]Simplex, Interior Point Method<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>Simplex Method form the Perspective of Complementary Consitions
-在上一节中我们完善了Duality Theorem的内容，其中我们...</p>
+
+
+在上一节中我们完善了Duality Theorem的内容，其中...</p>
         </a>
       
     </div>
