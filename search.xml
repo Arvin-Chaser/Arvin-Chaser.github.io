@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>[Discrete Math]Modular Arithmetic</title>
+      <link href="/2025/10/09/Discrete%20Math%20lec10-11/"/>
+      <url>/2025/10/09/Discrete%20Math%20lec10-11/</url>
+      
+        <content type="html"><![CDATA[<p>最大公因数之后，下一部分是同余及其相关运算、证明。</p><h3 id="Modular-Arithmetic">Modular Arithmetic</h3><h4 id="1-Modular-addition-multiplication">1.Modular addition, multiplication</h4><h4 id="Definition-1">Definition 1:</h4><ul><li>Given an integer$n$,called the <strong>modulus</strong>，two integers $a,b$ are <strong>congruent modulo</strong> $n$ iff $n\mid (a-b)$</li><li>$a\equiv b(\mod n)$ iff $n\mid (a - b)$</li></ul><h4 id="Definition-2">Definition 2:</h4><ul><li>A <strong>congruence class</strong> of $a$ modulo $b$ is：<ul><li>$[a]_b = {a + kb:k\in Z}$</li></ul></li></ul><h4 id="Lemma-1-1">Lemma 1.1</h4><ul><li>If $a\equiv c$ ($\mod n$)，and $b\equiv d(\mod n)$,then $a+b\equiv c+d(\mod n)$</li></ul><h4 id="Lemma-1-2">Lemma 1.2</h4><ul><li>If $a\equiv c(\mod n)$, and$b\equiv d(\mod n)$,then $ab\equiv cd(\mod n)$</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Discrete Math </tag>
+            
+            <tag> Number Theory </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>[Discrete Math]Greatest Common Divisors</title>
+      <link href="/2025/10/09/Discrete%20Math%20lec%209&amp;&amp;10/"/>
+      <url>/2025/10/09/Discrete%20Math%20lec%209&amp;&amp;10/</url>
+      
+        <content type="html"><![CDATA[<p>作为整个数论部分的起点，我们首先从最大公因数(Greatest Common Divisors,gcd)开始</p><h3 id="Greatest-Common-Divisors">Greatest Common Divisors</h3><h4 id="Basic-Definitions">Basic Definitions:</h4><ul><li>For any non-zero $b$，$b$ is a <strong>divisor</strong> of $a$ iff there is an integer $k$ such that $a = kb$.Denoted as “$b\mid a$”,or $b$  <em>divides</em>  $a$ ，or $a$  <em>is divided by</em>  $b$.</li><li>For any non-zero $b$, $a$ is a <strong>multiple</strong> of $b$ iff there is an integer $k$ such that $a = kb$</li><li>$b$ is a <em>divisor</em> of $a$ <strong>iff</strong> a is a <em>multiple</em> of $b$</li><li>$c$ is a <strong>common divisor</strong> of $a$ and $b$ iff $c\mid a$ and $c\mid b$</li><li>We denote the <strong>greatest common divisor</strong> of $a$  and $b$ as $gcd(a,b)$.</li></ul><h4 id="The-Quotient-Remainder-Theorem">The Quotient-Remainder Theorem:</h4><p>$\forall a,b,\in Z: b＞0,$there are <strong>unique</strong> integers $q,r$,such that:<br>$a = qb + r$ and $0\leq r &lt; b$<br>$q$ is the <strong>quotient</strong> of $a,b$, and $r$ is the <strong>remainder</strong> of $a, b$<br>We also concludes: $r = a \mod b$</p><ul><li><p>note, <strong>floor function</strong>: $\lfloor x \rfloor$  is the greatest integer that is less than or equal to $x$.</p></li><li><p>注意，这就是数论的基础，对除数和余数的定义，以此为基础将衍生出众多讨论</p></li></ul><h4 id="Computing-gcd-a-b">Computing $gcd(a,b)$</h4><p><strong>Euclid</strong>观察到：<br>$gcd(a,b) = gcd(b,r)$</p><ul><li><p>这里的$r$就是前文我们提到的余数(remainder)</p></li><li><p>不难注意到，每进行一次从$gcd(a,b)$到$gcd(b,r)$的转化，第二个数就变小一次，我们不妨假设在所有的$gcd$项中，前一项总是大于后一项，然后考虑，当$r=0$时，代表了什么情况呢？</p></li><li><p>显然，当$r=0$时，代表$b \mid a$ ，也就意味着$gcd(a,b) = b$</p></li><li><p>那么，我们通过不断的寻找与当前的$gcd$等价的$gcd$，并且不断的减小$b$，就能求解$gcd(a,b)$，这正是<strong>Euclid’s GCD Algorithm</strong>（辗转相除法）</p></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gcd(a,b)</span><br><span class="line">if(b == 0), return a;</span><br><span class="line">else</span><br><span class="line">find q,r, where(a = qb + r);</span><br><span class="line">return gcd(b,r);</span><br></pre></td></tr></table></figure><ul><li>对$gcd(a,b)=gcd(b,r)$的数学证明：<ul><li><strong>case 1</strong>:$r = 0$<ul><li>此时 $a = qb$,所以$gcd(a,b) = b$；显然$gcd(a,b)=gcd(b,r)$</li></ul></li><li><strong>case 2</strong>:$r&gt;0$<ul><li>不妨设$d$是$b,r$的一个公因数  $\Rightarrow$ $\exists k_1,k_2, b = k_1 d$ and $r = k_2d$ $\Rightarrow$ $a = qb + r = (qk_1+k_2)d$ $\Rightarrow$ $d$ 也是 $a,b$的公因数</li><li>不妨设$d$是$a,b$的一个公因数$\Rightarrow$ $a = k_3d,b = k_1d\Rightarrow$ $r = a - qb = k_3d - qk_1d = (k+3-qk_1)d\Rightarrow d$也是$b,r$的公因数</li><li>于是我们证明了$(a,b)$和$(b,r)$共用公因数，也就意味着$gcd(a,b) = gcd(b,r)$</li></ul></li></ul></li></ul><h3 id="Linear-Combination">Linear Combination</h3><h4 id="Definition">Definition</h4><ul><li>$d$ is an <strong>integer linear combination</strong> of $a$ and $b$ if $d = sa + tb$ for integers  $s,t$.</li><li>Denote$spc(a,b)$ as the <strong>smallest positive integer linear combination</strong> of $a,b.$</li></ul><h4 id="Theorem-1-1">Theorem 1.1</h4><ul><li>$gcd(a,b) = spc(a,b)$<br>我们不妨用一些例子验证：</li><li>$52$ 和$44$的$gcd$是$4$，同时$4$也是$52$和$44$的$spc:6 \times 52 + (-7)\times 44 = 4$</li></ul><p>接下来考虑对该定理进行证明：</p><ul><li>在数论中，当我们试图证明两个表达式/数相等时，若我们找不到一系列的连等关系，可以尝试证明：$1.a\leq b$  $2.a\geq b$ ，从而综合这两个式子证明$a=b$，在我们证明$gcd = spc$时，就是用的这种方法。</li><li>证明$gcd(a,b)\leq spc(a,b)$ ，我们并没有直接的不等关系，于是我们通过整除中隐含的不等关系证明。由$gcd$的定义可知，$gcd(a,b)\mid a$且$gcd(a,b) \mid b$ ，又因为$spc(a,b)$是$a,b$的一个<strong>linear combination</strong>，也就是说$\exists s,t, spc(a,b) = sa + tb$,假设$a = k_1\times gcd, b = k_2\times gcd$ ，那么$spc(a,b) = (sk_1+tk_2)\times gcd\Rightarrow gcd \mid spc \Rightarrow gcd(a,b)\leq spc(a,b)$，得证。</li><li>接下来我们证明$gcd(a,b)\geq spc(a,b)$. 在证明这个不等式时，我们不妨从$gcd$的定义中入手：$gcd$是所有<em>divisors</em>中最大的那一个，也就是说，如果我们能证明$spc(a,b)$是$(a,b)$的一个<em>divisor</em>，那么就天然的有，$gcd(a,b)\geq spc(a,b)$<ul><li>证明$spc(a,b) \mid a$：由<em>Quotient-Remainder Theorem</em> 我们有：<ul><li>$a = q\times spc(a,b) + r$</li><li>$spc(a,b) &gt; r \geq 0$</li><li>令$spc(a,b) = sa + tb$，那么$r = a - q\times spc(a,b) = a-q\times(sa+tb) = (1-qs)a + tb$ ，$r$也是一个$a,b$的线性组合。</li><li>由于$spc(a,b)$是$(a,b)$最小的正线性组合，所以$r$必须为$0$，也就意味着$spc(a,b)\mid a$</li></ul></li><li>同理可证明$spc(a,b) \mid b$</li></ul></li><li>于是我们可以宣称：$spc(a,b)\leq gcd(a,b)$，与前面的证明相结合，我们证明出了$gcd(a,b) = spc(a,b)$</li></ul><h4 id="Theorem-1-1的应用">Theorem 1.1的应用</h4><h5 id="引理-1-2：">引理 1.2：</h5><ul><li>若$gcd(a,b) = 1$，且$gcd(a,c) = 1$，那么$gcd(a,bc) = 1$</li></ul><h5 id="证明：">证明：</h5><p>根据Theorem 1.1，$\exists s,t,u,v$，使得：<br>$sa+tb = 1$<br>$ua+vc = 1$<br>故$(sa+tb)(ua+vc) = 1$<br>展开可得：$saua + savc + tbua + tbvc = 1$<br>$\Rightarrow (sau + svc + tbu)a + (tv)bc = 1$<br>比对形式，我们发现这意味着$spc(a,bc) = 1$，所以$gcd(a,bc) = 1$</p><ul><li>在证明$gcd$相关的问题时，我们可以通过Theorem 1.1将其转化为线性组合的问题来求解</li></ul><h5 id="引理-1-3">引理 1.3</h5><ul><li>若$p$是质数且$p\mid ab$，那么$p\mid a$或者$p\mid b$（或者同时满足）</li></ul><h5 id="证明：-2">证明：</h5><p>不妨假定$p\nmid a$ ，则$gcd(p,a) = 1.$<br>所以根据Theorem 1.1，$\exists s,t$，满足：<br>$sa+tp = 1$<br>$(sa)b+(tp)b=b$<br>由于$p\mid ab$，所以$ab = kp \Rightarrow (sa)b = (sk)p \Rightarrow (sk + tb)p = b \Rightarrow p \mid b$，</p><p>同理，当我们假定$p\nmid b$时，我们可以依此方法得到$p\mid a$</p><p>于是引理得证。</p><h5 id="引理-1-4">引理 1.4</h5><ul><li>若$p$是质数，且$p\mid a_1a_2…a_m$，那么对于一些$1\leq i \leq m$，$p\mid a_i$</li></ul><h5 id="Fundamental-Theorem-of-Arithmetic：">Fundamental Theorem of Arithmetic：</h5><ul><li>每个大于$1$的整数$n$，都存在<em>唯一</em>的质因数分解：$p_0\leq p_1\leq … \leq p_k$，使得$n = p_0p_1…p_k$<br>例：$61394323221 = 3\cdot 3\cdot 3\cdot 7 \cdot 11 \cdot 11\cdot 37\cdot 37\cdot 37\cdot 53$</li></ul><h5 id="Proof-by-contradiction：">Proof by contradiction：</h5><p>假设存在有至少两种质因数分解方式的数：</p><ul><li>根据well-ordering principle，我们选择这些数中<strong>最小</strong>的那一个，称其为$n$：$n = p_1p_2…p_k = q_1q_2…q_m$</li><li>由于$n$是这些数中最小的一个，所以我们必定有$\forall i,j, p_i\neq q_j$ （若存在$p_i=q_j$，那么我们可以在两侧同时约去公因数，也就意味着存在一个比$n$更小的，有至少两种质因数分解方式的数，这与我们的假定相悖）</li><li>又因为$p_1\mid n = q_1q_2…q_m$，所以根据引理1.4，我们知$\exists i,p_i \mid q_i$.</li><li>再因为$p_1$和$q_i$都是质数，所以我们必有$p_1 = q_i$，<strong>产生矛盾</strong><br>于是我们通过反证法证明了所有数都只有一种质因数分解方式。</li></ul><h5 id="Water-Jug-Problem：">Water Jug Problem：</h5><p>There are 2 jugs. One holds 5-gallons, and the other holds 3-gallons. The goal is to fill one of the jugs with exactly 4 gallons using only the two jugs.<br>正确方案如下：<br><img src="https://raw.githubusercontent.com/Arvin-Chaser/Arvin-Chaser.github.io/main/images/QQ_1760007882259.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/Arvin-Chaser.github.io/main/images/QQ_1760007882259.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br><img src="https://raw.githubusercontent.com/Arvin-Chaser/Arvin-Chaser.github.io/c7e758a1d43586991df8ff624c111200383e68aa/images/QQ_1760007913788.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/Arvin-Chaser.github.io/c7e758a1d43586991df8ff624c111200383e68aa/images/QQ_1760007913788.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><br><img src="https://raw.githubusercontent.com/Arvin-Chaser/Arvin-Chaser.github.io/c7e758a1d43586991df8ff624c111200383e68aa/images/QQ_1760007920452.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/Arvin-Chaser.github.io/c7e758a1d43586991df8ff624c111200383e68aa/images/QQ_1760007920452.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p><p>对于规模较小的数据我们可以尝试手动模拟，但如果是规模较大的数据呢？</p><ul><li>不难发现，如果我们有两个容量分别为$B$和$L$的容器，那么每个容器内的水量总是一个$B$和$L$的线性组合。</li><li>又因为，$gcd(a,b) \mid all$  $LC$，所以<strong>每个容器里的水量都是$gcd(a,b)$的一个倍数</strong></li><li>所以我们得到了一般化的判断方法：<ul><li>给出两个容量分别为$a$和$b$的容器($a\leq b$)，我们可能在一个容器中恰好保有$k\leq b$加仑的水，当且仅当$k$是$gcd(a,b)$的一个倍数。</li></ul></li></ul><p><strong>进一步的</strong>，我们可以依据我们每次倒出$gcd(a,b)$的过程，来得到我们整个倒出$k$加仑水的过程：</p><ul><li>得到$k = sa + tb$的解（注，此处用线性组合表示$gcd$后，乘若干倍即可）</li><li>重复$s$次如下过程：<ul><li>装满$a$加仑的容器</li><li>将所有$a$加仑容器里的水倒入$b$加仑容器中。每当$b$加仑容器变满时，将其清空。</li></ul></li><li>在整个过程中，$b$加仑容器将会被清空$t$次。</li><li>该过程结束后，$b$加仑容器中将恰有$k$加仑水。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Discrete Math </tag>
+            
+            <tag> Number Theory </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[Optimization]Sensitivity Analysis</title>
       <link href="/2025/09/29/optimizationsensitivity-analysis/"/>
       <url>/2025/09/29/optimizationsensitivity-analysis/</url>
