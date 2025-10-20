@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2025/01/30/gridea-yu-github-pages-yuan-cheng-lian-jie-shi-xiao-de-jie-jue-fang-fa/"/>
+  <link rel="canonical" href="http://example.com/2025/10/20/dijkstra/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,21 +34,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Gridea与Github Pages远程连接失效的解决方法 - MoonIsAMute</title>
-  <meta name="keywords" content="软件,null">
+  <title>[Optimization]Shortest Path Problem - MoonIsAMute</title>
+  <meta name="keywords" content="Optimization,null">
   <meta desc name="description" content="堕天万国信使会梦到电子甜甜圈吗 - m0st1ma - MoonIsAMute">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gridea与Github Pages远程连接失效的解决方法">
-<meta property="og:url" content="http://example.com/2025/01/30/gridea-yu-github-pages-yuan-cheng-lian-jie-shi-xiao-de-jie-jue-fang-fa/index.html">
+<meta property="og:title" content="[Optimization]Shortest Path Problem">
+<meta property="og:url" content="http://example.com/2025/10/20/dijkstra/index.html">
 <meta property="og:site_name" content="MoonIsAMute">
-<meta property="og:description" content="一、前言 笔者若干天没有管理博客后，在心血来潮检查repositories时，惊奇地发现Gridea和Github Pages之间的远程连接居然断掉了。（连接逃げる）  第一时间，笔者下意识认为是repositories的token过期了，于是重新整了一个，但是Gridea上仍然显示远程连接断开，令人疑惑。几经鼓捣后，笔者终于找到了问题所在，本文将大概介绍一下笔者的解决方法。  二、出现连接问题的">
+<meta property="og:description" content="图论基础概念如节点路径生成树一类不再赘述。  Shortest Path Problem Formulation  对于每条边$(i,j)\in E$，定义：  $x_{ij} &#x3D; 1$（若我们使用该边） $x_{ij}&#x3D;0$（若我们不使用该边）   则最短路径的最优化问题为：  $minimize$  $\sum_{(i,j) \in E} w_{ij}x_{ij}$ , subject to">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2025-01-30T08:12:44.000Z">
-<meta property="article:modified_time" content="2025-10-08T12:46:36.896Z">
+<meta property="article:published_time" content="2025-10-20T12:32:15.000Z">
+<meta property="article:modified_time" content="2025-10-20T08:40:13.500Z">
 <meta property="article:author" content="m0st1ma">
-<meta property="article:tag" content="软件">
+<meta property="article:tag" content="Optimization">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2315,6 +2315,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div id="l_body">
       <div id="l_cover">
   
+    
+      <div class="cover-wrapper post search" id='half'>
+        
+  <div id="parallax-window"></div>
+
+<div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">MoonIsAMute</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="问问小莫..." />
+          <i class="icon fa-solid fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              active-action="action-home">
+              <p>主页</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              active-action="action-tags">
+              <p>标签</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    
+  
 </div>
 
       <div id="safearea">
@@ -2322,7 +2371,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="https://schema.org.cn/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2025/01/30/gridea-yu-github-pages-yuan-cheng-lian-jie-shi-xiao-de-jie-jue-fang-fa/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/10/20/dijkstra/">
   <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
     <meta itemprop="name" content="MoonIsAMute">
   </span>
@@ -2343,7 +2392,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        Gridea与Github Pages远程连接失效的解决方法
+        [Optimization]Shortest Path Problem
       </h1>
       <div class='new-meta-box'>
         
@@ -2379,10 +2428,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2025-01-30T16:12:44+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2025-10-20T20:32:15+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jan 30, 2025</p>
+    <p>发布于：Oct 20, 2025</p>
   </a>
 </div>
 
@@ -2393,13 +2442,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>978 words</p>
+      <p>318 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>3 min</p>
+      <p>1 min</p>
     </a>
   </div>
 
@@ -2423,37 +2472,104 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1>一、前言</h1>
-<p>笔者若干天没有管理博客后，在心血来潮检查repositories时，惊奇地发现Gridea和Github Pages之间的远程连接居然断掉了。<s>（连接逃げる）</s>  第一时间，笔者下意识认为是repositories的token过期了，于是重新整了一个，但是Gridea上仍然显示远程连接断开，令人疑惑。几经鼓捣后，笔者终于找到了问题所在，本文将大概介绍一下笔者的解决方法。</p>
-<hr>
-<h1>二、出现连接问题的根本原因</h1>
-<ol>
-<li>当repositories中的token过期时，Gridea会失去对repositories的访问权限，就像用一把旧钥匙去开一个新锁，不能同步是自然的。<s>这也是笔者下意识认为问题所在之处</s>  遇到这种情况很方便，就按照当初设置Gridea时一样重新申请一个token就行了。</li>
-</ol>
-<ul>
-<li>但是有一点要补充，在若干次更新前，github设置token的页面添加了一个<code>Fine-grained tokens</code>，这个玩意笔者感觉像是一个测试版本，而且好像和经典的token编辑方式不太一样（？）总之，和之前一样，在Github-&gt;Settings-&gt;Developer Settings-&gt;Personal access tokens里选<code>Tokens(classic)</code>就行了，这就是我们熟知的token版本。</li>
+    <ul>
+<li>图论基础概念如节点路径生成树一类不再赘述。</li>
 </ul>
-<ol start="2">
-<li>如果重新申请token后，<s>或者我们的token没有设置过期时间</s>Gridea还是连接不上repositories，那么就大概率是网络的问题。笔者在网上看到各种相当前沿的解决方法，比如每次写完避开同步，而使用github client本地克隆repositories去上传等等。但是笔者之前有一个repositories就是在本地上传时崩了，所以没敢用这种方法。（是真的会崩，所以强烈建议大家别在本地强制push，<s>不过崩的原因笔者不知道</s>）那么我们就回到这个问题本身：<code>网络问题</code>。说白了，无非是我们的个人电脑和在github中的repositories连接没有构建好，而本地上传就是直接避开这个连接过程，用github客户端检测到的库冲突来强制push。在已知强制push可能会爆炸的情况下，我们能不能尝试直接解决网络问题，稳定个人电脑和github中repositories的连接情况呢？答案是肯定的。</li>
-</ol>
-<hr>
-<h1>三、解决方法</h1>
-<p>大家都知道，电脑打开网页时，会先行在本地的<code>hosts</code>文件中检测是否有匹配的网站，如果匹配，那么就用hosts中预设的IP来为域名指定好地址；如果不匹配，那么浏览器会将网址提交到DNS服务器来进行IP地址解析。DNS解析的这个过程，便是可能会出现连接情况异常的来源。那么很显然，只要我们绕过DNS，直接预设好github的IP地址，就能达到快速打开网页的目的，从而最大幅度的优化本地与github repositories之间的连接情况。笔者在这里直接把ping github IP地址的网站贴出来：<a target="_blank" rel="noopener" href="https://ping.chinaz.com/github.com" title="It's mygo!!!!!">Here</a>  笔者自己是选择了一个霓虹的IP地址，延迟只有惊人的8ms（</p>
-<hr>
-<h1>四、详细过程</h1>
-<ol>
-<li>在库中按如下路径找到<code>hosts</code>（无后缀名！！！）：<code>C:\Windows\System32\drivers\etc</code></li>
-</ol>
+<h3 id="Shortest-Path-Problem-Formulation">Shortest Path Problem Formulation</h3>
 <ul>
-<li>注意：系统文件直接搜索搜不到，慢慢找罢。</li>
+<li>对于每条边$(i,j)\in E$，定义：
+<ul>
+<li>$x_{ij} = 1$（若我们使用该边）</li>
+<li>$x_{ij}=0$（若我们不使用该边）</li>
 </ul>
-<ol start="2">
-<li>提供管理员权限，修改<code>hosts</code>（在属性-&gt;安全-&gt;高级里提供权限）。或者有更加简单易懂的方法：先将<code>hosts</code>复制出该路径，在用记事本修改新<code>hosts</code>副本后，再将其复制回该路径下替换，全程不用提供管理员权限。<s>是您的不二之选</s></li>
-</ol>
-<hr>
-<h1>五、结语</h1>
-<p>对Gridea与Github Pages远程连接失效的解决方法，研究的同时还能复习电脑打开网页的底层逻辑，可喜可贺，可喜可贺。<br>
-<s>又：本文有一个若只彩蛋</s></p>
+</li>
+<li>则最短路径的最优化问题为：
+<ul>
+<li>$minimize$  $\sum_{(i,j) \in E} w_{ij}x_{ij}$ , subject to :
+<ul>
+<li>$x_{ij}\in${$0,1$}</li>
+<li>$\sum_{j:(s,j)\in E}x_{sj} - \sum_{j:(j,s)\in E}x_{js} = 1$</li>
+<li>$\sum_{j:(j,t)\in E}x_{jt} - \sum_{j:(t,j)\in E}x_{tj} = 1$</li>
+<li>$\sum_{j:(i,j)\in E}x_{ij} = \sum_{j:(j,i)\in E}x_{ji},\forall i\not =s,t.$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Dijkstra’s-Algorithm">Dijkstra’s Algorithm</h3>
+<p><img src="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/18566c29f21330f1486891d3b9d2d923257e736d/3007_37.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/18566c29f21330f1486891d3b9d2d923257e736d/3007_37.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>$n$</th>
+<th>Solved nodes adjacent to unsolved nodes</th>
+<th>Closest adjacent unsolved node</th>
+<th>Total distance</th>
+<th>$n’$th nearst node</th>
+<th>Distance of $n’$th nearest</th>
+<th>Last arc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$1$</td>
+<td>$O$</td>
+<td>$A$</td>
+<td>$0+2=2$</td>
+<td>$A$</td>
+<td>$2$</td>
+<td>$OA$</td>
+</tr>
+<tr>
+<td>$2$</td>
+<td>$O,A$</td>
+<td>$C,B$</td>
+<td>$0+4 = 4,2+2=4$</td>
+<td>$C$</td>
+<td>$4$</td>
+<td>$OC$</td>
+</tr>
+<tr>
+<td>$3$</td>
+<td>$O,A,C$</td>
+<td>$B,B,B$</td>
+<td>$0+5=5,2+2=4,4+1=5$</td>
+<td>$B$</td>
+<td>$4$</td>
+<td>$AB$</td>
+</tr>
+<tr>
+<td>$4$</td>
+<td>$A,B,C$</td>
+<td>$D,E,E$</td>
+<td>$2+7=9,4+3=7,4+4=8$</td>
+<td>$E$</td>
+<td>$7$</td>
+<td>$BE$</td>
+</tr>
+<tr>
+<td>$5$</td>
+<td>$A,B,E$</td>
+<td>$D,D,D$</td>
+<td>$2+7=9,4+4=8,7+1=8$</td>
+<td>$D$</td>
+<td>$8$</td>
+<td>$BD$</td>
+</tr>
+<tr>
+<td>$6$</td>
+<td>$D,E$</td>
+<td>$T,T$</td>
+<td>$8+5=13,7+7=14$</td>
+<td>$T$</td>
+<td>$13$</td>
+<td>$DT$</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>dij的思路是：不断寻找离出发点第$n$近的节点，并保证已有的生成树中包含了出发点到每个点的最短路径，直到更新到目标节点，参考上表</li>
+</ul>
 
   </div>
   
@@ -2478,10 +2594,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-10-08T20:46:36+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-10-20T16:40:13+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Oct 8, 2025</p>
+    <p>更新于：Oct 20, 2025</p>
   </a>
 </div>
 
@@ -2492,8 +2608,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%BD%AF%E4%BB%B6/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>软件</p></a></div>
-  <span hidden itemprop="keywords">软件</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Optimization/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Optimization</p></a></div>
+  <span hidden itemprop="keywords">Optimization</span>
   
 
 
@@ -2507,7 +2623,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2025/01/30/gridea-yu-github-pages-yuan-cheng-lian-jie-shi-xiao-de-jie-jue-fang-fa/&title=Gridea与Github Pages远程连接失效的解决方法 - MoonIsAMute&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2025/10/20/dijkstra/&title=[Optimization]Shortest Path Problem - MoonIsAMute&summary="
           
           >
           
@@ -2519,7 +2635,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2025/01/30/gridea-yu-github-pages-yuan-cheng-lian-jie-shi-xiao-de-jie-jue-fang-fa/&title=Gridea与Github Pages远程连接失效的解决方法 - MoonIsAMute&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2025/10/20/dijkstra/&title=[Optimization]Shortest Path Problem - MoonIsAMute&summary="
           
           >
           
@@ -2531,7 +2647,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2025/01/30/gridea-yu-github-pages-yuan-cheng-lian-jie-shi-xiao-de-jie-jue-fang-fa/&title=Gridea与Github Pages远程连接失效的解决方法 - MoonIsAMute&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2025/10/20/dijkstra/&title=[Optimization]Shortest Path Problem - MoonIsAMute&summary="
           
           >
           
@@ -2560,18 +2676,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2025/04/08/pin-cou-de-duan-yin/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>拼凑的断音</p>
-          <p class='content'>前些日子为了完成所谓ITE的作业，去学了一下怎么调ai翻唱。自己上手后才发现这玩意学习成本意外的低。
-说是意外其实也是情理之中，现在的作品似乎都有着高度集成的模板，开发的过程竟被略去了。
-确实是...</p>
-        </a>
       
-      
-        <a class='next' href='/2025/01/15/java-zhong-de-exception/'>
-          <p class='title'>JAVA中的Exception<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>一、前言
-笔者在学习java的过程中经常见到一些throws Exception或者类似的语句；在初学java，阅读一些代码框架时，throws Exception的语句常常被笔者认为是不必要，...</p>
+        <a class='next' href='/2025/10/20/gametheory/'>
+          <p class='title'>[Optimization]Game Theory<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>博弈论初步，所分析的问题仅为简单的双人零和问题。
+Matching Pennies Game
+
+最简单的零和游戏：两个玩家各有一枚硬币，秘密的设定为向上或向下；同时揭露后，若相同则玩家A获得两枚...</p>
         </a>
       
     </div>
@@ -2590,7 +2701,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2025/01/30/gridea-yu-github-pages-yuan-cheng-lian-jie-shi-xiao-de-jie-jue-fang-fa/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2025/10/20/dijkstra/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2632,7 +2743,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-      
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Shortest-Path-Problem-Formulation"><span class="toc-text">Shortest Path Problem Formulation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dijkstra%E2%80%99s-Algorithm"><span class="toc-text">Dijkstra’s Algorithm</span></a></li></ol>
   </div>
 </section>
 
@@ -3321,7 +3432,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"MoonIsAMute","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"堕天万国信使会梦到电子甜甜圈吗"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"MoonIsAMute"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/学习笔记/","name":"学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/01/30/gridea-yu-github-pages-yuan-cheng-lian-jie-shi-xiao-de-jie-jue-fang-fa/","name":"Gridea与Github Pages远程连接失效的解决方法"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"MoonIsAMute","url":"http://example.com/","keywords":null,"description":"堕天万国信使会梦到电子甜甜圈吗","author":{"@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"堕天万国信使会梦到电子甜甜圈吗"},"publisher":{"@type":"Organization","name":"MoonIsAMute","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"Gridea与Github Pages远程连接失效的解决方法","description":"堕天万国信使会梦到电子甜甜圈吗","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/01/30/gridea-yu-github-pages-yuan-cheng-lian-jie-shi-xiao-de-jie-jue-fang-fa/"},"author":{"@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"MoonIsAMute","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/01/30/gridea-yu-github-pages-yuan-cheng-lian-jie-shi-xiao-de-jie-jue-fang-fa/","wordCount":0,"datePublished":"2025-01-30T08:12:44.000Z","dateModified":"2025-10-08T12:46:36.896Z","articleSection":"学习笔记","keywords":"软件","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"MoonIsAMute","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"堕天万国信使会梦到电子甜甜圈吗"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"MoonIsAMute"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/学习笔记/","name":"学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/10/20/dijkstra/","name":"[Optimization]Shortest Path Problem"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"MoonIsAMute","url":"http://example.com/","keywords":null,"description":"堕天万国信使会梦到电子甜甜圈吗","author":{"@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"堕天万国信使会梦到电子甜甜圈吗"},"publisher":{"@type":"Organization","name":"MoonIsAMute","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"[Optimization]Shortest Path Problem","description":"堕天万国信使会梦到电子甜甜圈吗","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/10/20/dijkstra/"},"author":{"@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"MoonIsAMute","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/10/20/dijkstra/","wordCount":0,"datePublished":"2025-10-20T12:32:15.000Z","dateModified":"2025-10-20T08:40:13.500Z","articleSection":"学习笔记","keywords":"Optimization","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
