@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>[Optimization]Integer Programming</title>
+      <link href="/2025/10/26/integer_pro/"/>
+      <url>/2025/10/26/integer_pro/</url>
+      
+        <content type="html"><![CDATA[<ul><li>Integer Programming，与Linear Programming仅有一字之差，它们的差别也相应的很微小：IP研究的是变量均要求为整数的方程组，而相应的，LP研究的范围更为宽泛，只要方程形式是线性就可以。</li><li>若所有的变量只能为$0$或$1$，那么该模型常被称为Binary IP(BIP)</li><li>若一部分变量必须为整数，一部分变量可为实数值，那么该模型常被称为Mixed IP(MIP)</li><li>IP的约束条件和Objective Function可以不为线性</li></ul><h4 id="标准形式">标准形式</h4><ul><li>参考LP的标准形式：<br>$\qquad \qquad minimize$  $c^Tx$</li></ul><p>$\qquad \qquad$subject to $Ax=b$</p><p>$\qquad\qquad$ $x \geq 0$</p><p>$\qquad\qquad x\in Z^n$</p><h3 id="整数变量的应用场景">整数变量的应用场景</h3><h4 id="1-Logical-relationships">1.Logical relationships</h4><ul><li>当一个变量只有两种状态，如选或不选，同时在不同状态间存在逻辑关系，我们可以使用BIP来分析，如<ul><li>Cake or Ice cream?<ul><li>$u_1$:吃cake的满意度</li><li>$u_2$:吃冰淇淋的满意度</li><li>最多只能吃两个中的一个，最大化满意度</li><li>$max$ $u_1x_1 + u_2x_2$, subject to $x_1+x_2\leq 1, x_2,x_2\in{0,1}$</li></ul></li></ul></li></ul><h4 id="2-Fixed-Investment-Problem">2.Fixed Investment Problem</h4><ul><li>两种构建通信网络的方式<ul><li>5G1，100k的固定花费，最多能供给1000个客户，每个客户额外70的费用</li><li>5G2，80k的固定花费，最多能供给2000个客户，每个客户额外90的费用</li><li>每个客户能够产生150的利润</li><li>如何获得最大利润？<br>$\qquad\qquad\qquad\qquad\qquad$ $max 0.08x_1+0.06x_2-100y_1-80y_2$</li></ul></li></ul><p>$\qquad\qquad\qquad\qquad\qquad x_1\leq 1000y_1$</p><p>$\qquad\qquad\qquad\qquad\qquad x_2\leq 2000y_2$</p><p>$\qquad\qquad\qquad\qquad\qquad y_1+y_2 = 1$</p><p>$\qquad\qquad\qquad\qquad\qquad x_1,x_2\geq 0$</p><p>$\qquad\qquad\qquad\qquad\qquad y_1,y_2\in${$0,1$}</p><p>$\qquad\qquad\qquad\qquad\qquad x_1,x_2\in Z$</p><h4 id="3-Sequential-decisions">3.Sequential decisions</h4><ul><li><p>存在先决条件的方案</p></li><li><p>共有20的费用来投资两个项目</p></li><li><p>项目$1$：$1^{st}$投资（最多$7$费用）：($-3$%)；$2^{nd}$投资(最多$8$费用) ：$10$%；$3^{rd}$投资（最多$5$费用）：$5$%</p></li><li><p>项目$2$：$1^{st}$投资（最多$10$费用）：($8$%)；$2^{nd}$投资(最多$10$费用) ：$4$%</p></li><li><p>对于每个项目，只有完成了前置的投资，才能进行后续的投资</p></li><li><p>每个项目的每一步应该投资多少？</p></li></ul><p>$\qquad\qquad\qquad\qquad\qquad max -0.03x_1+0.1x_2+0.05x_3+0.08x_4+0.04x_5$</p><p>$\qquad\qquad\qquad\qquad\qquad x_1\leq 7$</p><p>$\qquad\qquad\qquad\qquad\qquad y_1\leq \frac{x_1}{7}$</p><p>$\qquad\qquad\qquad\qquad\qquad x_2\leq 8y_1$</p><p>$\qquad\qquad\qquad\qquad\qquad y_2\leq \frac{x_2}{8}$</p><p>$\qquad\qquad\qquad\qquad\qquad x_3\leq 5y_2$</p><p>$\qquad\qquad\qquad\qquad\qquad x_4\leq 10$</p><p>$\qquad\qquad\qquad\qquad\qquad y_3\leq \frac{x_4}{10}$</p><p>$\qquad\qquad\qquad\qquad\qquad x_5\leq10y_3$</p><p>$\qquad\qquad\qquad\qquad\qquad x_1+x_2+x_3+x_4+x_5\leq 20$</p><p>$\qquad\qquad\qquad\qquad\qquad x_1,x_2,x_3,x_4,x_5 \geq 0, y_1,y_2,y_3\in${$0,1$}</p><h4 id="…">…</h4><h3 id="对IP的求解">对IP的求解</h3><ul><li>IP并不好求解</li><li>可能可以从IP的方程中得到一些能求解的变量</li><li>…</li><li>Branch and Bound Algorithm……</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Optimization </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[Optimization]Shortest Path Problem</title>
       <link href="/2025/10/20/dijkstra/"/>
       <url>/2025/10/20/dijkstra/</url>
