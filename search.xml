@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>没走完的dijkstra</title>
+      <link href="/2025/10/27/unfinished/"/>
+      <url>/2025/10/27/unfinished/</url>
+      
+        <content type="html"><![CDATA[<p>$17$年的人生是一场没走完的$dijkstra$，我知道算出到每个节点的最短路后一定能更新出到达终点的最短路，但我就是不愿这样做。说不定我走的路径恰好就是最短路，我这样想。</p><p>人的运气当然没有那么好。</p><p>$17$岁后的人生是一场望不到头，剪不了枝的单向$dfs$，这颗搜索树有多高我不知道，我只知道回溯的成本是$0x7ffffffff$ 。所以我只能继续遍历下去，即使终点可能只是一个实现不了的许诺。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>[Optimization]Integer Programming</title>
       <link href="/2025/10/26/integer_pro/"/>
       <url>/2025/10/26/integer_pro/</url>
