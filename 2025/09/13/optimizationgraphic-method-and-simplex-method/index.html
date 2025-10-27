@@ -46,7 +46,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-09-13T12:32:15.000Z">
-<meta property="article:modified_time" content="2025-10-08T12:49:11.790Z">
+<meta property="article:modified_time" content="2025-10-27T01:44:25.192Z">
 <meta property="article:author" content="m0st1ma">
 <meta property="article:tag" content="Optimization">
 <meta name="twitter:card" content="summary">
@@ -1966,7 +1966,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1761492757630),
+    lastupdate: new Date(1761531157531),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -2442,13 +2442,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>3.4k words</p>
+      <p>3.5k words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>12 min</p>
+      <p>13 min</p>
     </a>
   </div>
 
@@ -2475,7 +2475,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <h2 id="Graphic-Method">Graphic Method</h2>
 <ul>
 <li>
-<p>LP之所以叫线性方程组，正是因为它所含有的方程都是线性的，而简化到一个双变量的LP中时，我们不妨考虑这些约束条件在坐标系中的表现：作为线性函数，它们自然是方便分析且直观的。仍以第一节中提到的应用为例，<img src="https://Arvin-Chaser.github.io/post-images/1757766964515.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1757766964515.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<p>LP之所以叫线性方程组，正是因为它所含有的方程都是线性的，而简化到一个双变量的LP中时，我们不妨考虑这些约束条件在坐标系中的表现：作为线性函数，它们自然是方便分析且直观的。仍以第一节中提到的应用为例，<img src="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_7.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3007_7.png (949×689)"></p>
 <ul>
 <li>如图所示，我们能得到一个阴影区域，在该区域中的数对都是对此线性方程组的有效解。</li>
 <li>我们不妨再关注一下与Objective Function对应的一组平行线：$3x_1+5x_2=c$</li>
@@ -2483,7 +2483,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 </li>
 <li>
-<p>自然，我们将上文所述的两个结论结合一下就能得到：在平行线不断移动的过程中，当其触碰到阴影区域的边界时，该交点便是此问题的最优解。<img src="https://Arvin-Chaser.github.io/post-images/1757768014020.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1757768014020.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<p>自然，我们将上文所述的两个结论结合一下就能得到：在平行线不断移动的过程中，当其触碰到阴影区域的边界时，该交点便是此问题的最优解。<img src="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_8.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3007_8.png (692×491)"></p>
 </li>
 <li>
 <p>在使用Graphic Method时：</p>
@@ -2505,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>既然一个最优解一定是一个CFP，这显然会引入一个新的思考方式：如果我们把计算所有的CFP，取最大值的解，那么它便是全局最优解。不过，CFP的数量可能极多，这种思考方式是不适合人脑的。</p>
 </li>
 <li>
-<p>不过，在分析一个CFP时，我们仍然有较为简便的方法来检验它是否是最优解：<img src="https://Arvin-Chaser.github.io/post-images/1757769450007.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1757769450007.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<p>不过，在分析一个CFP时，我们仍然有较为简便的方法来检验它是否是最优解：<img src="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_9.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3007_9.png (702×493)"></p>
 <ul>
 <li>值得注意的是，在该证明过程中，多边形的凸性质得到了运用，它保证了局部最优即是全局最优。</li>
 </ul>
@@ -2520,9 +2520,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>注意到，这正是和LP标准形式写法相近的，再与Graphic Method相结合，我们能理解一个LP问题与一个解析几何中的多边形的强关联性。</li>
 </ul>
 </li>
-<li>Convex Set和Convex Combination：和之前DDA中所述定义一致，不再赘述。<img src="https://Arvin-Chaser.github.io/post-images/1757770985815.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1757770985815.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>Convex Set和Convex Combination：和之前DDA中所述定义一致，不再赘述。<img src="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_10.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_10.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3007_10.png (667×300)"></li>
 <li>Extreme Point：如名字所述，极值点。在LP问题中常表现为CFP，我们将在后文详细讲解如何求这些点。</li>
-<li>Basic Solution：<img src="https://Arvin-Chaser.github.io/post-images/1757771663217.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1757771663217.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+<li>Basic Solution：<img src="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_11.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_11.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3007_11.png (645×265)">
 <ul>
 <li>BS的定义看起来很莫名其妙，我们先大致描述一下BS是怎么样的一个特定解，BS存在的必要性会在Simplex method中体现。</li>
 <li>BS提供了一组$x$，其中有$m个x_i$不为0，同时相应的，矩阵的column rank也大于等于m（注意，不是一定等于m），并且与这$m个x_i$对应的列都是独立的。</li>
@@ -2567,7 +2567,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>
 <p>不妨先从slack variable的几何意义来切入：</p>
 <ul>
-<li>回顾slack variable的引入背景，我们是在将一个不等式约束条件等式化的过程中引入的slack variable，如$3x_1+2x_2≤18$，我们引入$x_5$使得$3x_1+2x_2+x_5=18$且$x_5≥0$，在坐标系中考虑约束线$3x_1+2x_2=18$，不难发现$x_5$代表了解$(<a target="_blank" rel="noopener" href="https://Arvin-Chaser.github.io/post-images/1757835220051.png">https://Arvin-Chaser.github.io/post-images/1757835220051.png</a>)</li>
+<li>回顾slack variable的引入背景，我们是在将一个不等式约束条件等式化的过程中引入的slack variable，如$3x_1+2x_2≤18$，我们引入$x_5$使得$3x_1+2x_2+x_5=18$且$x_5≥0$，在坐标系中考虑约束线$3x_1+2x_2=18$，不难发现$x_5$代表了当前解到该约束线的距离<img src="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_12.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_12.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3007_12.png (376×393)"></li>
 <li>进一步的，该图中的其余slack variable $x_3, x_4$的几何意义也是类似的，都表示了当前解到约束线的距离。</li>
 <li>更一般化，Decision Variable$x_1,x_2$也可以看作是到对应坐标轴的距离，自此所有$x_i$的几何意义得到诠释</li>
 </ul>
@@ -2578,17 +2578,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>CFP是若干约束线的交点，这也意味着一个CFP的若干$x_i$为0，表示它是这些对应约束线的交点</li>
 <li>值得注意的是，因为有$n$个Decision Variable，意味着该LP的图形是$n$维的，也就是说CFP是$n$个约束线的交点。所以当我们令$n$个$x_i$为0时，可以得到一个确定的解，该解正是一个CFP</li>
 <li>回想起BS的定义，我们令$n$个$x_i$为0的过程，正是与BS的定义相互呼应的：在该过程中，共有$n+m$个变量，我们令$n$个变量为0，自然剩下$m$个不为0的变量，同时此时我们能得到一个唯一解，根据定义该解正是一个BFS</li>
-<li>那么我们进一步拓展BS的定义，在求最优解的迭代过程中，我们称这些被我们设为0的变量为non-basic variables，不为0的变量我们称之为basic variables，如图</li>
-<li><img src="https://Arvin-Chaser.github.io/post-images/1757836276920.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1757836276920.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li>那么我们进一步拓展BS的定义，在求最优解的迭代过程中，我们称这些被我们设为0的变量为non-basic variables，不为0的变量我们称之为basic variables，如下
+<ul>
+<li>对于标准形式LP，每个约束条件被我们引入了一个非负的松弛变量，所以我们有$m+n$个变量，$m$个等式关系</li>
+<li><strong>CFP</strong>:令这$m+n$个变量中的$n$个变量为$0$（non-basic variables），求解剩下的$m$个变量(basic variables)，若剩下的$m$个变量都非负，那么这个CFP是一个<strong>BFS</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
-<p>自此，我们解决了CFP的代数化，那么接下来我们要代数化的是“在一个CFP的相邻CFP中寻找最优解”的过程<br>
-- CFP是若干条约束线的交点，而两个CFP相邻则意味着它们在同一条约束线/平面上，换句话说，在$n$维的LP中，相邻的CFP具有$n-1$个相同且为0的slack variable，这使得它们被约束在同一个$n-1$维的空间上，而剩下1个不同的slack variable则决定了它们是相邻而非重合<br>
-- 明确了这一点，我们便知道了如何从一个CFP跳至一个相邻的CFP：交换一个non-basic variable和一个basic variable即可<br>
-- <img src="https://Arvin-Chaser.github.io/post-images/1757837164063.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1757837164063.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<p>自此，我们解决了CFP的代数化，那么接下来我们要代数化的是“在一个CFP的相邻CFP中寻找最优解”的过程</p>
 <ul>
-<li>不过，只知道如何从一个CFP跳至另一个相邻的CFP还是朴素的遍历，我们期望能有一种直接找到相邻的CFP中最优的那个解</li>
+<li>CFP是若干条约束线的交点，而两个CFP相邻则意味着它们在同一条约束线/平面上，换句话说，在$n$维的LP中，相邻的CFP具有$n-1$个相同且为0的slack variable，这使得它们被约束在同一个$n-1$维的空间上，而剩下1个不同的slack variable则决定了它们是相邻而非重合
+<ul>
+<li>明确了这一点，我们便知道了如何从一个CFP跳至一个相邻的CFP：交换一个non-basic variable和一个basic variable即可</li>
+<li><img src="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_13.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_13.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3007_13.png (431×155)"></li>
+</ul>
+</li>
+<li>不过，只知道如何从一个CFP跳至另一个相邻的CFP还是朴素的遍历，我们期望能有一种直接找到相邻的CFP中最优解的方式</li>
 <li>考虑到LP中的所有方程都是线性的，所以在分析变量改变对Objective Function的影响时，我们可以直接考虑变量的系数：在LP的标准形式中，若我们仅仅用non-basic variable来表示Objective Function，那么将系数小的设为basic variable，是一定优于将系数大的设为basic variable的，这就是选择entering variable的最优方式</li>
 <li>而为了选择leaving variable，我们直接在确定entering variable的基础上进行分析：由于entering variable一定是越大解越优，所以我们在不断扩大entering variable时，第一个因为它的扩大而减小到0的basic variable就是我们所求的leaving variable，因为只考虑entering variable就能确定最优解了，我们求leaving variable的过程实际上就是将entering variable最大化的过程</li>
 </ul>
@@ -2597,11 +2604,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>为达到方便寻找leaving variable和entering variable的目的，我们可以稍微改变式子的形式：</p>
 </li>
 <li>
-<p><img src="https://Arvin-Chaser.github.io/post-images/1757850904104.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1757850904104.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_16.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_16.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3007_16.png (701×495)"></p>
 </li>
 </ul>
 <p>以上就是Simplex method，其整体过程总结如下：<br>
-<img src="https://Arvin-Chaser.github.io/post-images/1757850952502.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1757850952502.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<img src="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_17.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_17.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3007_17.png (692×500)"></p>
 <h2 id="More-general-declaration-by-linear-algebra">More general declaration by linear algebra</h2>
 <ul>
 <li>我们在前文明确了最优化的算法后，通过一个例子对最优解的求值过程大概体验了Simplex method的运行，接下来我们将用线性代数来对Simplex method的过程进行一个更rigorous的说明。</li>
@@ -2633,7 +2640,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>值得注意的是，我们在这里同样可以保证$y ≥ 0$：
 <ul>
 <li>对于non-basic index$j$，$x_j = 0,d_j$为$1$或$0$，所以$x_j+\theta d_j$仍然非负</li>
-<li>对于basic variable$x_i$，因为$x_i＞0$，所以一定$\exist \theta s.t. x_i+\theta d_i ≥ 0$</li>
+<li>对于basic variable$x_i$，因为$x_i＞0$，所以一定$\exists \theta s.t. x_i+\theta d_i ≥ 0$</li>
 </ul>
 </li>
 </ul>
@@ -2682,7 +2689,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <h2 id="The-Summary-Part-of-Linear-Algebra-Form">The Summary Part of Linear Algebra Form</h2>
 <ul>
-<li><img src="https://Arvin-Chaser.github.io/post-images/1758473146651.png" class="lazyload" data-srcset="https://Arvin-Chaser.github.io/post-images/1758473146651.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></li>
+<li><img src="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_18.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Arvin-Chaser/My_Images/refs/heads/main/3007_18.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="3007_18.png (783×569)"></li>
 </ul>
 
   </div>
@@ -2708,10 +2715,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-10-08T20:49:11+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-10-27T09:44:25+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Oct 8, 2025</p>
+    <p>更新于：Oct 27, 2025</p>
   </a>
 </div>
 
@@ -3557,7 +3564,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"MoonIsAMute","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"堕天万国信使会梦到电子甜甜圈吗"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"MoonIsAMute"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/学习笔记/","name":"学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/09/13/optimizationgraphic-method-and-simplex-method/","name":"[Optimization]Graphic Method and Simplex method"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"MoonIsAMute","url":"http://example.com/","keywords":null,"description":"堕天万国信使会梦到电子甜甜圈吗","author":{"@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"堕天万国信使会梦到电子甜甜圈吗"},"publisher":{"@type":"Organization","name":"MoonIsAMute","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"[Optimization]Graphic Method and Simplex method","description":"堕天万国信使会梦到电子甜甜圈吗","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/09/13/optimizationgraphic-method-and-simplex-method/"},"author":{"@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"MoonIsAMute","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/09/13/optimizationgraphic-method-and-simplex-method/","wordCount":0,"datePublished":"2025-09-13T12:32:15.000Z","dateModified":"2025-10-08T12:49:11.790Z","articleSection":"学习笔记","keywords":"Optimization","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"MoonIsAMute","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"堕天万国信使会梦到电子甜甜圈吗"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"MoonIsAMute"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/学习笔记/","name":"学习笔记"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/09/13/optimizationgraphic-method-and-simplex-method/","name":"[Optimization]Graphic Method and Simplex method"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"MoonIsAMute","url":"http://example.com/","keywords":null,"description":"堕天万国信使会梦到电子甜甜圈吗","author":{"@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"堕天万国信使会梦到电子甜甜圈吗"},"publisher":{"@type":"Organization","name":"MoonIsAMute","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"[Optimization]Graphic Method and Simplex method","description":"堕天万国信使会梦到电子甜甜圈吗","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/09/13/optimizationgraphic-method-and-simplex-method/"},"author":{"@type":"Person","name":"m0st1ma","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"MoonIsAMute","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/09/13/optimizationgraphic-method-and-simplex-method/","wordCount":0,"datePublished":"2025-09-13T12:32:15.000Z","dateModified":"2025-10-27T01:44:25.192Z","articleSection":"学习笔记","keywords":"Optimization","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
